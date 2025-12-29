@@ -55,9 +55,9 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <a href="#" className="flex items-center z-50 transition-transform duration-300 hover:scale-105">
             <img 
-              src="/images/logoSCA.png" 
+              src="/images/logoSCA - blanco.png" 
               alt="SCA Logo" 
-              className="h-20 lg:h-32 w-auto object-contain brightness-0 invert"
+              className="h-20 lg:h-32 w-auto object-contain"
             />
           </a>
 

@@ -57,26 +57,26 @@ export const ConnectPage: React.FC = () => {
         {/* Main Card */}
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           {/* Header Section */}
-          <div className="bg-gradient-to-br from-primary to-primary-light p-8 text-center">
+          <div className="bg-gradient-to-br from-primary to-primary-light p-6 md:p-8 text-center">
             {/* Logo */}
-            <div className="mb-6 flex justify-center">
+            <div className="mb-4 flex justify-center">
               <img
-                src="/images/logoSCA.png"
+                src="/images/logoSCA - blanco.png"
                 alt="SCA Logo"
-                className="h-24 md:h-28 w-auto object-contain brightness-0 invert"
+                className="h-24 md:h-32 w-auto object-contain"
               />
             </div>
 
             {/* Tagline */}
-            <h1 className="text-white text-xl font-display font-bold mb-2">
+            <h1 className="text-white text-lg md:text-xl font-display font-bold mb-2">
               Global OEM Saddle Manufacturing
             </h1>
-            <p className="text-white/80 text-sm font-light">
+            <p className="text-white/80 text-sm font-light mb-4">
               Premium craftsmanship from Argentina to the world
             </p>
 
             {/* Event Badge */}
-            <div className="mt-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
               <i className="fas fa-calendar-check text-accent text-sm" />
               <span className="text-white text-xs font-semibold">
                 {eventInfo.name} {eventInfo.year}

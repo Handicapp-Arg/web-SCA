@@ -17,7 +17,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact, delay = 0 }) => {
 
   return (
     <RevealWrapper delay={delay}>
-      <div className="bg-white/5 backdrop-blur-sm border-t-4 border-accent p-8 md:p-10 rounded-lg">
+      <div className="h-full bg-white/5 backdrop-blur-sm border-t-4 border-accent p-8 md:p-10 rounded-lg flex flex-col">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/10">
           <span className="text-5xl">{contact.flag}</span>
@@ -42,7 +42,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact, delay = 0 }) => {
         </div>
 
         {/* Contact Details */}
-        <div className="space-y-4">
+        <div className="space-y-4 flex-grow">
           {/* Address */}
           <div className="flex items-start gap-4 text-gray-300">
             <i className="fas fa-map-marker-alt text-accent mt-1 w-5" />
@@ -98,7 +98,7 @@ export const Contact: React.FC = () => {
           <SectionHeader title={t('contact_title')} light />
         </RevealWrapper>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mt-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mt-12 items-stretch">
           {contacts.map((contact, index) => (
             <ContactCard key={index} contact={contact} delay={index * 100} />
           ))}
