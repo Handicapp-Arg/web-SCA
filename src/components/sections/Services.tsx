@@ -15,16 +15,16 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay = 0 }) => (
   <RevealWrapper delay={delay}>
-    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-2 hover:bg-white/8 hover:border-accent group">
-      <div className="inline-flex items-center justify-center bg-accent/10 text-accent rounded-xl p-4 mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
-        <i className={`fas ${icon} text-3xl md:text-4xl`} />
+    <div className="h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-1 group flex flex-col">
+      <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-accent/20 text-accent mb-6 group-hover:bg-accent group-hover:text-white group-hover:scale-110 transition-all duration-300">
+        <i className={`fas ${icon} text-3xl`} />
       </div>
       
-      <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-4">
+      <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-4 group-hover:text-accent transition-colors">
         {title}
       </h3>
       
-      <p className="text-gray-300 leading-relaxed">
+      <p className="text-gray-300 leading-relaxed flex-grow">
         {description}
       </p>
     </div>
@@ -57,6 +57,7 @@ export const Services: React.FC = () => {
           <SectionHeader title={t('services_title')} light />
         </RevealWrapper>
 
+        {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service, index) => (
             <ServiceCard

@@ -53,9 +53,9 @@ export const Concept: React.FC = () => {
           <RevealWrapper delay={200}>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1612458784263-d73c24e650d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                src="/images/care_02.jpg"
                 alt="Saddle Craftsmanship"
-                className="rounded-sm shadow-2xl"
+                className="rounded-sm shadow-2xl w-full h-auto object-cover"
                 style={{ boxShadow: '30px 30px 0px rgba(0,0,0,0.05)' }}
               />
             </div>
