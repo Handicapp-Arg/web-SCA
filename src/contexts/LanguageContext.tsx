@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState, useCallback, useMemo, ReactNode } from 'react';
+import React, { createContext, useContext, useCallback, useMemo, ReactNode } from 'react';
 import type { Language, TranslationKeys } from '@/types';
 import { translations } from '@/data/translations';
+import { useParams } from 'react-router-dom';
 
 /**
  * Language Context Interface
@@ -21,27 +22,31 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
  */
 interface LanguageProviderProps {
   children: ReactNode;
-  defaultLanguage?: Language;
 }
 
 /**
  * Language Provider Component
- * Manages the current language state and provides translation function
+ * Manages language state synchronized with URL locale parameter
+ * MUST be used inside React Router to access useParams
  */
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ 
-  children, 
-  defaultLanguage = 'en' 
-}) => {
-  const [language, setLanguageState] = useState<Language>(defaultLanguage);
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const { locale } = useParams<{ locale: string }>();
+  
+  // Valid locales
+  const validLocales: Language[] = ['en', 'es', 'de'];
+  const defaultLocale: Language = 'en';
+  
+  // Get language from URL or default
+  const language: Language = 
+    locale && validLocales.includes(locale as Language) 
+      ? (locale as Language) 
+      : defaultLocale;
 
   /**
-   * Set language with localStorage persistence
+   * Set language (deprecated - use navigation instead)
    */
-  const setLanguage = useCallback((lang: Language) => {
-    setLanguageState(lang);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('sca-language', lang);
-    }
+  const setLanguage = useCallback((_lang: Language) => {
+    console.log('setLanguage is deprecated. Use navigation to change locale.');
   }, []);
 
   /**
@@ -50,13 +55,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
    */
   const t = useCallback(
     (key: keyof TranslationKeys): string => {
-      return translations[language][key] || key;
+      return translations[language]?.[key] || key;
     },
     [language]
   );
 
   /**
-   * Memoized context value to prevent unnecessary re-renders
+   * Memoized context value
    */
   const value = useMemo(
     () => ({

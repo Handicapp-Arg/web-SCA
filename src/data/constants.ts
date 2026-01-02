@@ -32,7 +32,7 @@ export const contacts: ContactInfo[] = [
     location: 'Buenos Aires, Argentina',
     name: 'Santiago A. Salerno',
     roleKey: 'role_partner',
-    address: 'Cochabamba 478, Villa Martelli, BA.\nShowroom: Paul Groussac 1030, Pacheco.',
+    address: 'Cochabamba 478, Villa Martelli, BA.',
     phone: '+5401156650533',
     email: 'santiago@horsebrandcompany.com.ar',
   },
@@ -57,4 +57,5 @@ export const features: Feature[] = [
   { icon: 'fa-check-circle', textKey: 'feat_2' },
   { icon: 'fa-check-circle', textKey: 'feat_3' },
   { icon: 'fa-check-circle', textKey: 'feat_4' },
+  { icon: 'fa-check-circle', textKey: 'feat_5' },
 ];

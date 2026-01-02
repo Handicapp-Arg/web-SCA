@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocale } from '@/hooks/useLocale';
 import { ActionButton } from '@/components/ui';
 import { downloadVCard, getWhatsAppLink, getMailtoLink } from '@/lib/contactUtils';
 import { companyContact, contactMessages, catalogPDF, eventInfo } from '@/lib/connectData';
@@ -9,6 +11,9 @@ import { companyContact, contactMessages, catalogPDF, eventInfo } from '@/lib/co
  * No navigation, no footer - just quick actions
  */
 export const ConnectPage: React.FC = () => {
+  const { t } = useLanguage();
+  const { getLocalizedPath } = useLocale();
+
   /**
    * Handle save contact (download vCard)
    */
@@ -47,7 +52,7 @@ export const ConnectPage: React.FC = () => {
    * Handle visit website
    */
   const handleVisitWebsite = () => {
-    window.location.href = '/';
+    window.location.href = getLocalizedPath('');
   };
 
   return (
@@ -69,10 +74,10 @@ export const ConnectPage: React.FC = () => {
 
             {/* Tagline */}
             <h1 className="text-white text-lg md:text-xl font-display font-bold mb-2">
-              Global OEM Saddle Manufacturing
+              {t('connect_tagline')}
             </h1>
             <p className="text-white/80 text-sm font-light mb-4">
-              Premium craftsmanship from Argentina to the world
+              {t('connect_subtitle')}
             </p>
 
             {/* Event Badge */}
@@ -89,7 +94,7 @@ export const ConnectPage: React.FC = () => {
             {/* Save Contact */}
             <ActionButton
               icon="fa-address-card"
-              label="Save Contact"
+              label={t('connect_save')}
               onClick={handleSaveContact}
               variant="primary"
             />
@@ -97,7 +102,7 @@ export const ConnectPage: React.FC = () => {
             {/* WhatsApp */}
             <ActionButton
               icon="fa-brands fa-whatsapp"
-              label="WhatsApp"
+              label={t('connect_whatsapp')}
               onClick={handleWhatsApp}
               variant="whatsapp"
             />
@@ -105,7 +110,7 @@ export const ConnectPage: React.FC = () => {
             {/* Email */}
             <ActionButton
               icon="fa-envelope"
-              label="Send Email"
+              label={t('connect_email')}
               onClick={handleEmail}
               variant="email"
             />
@@ -113,7 +118,7 @@ export const ConnectPage: React.FC = () => {
             {/* View Catalog */}
             <ActionButton
               icon="fa-file-pdf"
-              label="View Catalog"
+              label={t('connect_catalog')}
               onClick={handleViewCatalog}
               variant="secondary"
             />
@@ -121,7 +126,7 @@ export const ConnectPage: React.FC = () => {
             {/* Visit Website */}
             <ActionButton
               icon="fa-globe"
-              label="Visit Website"
+              label={t('connect_website')}
               onClick={handleVisitWebsite}
               variant="secondary"
             />

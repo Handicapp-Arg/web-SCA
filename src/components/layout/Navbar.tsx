@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocale } from '@/hooks/useLocale';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import type { Language } from '@/types';
 
 /**
  * Navbar Component
- * Responsive navigation with language switcher
+ * Responsive navigation with URL-based language switcher
  */
 export const Navbar: React.FC = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
+  const { changeLocale } = useLocale();
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,10 +35,10 @@ export const Navbar: React.FC = () => {
   };
 
   /**
-   * Handle language change
+   * Handle language change via URL navigation
    */
   const handleLanguageChange = (lang: Language) => {
-    setLanguage(lang);
+    changeLocale(lang);
     setIsMenuOpen(false);
   };
 

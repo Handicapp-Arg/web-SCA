@@ -14,8 +14,6 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-sm">
           &copy; {currentYear} <span className="font-semibold text-gray-400">SCA - Saddle Company Argentina</span>. All Rights Reserved.
-          {' | '}
-          <span className="text-accent font-bold">{t('footer')}</span>
         </p>
       </div>
     </footer>

@@ -16,6 +16,19 @@ Estructura completa del proyecto, organización de carpetas, convenciones y mejo
 
 ---
 
+### 🌐 [Sistema de Internacionalización](./I18N_ROUTING.md)
+Implementación de i18n con rutas localizadas para SEO y UX profesional.
+
+**Incluye:**
+- Arquitectura de rutas multiidioma
+- Hook `useLocale` y `LanguageContext`
+- Flujo de navegación entre idiomas
+- Configuración de Vercel
+- Guía para agregar nuevos idiomas
+- Testing y mejores prácticas
+
+---
+
 ### 📱 [Guía de Página QR Connect](./CONNECT_PAGE_GUIDE.md)
 Manual completo para usar la página de conexión rápida en eventos.
 

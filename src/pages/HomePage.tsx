@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Footer } from '@/components/layout';
-import { Hero, Concept, Services, Contact } from '@/components/sections';
+import { Hero, Concept, Services, Expertise, Brands, Glossary, Contact } from '@/components/sections';
 
 /**
  * Home Page
@@ -14,6 +14,9 @@ export const HomePage: React.FC = () => {
         <Hero />
         <Concept />
         <Services />
+        <Glossary />
+        <Expertise />
+        <Brands />
         <Contact />
       </main>
       <Footer />
