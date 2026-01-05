@@ -62,23 +62,104 @@ export const Brands: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Premium Header */}
         <RevealWrapper>
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="relative"
             >
-              <span className="inline-block px-6 py-2 bg-accent/20 backdrop-blur-sm text-accent font-bold text-sm uppercase tracking-widest rounded-full mb-6 border border-accent/30">
-                Nuestras marcas
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Nuestras marcas propias
-              </h2>
-              <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6" />
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Cinco marcas excepcionales, una pasión compartida: la excelencia ecuestre
-              </p>
+              {/* Decorative Background */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-3xl -z-10" />
+              
+              {/* Top Badge */}
+              <motion.span 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 backdrop-blur-md text-accent font-bold text-xs md:text-sm uppercase tracking-[0.2em] rounded-full mb-8 border border-accent/40 shadow-lg shadow-accent/20"
+              >
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                Portfolio de Marcas Premium
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              </motion.span>
+              
+              {/* Main Title */}
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1]"
+              >
+                <span className="inline-block bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                  Nuestras marcas
+                </span>
+                <br />
+                <span className="inline-block bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent mt-2">
+                  propias
+                </span>
+              </motion.h2>
+              
+              {/* Animated Divider */}
+              <motion.div 
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="flex items-center justify-center gap-3 mb-8"
+              >
+                <div className="w-16 h-[2px] bg-gradient-to-r from-transparent to-accent/50" />
+                <div className="w-3 h-3 rounded-full bg-accent shadow-lg shadow-accent/50" />
+                <div className="w-32 h-[3px] bg-gradient-to-r from-accent via-accent/80 to-accent rounded-full shadow-lg shadow-accent/30" />
+                <div className="w-3 h-3 rounded-full bg-accent shadow-lg shadow-accent/50" />
+                <div className="w-16 h-[2px] bg-gradient-to-l from-transparent to-accent/50" />
+              </motion.div>
+              
+              {/* Subtitle */}
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
+              >
+                Cinco marcas excepcionales,{' '}
+                <span className="text-white font-medium">una pasión compartida</span>
+                : la excelencia ecuestre
+              </motion.p>
+              
+              {/* Stats Row */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-10"
+              >
+                <div className="flex items-center gap-2 text-gray-400">
+                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                    <span className="text-accent font-bold text-sm">5</span>
+                  </div>
+                  <span className="text-sm uppercase tracking-wider">Marcas</span>
+                </div>
+                <div className="w-px h-6 bg-gray-700" />
+                <div className="flex items-center gap-2 text-gray-400">
+                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                    <i className="fas fa-globe text-accent text-xs" />
+                  </div>
+                  <span className="text-sm uppercase tracking-wider">Presencia Global</span>
+                </div>
+                <div className="w-px h-6 bg-gray-700" />
+                <div className="flex items-center gap-2 text-gray-400">
+                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                    <i className="fas fa-award text-accent text-xs" />
+                  </div>
+                  <span className="text-sm uppercase tracking-wider">Calidad Premium</span>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </RevealWrapper>
