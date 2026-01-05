@@ -74,6 +74,15 @@ export const translations: Translations = {
     connect_email: 'Send Email',
     connect_catalog: 'View Catalog',
     connect_website: 'Visit Website',
+    
+    // Products Section
+    products_title: 'JUMPING SADDLES',
+    products_subtitle: 'Our Saddles',
+    products_desc_1: 'All our products are handcrafted with the finest materials, using a vegetable tanning process.',
+    products_desc_2: 'The leathers are worked exclusively with chemical products of vegetable origin.',
+    products_desc_3: 'The tree is carefully reviewed and adjusted to ensure its symmetry before assembling the final product.',
+    products_desc_4: 'Once the tree is finished, we verify, through a laser system, that the asymmetry is adequate.',
+    product_view_details: 'View Details',
   },
   de: {
     nav_concept: 'Konzept',
@@ -144,6 +153,15 @@ export const translations: Translations = {
     connect_email: 'E-Mail Senden',
     connect_catalog: 'Katalog Ansehen',
     connect_website: 'Website Besuchen',
+    
+    // Products Section
+    products_title: 'SPRINGSÄTTEL',
+    products_subtitle: 'Unsere Sättel',
+    products_desc_1: 'Alle unsere Produkte werden handgefertigt mit den besten Materialien unter Verwendung eines pflanzlichen Gerbverfahrens.',
+    products_desc_2: 'Die Leder werden ausschließlich mit chemischen Produkten pflanzlichen Ursprungs bearbeitet.',
+    products_desc_3: 'Der Baum wird sorgfältig überprüft und angepasst, um seine Symmetrie vor der Montage des Endprodukts zu gewährleisten.',
+    products_desc_4: 'Sobald der Baum fertig ist, überprüfen wir mittels eines Lasersystems, dass die Asymmetrie angemessen ist.',
+    product_view_details: 'Details Anzeigen',
   },
   es: {
     nav_concept: 'Concepto',
@@ -214,5 +232,14 @@ export const translations: Translations = {
     connect_email: 'Enviar Email',
     connect_catalog: 'Ver Catálogo',
     connect_website: 'Visitar Sitio Web',
+    
+    // Products Section
+    products_title: 'Nuestras Líneas de Producto',
+    products_subtitle: 'Nuestras Monturas',
+    products_desc_1: 'Todos nuestros productos están fabricados a mano con los mejores materiales, utilizando un proceso de curtido vegetal.',
+    products_desc_2: 'Los cueros se trabajan exclusivamente con productos químicos de origen vegetal.',
+    products_desc_3: 'El armazón se revisa cuidadosamente y se ajusta para garantizar su simetría antes de ensamblar el producto final.',
+    products_desc_4: 'Una vez terminado el armazón, verificamos, mediante un sistema láser, que la asimetría sea la adecuada.',
+    product_view_details: 'Ver Detalles',
   },
 };

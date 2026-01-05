@@ -86,6 +86,15 @@ export interface TranslationKeys {
   connect_email: string;
   connect_catalog: string;
   connect_website: string;
+
+  // Products Section
+  products_title: string;
+  products_subtitle: string;
+  products_desc_1: string;
+  products_desc_2: string;
+  products_desc_3: string;
+  products_desc_4: string;
+  product_view_details: string;
 }
 
 /**
