@@ -1,0 +1,54 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+@layer base {
+  ::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-dark;
+  }
+
+  /* Smooth Scroll */
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Base Typography */
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  /* Custom animation for hero */
+  .animate-slide-in-left {
+    animation: slideInLeft 1s ease;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
