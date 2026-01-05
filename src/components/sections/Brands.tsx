@@ -174,8 +174,8 @@ export const Brands: React.FC = () => {
           */}
           
           {/* Primera fila: primeras 4 cards en tablet (2-2), primeras 3 en desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {brands.slice(0, 3).map((brand, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-0 md:mb-8">
+            {brands.slice(0, 4).map((brand, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -183,7 +183,10 @@ export const Brands: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className="group relative"
+                className={`group relative ${
+                  // En desktop: esconder la 4ta card (se mostrará abajo)
+                  index === 3 ? 'lg:hidden' : ''
+                }`}
               >
                 {/* Card */}
                 <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
@@ -225,18 +228,50 @@ export const Brands: React.FC = () => {
             ))}
           </div>
 
-          {/* Segunda fila: últimas 2 cards - centradas en desktop, 2-1 en tablet */}
-          <div className="flex flex-wrap justify-center gap-8">
-            {brands.slice(3).map((brand, index) => (
+          {/* Segunda fila: última card en tablet centrada, 2 cards centradas en desktop */}
+          <div className="flex flex-wrap justify-center gap-8 mt-8 md:mt-0 lg:mt-8">
+            {/* En tablet: solo card 5. En desktop: cards 4 y 5 */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 4 * 0.1 }}
+              whileHover={{ y: -12, scale: 1.02 }}
+              className="group relative w-full md:max-w-md lg:max-w-none lg:w-[calc((100%-4rem)/3)] hidden lg:block"
+            >
+              {/* Card 4 - Solo visible en desktop */}
+              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
+                <div className={`absolute inset-0 bg-gradient-to-br ${brands[3].color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm flex items-center justify-center text-accent font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  4
+                </div>
+                <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                  <img
+                    src={brands[3].logo}
+                    alt={brands[3].name}
+                    className="max-w-[180px] max-h-24 object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-500"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                  {brands[3].name}
+                </h3>
+                <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  {brands[3].tagline}
+                </p>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              </div>
+            </motion.div>
+
+            {brands.slice(4).map((brand, index) => (
               <motion.div
-                key={index + 3}
+                key={index + 4}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: (index + 3) * 0.1 }}
+                transition={{ duration: 0.6, delay: (index + 4) * 0.1 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
-                style={{ maxWidth: '100%' }}
+                className="group relative w-full md:max-w-md lg:max-w-none lg:w-[calc((100%-4rem)/3)]"
               >
                 {/* Card */}
                 <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
