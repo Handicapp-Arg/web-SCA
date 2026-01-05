@@ -168,12 +168,14 @@ export const Brands: React.FC = () => {
         <div className="max-w-6xl mx-auto mb-20">
           {/* 
             Responsive Grid Strategy:
-            - Mobile (sm): 1 column (5 rows: 1-1-1-1-1)
+            - Mobile (xs-sm): 1 column (5 rows: 1-1-1-1-1)
             - Tablet (md): 2 columns (3 rows: 2-2-1 centered)
-            - Desktop (lg): 2 columns centered (3 rows: 2-2-1 centered)
+            - Desktop (lg+): 3 columns primera fila, 2 centradas segunda fila
           */}
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {brands.map((brand, index) => (
+          
+          {/* Primera fila: primeras 4 cards en tablet (2-2), primeras 3 en desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {brands.slice(0, 3).map((brand, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -181,10 +183,60 @@ export const Brands: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className={`group relative ${
-                  // Última card: centrar en todas las breakpoints
-                  index === 4 ? 'md:col-span-2 md:max-w-md md:mx-auto' : ''
-                }`}
+                className="group relative"
+              >
+                {/* Card */}
+                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
+                  
+                  {/* Gradient Overlay on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  
+                  {/* Decorative Corner */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Brand Number */}
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm flex items-center justify-center text-accent font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {index + 1}
+                  </div>
+                  
+                  {/* Logo */}
+                  <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-w-[180px] max-h-24 object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-500"
+                    />
+                  </div>
+                  
+                  {/* Brand Name */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                    {brand.name}
+                  </h3>
+                  
+                  {/* Tagline */}
+                  <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    {brand.tagline}
+                  </p>
+                  
+                  {/* Bottom Border Animation */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Segunda fila: últimas 2 cards - centradas en desktop, 2-1 en tablet */}
+          <div className="flex flex-wrap justify-center gap-8">
+            {brands.slice(3).map((brand, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: (index + 3) * 0.1 }}
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
+                style={{ maxWidth: '100%' }}
               >
                 {/* Card */}
                 <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
