@@ -85,7 +85,13 @@ export const Brands: React.FC = () => {
 
         {/* Premium Brands Grid */}
         <div className="max-w-6xl mx-auto mb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* 
+            Responsive Grid Strategy:
+            - Mobile (sm): 1 column (5 rows: 1-1-1-1-1)
+            - Tablet (md): 2 columns (3 rows: 2-2-1 centered)
+            - Desktop (lg): 2 columns centered (3 rows: 2-2-1 centered)
+          */}
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {brands.map((brand, index) => (
               <motion.div
                 key={index}
@@ -94,7 +100,10 @@ export const Brands: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -12, scale: 1.02 }}
-                className="group relative"
+                className={`group relative ${
+                  // Última card: centrar en todas las breakpoints
+                  index === 4 ? 'md:col-span-2 md:max-w-md md:mx-auto' : ''
+                }`}
               >
                 {/* Card */}
                 <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
