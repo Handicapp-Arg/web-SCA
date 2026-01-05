@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { SectionHeader, RevealWrapper } from '@/components/ui';
+import { SectionHeader, RevealWrapper, TechTooltip } from '@/components/ui';
 import { features } from '@/data/constants';
 
 /**
@@ -31,9 +31,20 @@ export const Concept: React.FC = () => {
                 {t('concept_subtitle')}
               </h3>
               
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                {t('concept_desc')}
-              </p>
+              <div className="text-lg text-gray-600 mb-8 leading-relaxed">
+                <p>
+                  SCA no es solo una fábrica; es una solución B2B completa. Aprovechamos el mejor cuero del mundo 
+                  y artesanos expertos en Buenos Aires, respaldados por un centro de logística ubicado en Walsrode, Alemania, 
+                  y nuestro equipo de{' '}
+                  <TechTooltip 
+                    term={t('term_fitter_title')}
+                    definition={t('term_fitter_desc')}
+                  >
+                    {t('term_fitter_title')}
+                  </TechTooltip>
+                  {' '}que optimiza y controla nuestros productos llevándolos a la excelencia.
+                </p>
+              </div>
 
               {/* Features Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

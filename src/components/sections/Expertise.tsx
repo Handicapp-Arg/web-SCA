@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { RevealWrapper } from '@/components/ui';
+import { RevealWrapper, TechTooltip } from '@/components/ui';
 import type { TranslationKeys } from '@/types';
 import { motion } from 'framer-motion';
 
@@ -124,8 +124,25 @@ export const Expertise: React.FC = () => {
               >
                 {t('products_title')}
               </motion.h3>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-4">
                 Artesanía de clase mundial con los más altos estándares de calidad
+              </p>
+              <p className="text-sm text-gray-500 max-w-3xl mx-auto">
+                Cada montura es diseñada por un{' '}
+                <TechTooltip 
+                  term={t('term_fitter_title')}
+                  definition={t('term_fitter_desc')}
+                >
+                  {t('term_fitter_title')}
+                </TechTooltip>
+                {' '}certificado, garantizando que los{' '}
+                <TechTooltip 
+                  term={t('term_panel_title')}
+                  definition={t('term_panel_desc')}
+                >
+                  {t('term_panel_title')}
+                </TechTooltip>
+                {' '}se ajusten perfectamente a cada caballo.
               </p>
             </div>
             
