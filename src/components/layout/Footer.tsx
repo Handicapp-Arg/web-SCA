@@ -6,7 +6,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
  * Simple, professional footer with copyright info
  */
 export const Footer: React.FC = () => {
-  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
