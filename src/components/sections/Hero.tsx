@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="max-w-3xl animate-slide-in-left">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase leading-tight mb-6 text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 text-white uppercase">
             {t('hero_title').split('OEM')[0]}
             <span className="text-accent">OEM</span>
             {t('hero_title').split('OEM')[1]}

@@ -70,10 +70,10 @@ export const Brands: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block px-6 py-2 bg-accent/20 backdrop-blur-sm text-accent font-bold text-sm uppercase tracking-widest rounded-full mb-6 border border-accent/30">
-                {t('brands_title')}
+                Nuestras marcas
               </span>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Nuestras Marcas Propias
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Nuestras marcas propias
               </h2>
               <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6" />
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

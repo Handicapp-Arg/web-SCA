@@ -39,10 +39,10 @@ export const Expertise: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-2 bg-accent/10 text-accent font-bold text-sm uppercase tracking-wider rounded-full mb-4">
-                {t('expertise_title')}
+                Expertise
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
-                Excelencia en Cada Detalle
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+                Excelencia en cada detalle
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
             </motion.div>
@@ -120,7 +120,7 @@ export const Expertise: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-primary mb-3"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3"
               >
                 {t('products_title')}
               </motion.h3>
