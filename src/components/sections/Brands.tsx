@@ -14,31 +14,31 @@ export const Brands: React.FC = () => {
     { 
       name: 'SADDLERY', 
       logo: '/images/canaves.png',
-      tagline: 'Tradición y Calidad',
+      taglineKey: 'brand_saddlery_tagline' as const,
       color: 'from-blue-600 to-blue-800'
     },
     { 
       name: 'HBC', 
       logo: '/images/HBC.png',
-      tagline: 'Innovación Ecuestre',
+      taglineKey: 'brand_hbc_tagline' as const,
       color: 'from-green-600 to-green-800'
     },
     { 
       name: 'HILBAR', 
       logo: '/images/hilbar.png',
-      tagline: 'Excelencia Europea',
+      taglineKey: 'brand_hilbar_tagline' as const,
       color: 'from-purple-600 to-purple-800'
     },
     { 
       name: 'MAXFLEX', 
       logo: '/images/maxflex.png',
-      tagline: 'Flexibilidad Premium',
+      taglineKey: 'brand_maxflex_tagline' as const,
       color: 'from-orange-600 to-orange-800'
     },
     { 
       name: 'MAX BENZ', 
       logo: '/images/maxbenz.png',
-      tagline: 'Diseño de Vanguardia',
+      taglineKey: 'brand_maxbenz_tagline' as const,
       color: 'from-red-600 to-red-800'
     },
   ];
@@ -218,7 +218,7 @@ export const Brands: React.FC = () => {
                   
                   {/* Tagline */}
                   <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {brand.tagline}
+                    {t(brand.taglineKey)}
                   </p>
                   
                   {/* Bottom Border Animation */}
@@ -257,7 +257,7 @@ export const Brands: React.FC = () => {
                   {brands[3].name}
                 </h3>
                 <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                  {brands[3].tagline}
+                  {t(brands[3].taglineKey)}
                 </p>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </div>
@@ -303,7 +303,7 @@ export const Brands: React.FC = () => {
                   
                   {/* Tagline */}
                   <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {brand.tagline}
+                    {t(brand.taglineKey)}
                   </p>
                   
                   {/* Bottom Border Animation */}
@@ -351,7 +351,7 @@ export const Brands: React.FC = () => {
                   rel="noopener noreferrer"
                   className="group/link inline-flex items-center gap-4 px-10 py-5 bg-accent hover:bg-accent/90 text-white rounded-full font-bold text-base md:text-lg tracking-wide uppercase shadow-2xl shadow-accent/30 hover:shadow-accent/50 transition-all duration-300 hover:scale-105"
                 >
-                  <span>Visitar Tienda Partner</span>
+                  <span>{t('partner_store_btn')}</span>
                   <i className="fas fa-arrow-right text-sm group-hover/link:translate-x-2 transition-transform duration-300" />
                 </a>
                 

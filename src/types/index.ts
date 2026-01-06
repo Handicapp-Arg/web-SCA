@@ -48,6 +48,12 @@ export interface TranslationKeys {
   brands_title: string;
   partner_store_title: string;
   partner_store_desc: string;
+  partner_store_btn: string;
+  brand_saddlery_tagline: string;
+  brand_hbc_tagline: string;
+  brand_hilbar_tagline: string;
+  brand_maxflex_tagline: string;
+  brand_maxbenz_tagline: string;
 
   // Expertise Section
   expertise_title: string;

@@ -35,9 +35,17 @@ export const translations: Translations = {
     role_partner_2: 'Partner',
     
     // Brands Section
-    brands_title: 'Nuestras marcas',
-    partner_store_title: 'Visita nuestra tienda partner europea',
+    brands_title: 'Our Brands',
+    partner_store_title: 'Visit Our European Partner Store',
     partner_store_desc: 'Explore our full range of products available directly in Germany.',
+    partner_store_btn: 'Visit Partner Store',
+    
+    // Brand Taglines
+    brand_saddlery_tagline: 'Tradition and Quality',
+    brand_hbc_tagline: 'Equestrian Innovation',
+    brand_hilbar_tagline: 'European Excellence',
+    brand_maxflex_tagline: 'Premium Flexibility',
+    brand_maxbenz_tagline: 'Vanguard Design',
     
     // Expertise Section
     expertise_title: 'Excelencia técnica',
@@ -118,6 +126,14 @@ export const translations: Translations = {
     brands_title: 'Unsere Eigenmarken',
     partner_store_title: 'Besuchen Sie unseren europäischen Partner-Store',
     partner_store_desc: 'Entdecken Sie unser komplettes Produktsortiment direkt in Deutschland.',
+    partner_store_btn: 'Partner-Store Besuchen',
+    
+    // Brand Taglines
+    brand_saddlery_tagline: 'Tradition und Qualität',
+    brand_hbc_tagline: 'Reitsport-Innovation',
+    brand_hilbar_tagline: 'Europäische Exzellenz',
+    brand_maxflex_tagline: 'Premium-Flexibilität',
+    brand_maxbenz_tagline: 'Avantgarde-Design',
     
     // Expertise Section
     expertise_title: 'Technische Exzellenz',
@@ -196,8 +212,16 @@ export const translations: Translations = {
     
     // Brands Section
     brands_title: 'Nuestras Marcas Propias',
-    partner_store_title: 'Visita nuestra Tienda Asociada en Europa',
-    partner_store_desc: 'Explora nuestra gama completa de productos disponibles directamente en Alemania.',
+    partner_store_title: 'Visita Nuestra Tienda Partner Europea',
+    partner_store_desc: 'Explore nuestra gama completa de productos disponibles directamente en Alemania.',
+    partner_store_btn: 'Visitar Tienda Partner',
+    
+    // Brand Taglines
+    brand_saddlery_tagline: 'Tradición y Calidad',
+    brand_hbc_tagline: 'Innovación Ecuestre',
+    brand_hilbar_tagline: 'Excelencia Europea',
+    brand_maxflex_tagline: 'Flexibilidad Premium',
+    brand_maxbenz_tagline: 'Diseño de Vanguardia',
     
     // Expertise Section
     expertise_title: 'Excelencia Técnica',
