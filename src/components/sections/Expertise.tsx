@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
  */
 export const Expertise: React.FC = () => {
   const { t } = useLanguage();
+  const [hoveredProduct, setHoveredProduct] = React.useState<number | null>(null);
 
   const features: Array<{ icon: string; titleKey: keyof TranslationKeys; descKey: keyof TranslationKeys }> = [
     { icon: 'fa-certificate', titleKey: 'exp_german_title', descKey: 'exp_german_desc' },
@@ -191,11 +192,17 @@ export const Expertise: React.FC = () => {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="relative overflow-hidden rounded-xl group aspect-square shadow-lg"
+                  onMouseEnter={() => setHoveredProduct(index)}
+                  onMouseLeave={() => setHoveredProduct(null)}
+                  animate={{
+                    scale: hoveredProduct === null ? 1 : hoveredProduct === index ? 1.15 : 0.85,
+                    y: hoveredProduct === index ? -15 : 0,
+                    opacity: 1
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative overflow-hidden rounded-xl group aspect-square shadow-lg cursor-pointer"
                 >
                   <img
                     src={product.img}
