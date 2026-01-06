@@ -33,16 +33,14 @@ export const Concept: React.FC = () => {
               
               <div className="text-lg text-gray-600 mb-8 leading-relaxed">
                 <p>
-                  SCA no es solo una fábrica; es una solución B2B completa. Aprovechamos el mejor cuero del mundo 
-                  y artesanos expertos en Buenos Aires, respaldados por un centro de logística ubicado en Walsrode, Alemania, 
-                  y nuestro equipo de{' '}
+                  {t('concept_desc').split('saddle fitters')[0]}
                   <TechTooltip 
                     term={t('term_fitter_title')}
                     definition={t('term_fitter_desc')}
                   >
-                    {t('term_fitter_title')}
+                    saddle fitters
                   </TechTooltip>
-                  {' '}que optimiza y controla nuestros productos llevándolos a la excelencia.
+                  {t('concept_desc').split('saddle fitters')[1]}
                 </p>
               </div>
 

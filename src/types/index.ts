@@ -16,6 +16,7 @@ export interface TranslationKeys {
   hero_title: string;
   hero_subtitle: string;
   hero_cta: string;
+  hero_brands_btn: string;
 
   // Concept Section
   concept_title: string;

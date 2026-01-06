@@ -48,10 +48,6 @@ export const Hero: React.FC = () => {
         }} />
       </div>
       
-      {/* Glow Effects */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/3 left-1/3 w-80 h-80 bg-primary/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="max-w-4xl">
@@ -60,13 +56,27 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6 text-white uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6 uppercase"
           >
-            {t('hero_title').split('OEM')[0]}
-            <span className="inline-block bg-gradient-to-r from-accent via-yellow-500 to-accent bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(234,179,8,0.3)]">
-              OEM
-            </span>
-            {t('hero_title').split('OEM')[1]}
+            {(() => {
+              const title = t('hero_title');
+              const parts = title.split('OEM');
+              const firstPart = parts[0].trim();
+              const words = firstPart.split(' ');
+              const firstLine = words[0];
+              const secondLine = words.slice(1).join(' ');
+              return (
+                <>
+                  <span className="block text-white">{firstLine}</span>
+                  <span className="block text-white">
+                    {secondLine}{' '}
+                    <span className="text-accent drop-shadow-[0_0_30px_rgba(56,189,248,0.5)]">
+                      OEM
+                    </span>
+                  </span>
+                </>
+              );
+            })()}
           </motion.h1>
           
           {/* Decorative Line */}
@@ -116,8 +126,7 @@ export const Hero: React.FC = () => {
               }}
               className="group inline-flex items-center gap-3 px-7 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white/30 hover:border-white/50 text-white rounded-full font-bold text-sm md:text-base uppercase tracking-wide transition-all duration-300 hover:scale-105"
             >
-              <i className="fas fa-star text-accent text-sm" />
-              <span>Nuestras Marcas</span>
+              <span>{t('hero_brands_btn')}</span>
             </button>
           </motion.div>
         </div>

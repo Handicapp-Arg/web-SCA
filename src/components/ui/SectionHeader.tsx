@@ -23,7 +23,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div className={`text-center mb-16 md:mb-20 ${className}`}>
       <h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 ${
+        className={`text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 uppercase ${
           light ? 'text-white' : 'text-primary'
         }`}
       >

@@ -101,13 +101,13 @@ export const Navbar: React.FC = () => {
                   <button
                     key={lang}
                     onClick={() => handleLanguageChange(lang)}
-                    className={`px-3 py-1 text-xs font-bold uppercase rounded-full transition-all ${
+                    className={`px-3 py-1 text-xs font-bold rounded-full transition-all ${
                       language === lang
                         ? 'bg-accent text-white'
                         : 'bg-transparent text-white/50 border border-white/10 hover:border-accent hover:text-white'
                     }`}
                   >
-                    {lang}
+                    {lang.toUpperCase()}
                   </button>
                 ))}
               </div>
@@ -177,13 +177,13 @@ export const Navbar: React.FC = () => {
                 <button
                   key={lang}
                   onClick={() => handleLanguageChange(lang)}
-                  className={`flex-1 px-4 py-2 text-xs font-bold uppercase rounded-full transition-all ${
+                  className={`flex-1 px-4 py-2 text-xs font-bold rounded-full transition-all ${
                     language === lang
                       ? 'bg-accent text-white'
                       : 'bg-transparent text-white/50 border border-white/20'
                   }`}
                 >
-                  {lang}
+                  {lang.toUpperCase()}
                 </button>
               ))}
             </div>
