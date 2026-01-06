@@ -207,7 +207,7 @@ export const Brands: React.FC = () => {
                     <img
                       src={brand.logo}
                       alt={brand.name}
-                      className="max-w-[180px] max-h-24 object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-500"
+                      className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
                     />
                   </div>
                   
@@ -250,7 +250,7 @@ export const Brands: React.FC = () => {
                   <img
                     src={brands[3].logo}
                     alt={brands[3].name}
-                    className="max-w-[180px] max-h-24 object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-500"
+                    className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
                   />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
@@ -292,7 +292,7 @@ export const Brands: React.FC = () => {
                     <img
                       src={brand.logo}
                       alt={brand.name}
-                      className="max-w-[180px] max-h-24 object-contain filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-all duration-500"
+                      className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
                     />
                   </div>
                   
