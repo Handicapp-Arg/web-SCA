@@ -12,7 +12,7 @@ export const Brands: React.FC = () => {
 
   const brands = [
     { 
-      name: 'CANAVES', 
+      name: 'SADDLERY', 
       logo: '/images/canaves.png',
       tagline: 'Tradición y Calidad',
       color: 'from-blue-600 to-blue-800'
