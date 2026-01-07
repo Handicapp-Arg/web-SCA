@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { RevealWrapper } from '@/components/ui';
+import { SectionHeader, RevealWrapper } from '@/components/ui';
 import { motion } from 'framer-motion';
 
 /**
@@ -73,35 +73,10 @@ export const Brands: React.FC = () => {
               {/* Decorative Background */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-3xl -z-10" />
               
-              {/* Top Badge */}
-              <motion.span 
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 backdrop-blur-md text-accent font-bold text-xs md:text-sm uppercase tracking-[0.2em] rounded-full mb-8 border border-accent/40 shadow-lg shadow-accent/20"
-              >
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                Portfolio de Marcas Premium
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              </motion.span>
-              
               {/* Main Title */}
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-[1.1]"
-              >
-                <span className="inline-block bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                  Nuestras marcas
-                </span>
-                <br />
-                <span className="inline-block bg-gradient-to-r from-accent via-accent/80 to-accent bg-clip-text text-transparent mt-2">
-                  propias
-                </span>
-              </motion.h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 uppercase text-white">
+                {t('brands_title')}
+              </h2>
               
               {/* Animated Divider */}
               <motion.div 
@@ -195,14 +170,7 @@ export const Brands: React.FC = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                   
                   {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Brand Number */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm flex items-center justify-center text-accent font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {index + 1}
-                  </div>
-                  
-                  {/* Logo */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />{/* Logo */}
                   <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
                     <img
                       src={brand.logo}
@@ -243,9 +211,6 @@ export const Brands: React.FC = () => {
               <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
                 <div className={`absolute inset-0 bg-gradient-to-br ${brands[3].color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm flex items-center justify-center text-accent font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  4
-                </div>
                 <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
                   <img
                     src={brands[3].logo}
@@ -280,14 +245,7 @@ export const Brands: React.FC = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                   
                   {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Brand Number */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-accent/20 backdrop-blur-sm flex items-center justify-center text-accent font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {index + 1}
-                  </div>
-                  
-                  {/* Logo */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />{/* Logo */}
                   <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
                     <img
                       src={brand.logo}

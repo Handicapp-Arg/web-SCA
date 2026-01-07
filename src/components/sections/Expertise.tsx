@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { RevealWrapper, TechTooltip } from '@/components/ui';
+import { SectionHeader, RevealWrapper, TechTooltip } from '@/components/ui';
 import type { TranslationKeys } from '@/types';
 import { motion } from 'framer-motion';
 
@@ -30,24 +30,9 @@ export const Expertise: React.FC = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Enhanced Section Header */}
+        {/* Section Header */}
         <RevealWrapper>
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-4 py-2 bg-accent/10 text-accent font-bold text-sm uppercase tracking-wider rounded-full mb-4">
-                Expertise
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 uppercase">
-                Excelencia en cada detalle
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
-            </motion.div>
-          </div>
+          <SectionHeader title={t('expertise_title')} />
         </RevealWrapper>
 
         {/* Premium Features Grid */}
@@ -94,8 +79,12 @@ export const Expertise: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-2xl" />
             
             <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white text-5xl md:text-6xl border-4 border-white/20 shadow-xl">
-                <i className="fas fa-user-tie" />
+              <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
+                <img 
+                  src="/images/profile.png" 
+                  alt="Santiago A. Salerno" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -116,15 +105,8 @@ export const Expertise: React.FC = () => {
         <RevealWrapper delay={300}>
           <div className="mb-20">
             {/* Main Section Header */}
+            <SectionHeader title={t('products_title')} />
             <div className="text-center mb-12">
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3"
-              >
-                {t('products_title')}
-              </motion.h3>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-4">
                 Artesanía de clase mundial con los más altos estándares de calidad
               </p>
@@ -158,11 +140,6 @@ export const Expertise: React.FC = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-accent overflow-hidden"
                 >
-                  {/* Number Badge */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center text-white text-2xl font-bold opacity-20 group-hover:opacity-30 transition-opacity">
-                    {num}
-                  </div>
-                  
                   <div className="relative flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-lg">
                       {num}
@@ -209,14 +186,17 @@ export const Expertise: React.FC = () => {
                     alt={t(product.key as keyof TranslationKeys)}
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-6 transition-all duration-500 group-hover:from-accent/90 group-hover:via-accent/60">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-6 transition-all duration-500">
                     <div className="transform transition-all duration-500 group-hover:translate-y-0 translate-y-2">
                       <h4 className="text-white text-xl md:text-2xl font-bold uppercase tracking-wide mb-1">
                         {t(product.key as keyof TranslationKeys)}
                       </h4>
-                      <div className="w-0 group-hover:w-12 h-1 bg-white transition-all duration-500" />
+                      <div className="w-0 group-hover:w-12 h-1 bg-accent transition-all duration-500" />
                     </div>
                   </div>
+                  
+                  {/* Accent Border on Hover */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Decorative Corner */}
                   <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
