@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { SectionHeader, RevealWrapper } from '@/components/ui';
+import { RevealWrapper } from '@/components/ui';
 import { motion } from 'framer-motion';
 
 /**
@@ -13,31 +13,31 @@ export const Brands: React.FC = () => {
   const brands = [
     { 
       name: 'SADDLERY', 
-      logo: '/images/canaves.png',
+      logo: '/images/canaves.webp',
       taglineKey: 'brand_saddlery_tagline' as const,
       color: 'from-blue-600 to-blue-800'
     },
     { 
       name: 'HBC', 
-      logo: '/images/HBC.png',
+      logo: '/images/HBC.webp',
       taglineKey: 'brand_hbc_tagline' as const,
       color: 'from-green-600 to-green-800'
     },
     { 
       name: 'HILBAR', 
-      logo: '/images/hilbar.png',
+      logo: '/images/hilbar.webp',
       taglineKey: 'brand_hilbar_tagline' as const,
       color: 'from-purple-600 to-purple-800'
     },
     { 
       name: 'MAXFLEX', 
-      logo: '/images/maxflex.png',
+      logo: '/images/maxflex.webp',
       taglineKey: 'brand_maxflex_tagline' as const,
       color: 'from-orange-600 to-orange-800'
     },
     { 
       name: 'MAX BENZ', 
-      logo: '/images/maxbenz.png',
+      logo: '/images/maxbenz.webp',
       taglineKey: 'brand_maxbenz_tagline' as const,
       color: 'from-red-600 to-red-800'
     },

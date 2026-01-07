@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
         transition={{ duration: 1.5, ease: 'easeOut' }}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/image1.jpeg)',
+          backgroundImage: 'url(/images/image1.webp)',
         }}
       />
       

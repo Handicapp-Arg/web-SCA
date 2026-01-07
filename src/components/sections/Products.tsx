@@ -23,16 +23,16 @@ export const Products: React.FC = () => {
 
   // Products list
   const products: Product[] = [
-    { name: 'Invictus by Lucas Mesa', image: '/images/montura_salto.jpg' },
-    { name: 'Malena', image: '/images/montura_adistramiento.jpg' },
-    { name: 'Tribute', image: '/images/montura_todoproposito.jpg' },
-    { name: 'Manu by Manuel Chechic', image: '/images/montura_trekking.jpg' },
-    { name: 'Legacy by Américo Simonetti', image: '/images/montura_salto.jpg' },
-    { name: 'Almil by Carlos Milthaler', image: '/images/montura_adistramiento.jpg' },
-    { name: 'Ophelia', image: '/images/montura_todoproposito.jpg' },
-    { name: 'Sophia', image: '/images/montura_trekking.jpg' },
-    { name: 'Olympic by Vitor Teixeira', image: '/images/montura_salto.jpg' },
-    { name: 'Maestro by Vitor Teixeira', image: '/images/montura_adistramiento.jpg' },
+    { name: 'Invictus by Lucas Mesa', image: '/images/montura_salto.webp' },
+    { name: 'Malena', image: '/images/montura_adistramiento.webp' },
+    { name: 'Tribute', image: '/images/montura_todoproposito.webp' },
+    { name: 'Manu by Manuel Chechic', image: '/images/montura_trekking.webp' },
+    { name: 'Legacy by Américo Simonetti', image: '/images/montura_salto.webp' },
+    { name: 'Almil by Carlos Milthaler', image: '/images/montura_adistramiento.webp' },
+    { name: 'Ophelia', image: '/images/montura_todoproposito.webp' },
+    { name: 'Sophia', image: '/images/montura_trekking.webp' },
+    { name: 'Olympic by Vitor Teixeira', image: '/images/montura_salto.webp' },
+    { name: 'Maestro by Vitor Teixeira', image: '/images/montura_adistramiento.webp' },
   ];
 
   // Process features - Información destacada

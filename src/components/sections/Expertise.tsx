@@ -81,7 +81,7 @@ export const Expertise: React.FC = () => {
             <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
               <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
                 <img 
-                  src="/images/profile.png" 
+                  src="/images/profile.webp" 
                   alt="Santiago A. Salerno" 
                   className="w-full h-full object-cover"
                 />
@@ -161,10 +161,10 @@ export const Expertise: React.FC = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { img: '/images/montura_salto.jpg', key: 'cat_jumping' },
-                { img: '/images/montura_adistramiento.jpg', key: 'cat_dressage' },
-                { img: '/images/montura_todoproposito.jpg', key: 'cat_eventing' },
-                { img: '/images/montura_trekking.jpg', key: 'cat_polo' }
+                { img: '/images/montura_salto.webp', key: 'cat_jumping' },
+                { img: '/images/montura_adistramiento.webp', key: 'cat_dressage' },
+                { img: '/images/montura_todoproposito.webp', key: 'cat_eventing' },
+                { img: '/images/montura_trekking.webp', key: 'cat_polo' }
               ].map((product, index) => (
                 <motion.div
                   key={index}

@@ -66,7 +66,7 @@ export const ConnectPage: React.FC = () => {
             {/* Logo */}
             <div className="mb-4 flex justify-center">
               <img
-                src="/images/logoSCA - blanco.png"
+                src="/images/logoSCA - blanco.webp"
                 alt="SCA Logo"
                 className="h-24 md:h-32 w-auto object-contain"
               />

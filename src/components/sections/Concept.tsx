@@ -62,7 +62,7 @@ export const Concept: React.FC = () => {
           <RevealWrapper delay={200}>
             <div className="relative">
               <img
-                src="/images/care_02.jpg"
+                src="/images/care_02.webp"
                 alt="Saddle Craftsmanship"
                 className="rounded-sm shadow-2xl w-full h-auto object-cover"
                 style={{ boxShadow: '30px 30px 0px rgba(0,0,0,0.05)' }}
