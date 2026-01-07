@@ -115,14 +115,6 @@ export const ConnectPage: React.FC = () => {
               variant="email"
             />
 
-            {/* View Catalog */}
-            <ActionButton
-              icon="fa-file-pdf"
-              label={t('connect_catalog')}
-              onClick={handleViewCatalog}
-              variant="secondary"
-            />
-
             {/* Visit Website */}
             <ActionButton
               icon="fa-globe"
@@ -140,13 +132,6 @@ export const ConnectPage: React.FC = () => {
               <p className="text-accent font-semibold">{companyContact.email}</p>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Note */}
-        <div className="mt-4 text-center">
-          <p className="text-gray-500 text-xs">
-            Tap any button to connect with us instantly
-          </p>
         </div>
       </div>
     </div>

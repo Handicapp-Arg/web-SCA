@@ -14,6 +14,16 @@ export const Navbar: React.FC = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+  /**
+   * Language configuration with names only
+   */
+  const languageConfig = {
+    en: { name: 'English' },
+    de: { name: 'Deutsch' },
+    es: { name: 'Español' }
+  };
 
   /**
    * Handle scroll effect for navbar
@@ -44,6 +54,7 @@ export const Navbar: React.FC = () => {
   const handleLanguageChange = (lang: Language) => {
     changeLocale(lang);
     setIsMenuOpen(false);
+    setIsLangMenuOpen(false);
   };
 
   const languages: Language[] = ['en', 'de', 'es'];
@@ -95,21 +106,30 @@ export const Navbar: React.FC = () => {
                 </button>
               </div>
 
-              {/* Language Switcher */}
-              <div className="flex gap-2 pl-6 border-l border-white/20">
-                {languages.map((lang) => (
-                  <button
-                    key={lang}
-                    onClick={() => handleLanguageChange(lang)}
-                    className={`px-3 py-1 text-xs font-bold rounded-full transition-all ${
-                      language === lang
-                        ? 'bg-accent text-white'
-                        : 'bg-transparent text-white/50 border border-white/10 hover:border-accent hover:text-white'
-                    }`}
-                  >
-                    {lang.toUpperCase()}
-                  </button>
-                ))}
+              {/* Language Switcher - Ultra Clean */}
+              <div className="relative pl-6 border-l border-white/20">
+                <button
+                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                  <span className="text-white text-sm font-medium">{language.toUpperCase()}</span>
+                  <i className={`fas fa-chevron-down text-accent text-xs transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown */}
+                {isLangMenuOpen && (
+                  <div className="absolute top-full right-0 mt-2 bg-primary rounded-md shadow-xl overflow-hidden min-w-[140px] z-50 border border-white/10">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang}
+                        onClick={() => handleLanguageChange(lang)}
+                        className="w-full text-left px-4 py-2.5 text-sm text-white hover:bg-accent transition-colors"
+                      >
+                        {languageConfig[lang].name}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -172,20 +192,25 @@ export const Navbar: React.FC = () => {
             </button>
 
             {/* Mobile Language Switcher */}
-            <div className="flex gap-3 pt-4 border-t border-white/10 w-48">
-              {languages.map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => handleLanguageChange(lang)}
-                  className={`flex-1 px-4 py-2 text-xs font-bold rounded-full transition-all ${
-                    language === lang
-                      ? 'bg-accent text-white'
-                      : 'bg-transparent text-white/50 border border-white/20'
-                  }`}
-                >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
+            <div className="pt-6 border-t border-white/10 w-full px-6">
+              <p className="text-white/40 text-xs uppercase tracking-wider mb-3 font-medium">
+                Language
+              </p>
+              <div className="flex flex-col gap-1.5">
+                {languages.map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => handleLanguageChange(lang)}
+                    className={`px-4 py-2.5 rounded-md text-left text-sm transition-colors ${
+                      language === lang
+                        ? 'bg-accent text-white'
+                        : 'text-white/70 hover:bg-white/10'
+                    }`}
+                  >
+                    {languageConfig[lang].name}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
