@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocale } from '@/hooks/useLocale';
 import { ActionButton } from '@/components/ui';
 import { downloadVCard, getWhatsAppLink, getMailtoLink } from '@/lib/contactUtils';
-import { companyContact, contactMessages, catalogPDF, eventInfo } from '@/lib/connectData';
+import { companyContact, contactMessages, eventInfo } from '@/lib/connectData';
 
 /**
  * Connect Page Component
@@ -39,13 +39,6 @@ export const ConnectPage: React.FC = () => {
       contactMessages.email.body
     );
     window.location.href = url;
-  };
-
-  /**
-   * Handle view catalog
-   */
-  const handleViewCatalog = () => {
-    window.open(catalogPDF, '_blank');
   };
 
   /**
