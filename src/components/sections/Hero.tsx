@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0">
           {/* Main Title */}
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -84,11 +84,11 @@ export const Hero: React.FC = () => {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center gap-3 mb-6 origin-left"
+            className="flex items-center gap-3 mb-6 md:origin-left justify-center md:justify-start"
           >
-            <div className="w-16 h-0.5 bg-gradient-to-r from-accent to-accent/50 rounded-full shadow-lg shadow-accent/30" />
-            <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-lg shadow-accent/50" />
-            <div className="w-10 h-0.5 bg-accent/30 rounded-full" />
+            <div className="flex-1 md:flex-none md:w-16 h-0.5 bg-gradient-to-r from-transparent md:from-accent to-accent rounded-full shadow-lg shadow-accent/30" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-lg shadow-accent/50 flex-shrink-0" />
+            <div className="flex-1 md:flex-none md:w-10 h-0.5 bg-gradient-to-l from-transparent md:from-accent/30 to-accent/30 rounded-full" />
           </motion.div>
           
           {/* Subtitle */}
@@ -96,7 +96,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-10 font-light leading-relaxed max-w-2xl"
+            className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-10 font-light leading-relaxed max-w-2xl mx-auto md:mx-0"
           >
             {t('hero_subtitle')}
           </motion.p>
@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 items-start sm:items-center"
+            className="flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center md:justify-start"
           >
             <button 
               onClick={() => {

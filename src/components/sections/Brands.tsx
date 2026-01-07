@@ -15,31 +15,36 @@ export const Brands: React.FC = () => {
       name: 'SADDLERY', 
       logo: '/images/canaves.webp',
       taglineKey: 'brand_saddlery_tagline' as const,
-      color: 'from-blue-600 to-blue-800'
+      color: 'from-blue-600 to-blue-800',
+      link: 'https://sattelmanufaktur-bargh.de/index.php/jorge-canaves'
     },
     { 
       name: 'HBC', 
       logo: '/images/HBC.webp',
       taglineKey: 'brand_hbc_tagline' as const,
-      color: 'from-green-600 to-green-800'
+      color: 'from-green-600 to-green-800',
+      link: 'https://www.sattelmanufaktur-bargh.de/hbc.html'
     },
     { 
       name: 'HILBAR', 
       logo: '/images/hilbar.webp',
       taglineKey: 'brand_hilbar_tagline' as const,
-      color: 'from-purple-600 to-purple-800'
+      color: 'from-purple-600 to-purple-800',
+      link: 'https://sattelmanufaktur-bargh.de/index.php/hilbar'
     },
     { 
       name: 'MAXFLEX', 
       logo: '/images/maxflex.webp',
       taglineKey: 'brand_maxflex_tagline' as const,
-      color: 'from-orange-600 to-orange-800'
+      color: 'from-orange-600 to-orange-800',
+      link: 'https://sattelmanufaktur-bargh.de/index.php/max-flex'
     },
     { 
       name: 'MAX BENZ', 
       logo: '/images/maxbenz.webp',
       taglineKey: 'brand_maxbenz_tagline' as const,
-      color: 'from-red-600 to-red-800'
+      color: 'from-red-600 to-red-800',
+      link: 'https://sattelmanufaktur-bargh.de/index.php/max-benz'
     },
   ];
 
@@ -110,27 +115,52 @@ export const Brands: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-10"
+                className="mt-10"
               >
-                <div className="flex items-center gap-2 text-gray-400">
-                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                    <span className="text-accent font-bold text-sm">5</span>
+                {/* Mobile: Stack vertically with aligned icons */}
+                <div className="flex flex-col md:hidden items-start gap-6 max-w-xs mx-auto">
+                  <div className="flex items-center gap-3 text-gray-400 w-full">
+                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                      <span className="text-accent font-bold text-base">5</span>
+                    </div>
+                    <span className="text-sm uppercase tracking-wider font-medium">{t('brands_stat_brands')}</span>
                   </div>
-                  <span className="text-sm uppercase tracking-wider">{t('brands_stat_brands')}</span>
+                  <div className="flex items-center gap-3 text-gray-400 w-full">
+                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                      <i className="fas fa-globe text-accent text-sm" />
+                    </div>
+                    <span className="text-sm uppercase tracking-wider font-medium">{t('brands_stat_global')}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-400 w-full">
+                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                      <i className="fas fa-award text-accent text-sm" />
+                    </div>
+                    <span className="text-sm uppercase tracking-wider font-medium">{t('brands_stat_quality')}</span>
+                  </div>
                 </div>
-                <div className="w-px h-6 bg-gray-700" />
-                <div className="flex items-center gap-2 text-gray-400">
-                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                    <i className="fas fa-globe text-accent text-xs" />
+
+                {/* Desktop: Horizontal with dividers */}
+                <div className="hidden md:flex items-center justify-center gap-6 md:gap-10">
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                      <span className="text-accent font-bold text-sm">5</span>
+                    </div>
+                    <span className="text-sm uppercase tracking-wider">{t('brands_stat_brands')}</span>
                   </div>
-                  <span className="text-sm uppercase tracking-wider">{t('brands_stat_global')}</span>
-                </div>
-                <div className="w-px h-6 bg-gray-700" />
-                <div className="flex items-center gap-2 text-gray-400">
-                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                    <i className="fas fa-award text-accent text-xs" />
+                  <div className="w-px h-6 bg-gray-700" />
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                      <i className="fas fa-globe text-accent text-xs" />
+                    </div>
+                    <span className="text-sm uppercase tracking-wider">{t('brands_stat_global')}</span>
                   </div>
-                  <span className="text-sm uppercase tracking-wider">{t('brands_stat_quality')}</span>
+                  <div className="w-px h-6 bg-gray-700" />
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                      <i className="fas fa-award text-accent text-xs" />
+                    </div>
+                    <span className="text-sm uppercase tracking-wider">{t('brands_stat_quality')}</span>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -161,35 +191,74 @@ export const Brands: React.FC = () => {
                   index === 3 ? 'lg:hidden' : ''
                 }`}
               >
-                {/* Card */}
-                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
-                  
-                  {/* Gradient Overlay on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                  
-                  {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />{/* Logo */}
-                  <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
-                    <img
-                      src={brand.logo}
-                      alt={brand.name}
-                      className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
-                    />
+                {/* Card - Wrapper condicional para link */}
+                {brand.link ? (
+                  <a 
+                    href={brand.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10 cursor-pointer"
+                  >
+                    {/* Gradient Overlay on Hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                    
+                    {/* Decorative Corner */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Logo */}
+                    <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
+                      />
+                    </div>
+                    
+                    {/* Brand Name */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                      {brand.name}
+                    </h3>
+                    
+                    {/* Tagline */}
+                    <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {t(brand.taglineKey)}
+                    </p>
+                    
+                    {/* Bottom Border Animation */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  </a>
+                ) : (
+                  <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
+                    
+                    {/* Gradient Overlay on Hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                    
+                    {/* Decorative Corner */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Logo */}
+                    <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
+                      />
+                    </div>
+                    
+                    {/* Brand Name */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                      {brand.name}
+                    </h3>
+                    
+                    {/* Tagline */}
+                    <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {t(brand.taglineKey)}
+                    </p>
+                    
+                    {/* Bottom Border Animation */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   </div>
-                  
-                  {/* Brand Name */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                    {brand.name}
-                  </h3>
-                  
-                  {/* Tagline */}
-                  <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {t(brand.taglineKey)}
-                  </p>
-                  
-                  {/* Bottom Border Animation */}
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -205,25 +274,51 @@ export const Brands: React.FC = () => {
               whileHover={{ y: -12, scale: 1.02 }}
               className="group relative w-full md:max-w-md lg:max-w-none lg:w-[calc((100%-4rem)/3)] hidden lg:block"
             >
-              {/* Card 4 - Solo visible en desktop */}
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
-                <div className={`absolute inset-0 bg-gradient-to-br ${brands[3].color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
-                  <img
-                    src={brands[3].logo}
-                    alt={brands[3].name}
-                    className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
-                  />
+              {/* Card 4 - Solo visible en desktop - con link condicional */}
+              {brands[3].link ? (
+                <a 
+                  href={brands[3].link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10 cursor-pointer"
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${brands[3].color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                    <img
+                      src={brands[3].logo}
+                      alt={brands[3].name}
+                      className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                    {brands[3].name}
+                  </h3>
+                  <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    {t(brands[3].taglineKey)}
+                  </p>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                </a>
+              ) : (
+                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${brands[3].color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                    <img
+                      src={brands[3].logo}
+                      alt={brands[3].name}
+                      className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                    {brands[3].name}
+                  </h3>
+                  <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    {t(brands[3].taglineKey)}
+                  </p>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                  {brands[3].name}
-                </h3>
-                <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                  {t(brands[3].taglineKey)}
-                </p>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </div>
+              )}
             </motion.div>
 
             {brands.slice(4).map((brand, index) => (
@@ -236,35 +331,74 @@ export const Brands: React.FC = () => {
                 whileHover={{ y: -12, scale: 1.02 }}
                 className="group relative w-full md:max-w-md lg:max-w-none lg:w-[calc((100%-4rem)/3)]"
               >
-                {/* Card */}
-                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
-                  
-                  {/* Gradient Overlay on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                  
-                  {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />{/* Logo */}
-                  <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
-                    <img
-                      src={brand.logo}
-                      alt={brand.name}
-                      className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
-                    />
+                {/* Card - Wrapper condicional para link */}
+                {brand.link ? (
+                  <a 
+                    href={brand.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10 cursor-pointer"
+                  >
+                    {/* Gradient Overlay on Hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                    
+                    {/* Decorative Corner */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Logo */}
+                    <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
+                      />
+                    </div>
+                    
+                    {/* Brand Name */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                      {brand.name}
+                    </h3>
+                    
+                    {/* Tagline */}
+                    <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {t(brand.taglineKey)}
+                    </p>
+                    
+                    {/* Bottom Border Animation */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  </a>
+                ) : (
+                  <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 min-h-[280px] flex flex-col items-center justify-center overflow-hidden transition-all duration-500 hover:border-accent/50 hover:bg-white/10">
+                    
+                    {/* Gradient Overlay on Hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${brand.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                    
+                    {/* Decorative Corner */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Logo */}
+                    <div className="relative z-10 mb-6 transition-transform duration-500 group-hover:scale-110">
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
+                      />
+                    </div>
+                    
+                    {/* Brand Name */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                      {brand.name}
+                    </h3>
+                    
+                    {/* Tagline */}
+                    <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {t(brand.taglineKey)}
+                    </p>
+                    
+                    {/* Bottom Border Animation */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   </div>
-                  
-                  {/* Brand Name */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                    {brand.name}
-                  </h3>
-                  
-                  {/* Tagline */}
-                  <p className="text-gray-400 text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {t(brand.taglineKey)}
-                  </p>
-                  
-                  {/* Bottom Border Animation */}
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-accent/50 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                </div>
+                )}
               </motion.div>
             ))}
           </div>
