@@ -139,7 +139,7 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+          className="absolute bottom-16 sm:bottom-8 left-0 right-0 flex justify-center z-20"
         >
           <div className="flex flex-col items-center gap-2">
             <span className="text-white/60 text-xs uppercase tracking-widest">Scroll</span>

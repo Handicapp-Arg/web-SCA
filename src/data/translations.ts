@@ -54,7 +54,7 @@ export const translations: Translations = {
     brand_maxbenz_tagline: 'Vanguard Design',
     
     // Expertise Section
-    expertise_title: 'Excelencia técnica',
+    expertise_title: 'Technical Excellence',
     expertise_subtitle: 'World-class craftsmanship with the highest quality standards',
     expertise_description: 'Each saddle is designed by a certified',
     expertise_certified: 'certified, ensuring that the',

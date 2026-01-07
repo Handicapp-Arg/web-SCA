@@ -126,38 +126,32 @@ export const Products: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {processFeatures.map((feature, index) => {
-              const featureRef = useRef(null);
-              const featureInView = useInView(featureRef, { once: false, amount: 0.5 });
-
-              return (
-                <motion.div
-                  key={index}
-                  ref={featureRef}
-                  className="bg-white border-l-4 border-accent rounded-r-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group"
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  animate={featureInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ x: 10, scale: 1.02 }}
-                >
-                  <div className="flex items-start gap-4">
-                    <motion.div
-                      className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <i className={`fas ${feature.icon} text-accent text-2xl group-hover:text-white`} />
-                    </motion.div>
-                    
-                    <div className="flex-1">
-                      <p className="text-base text-gray-700 leading-relaxed group-hover:text-primary transition-colors">
-                        {feature.text}
-                      </p>
-                    </div>
+            {processFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="bg-white border-l-4 border-accent rounded-r-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ x: 10, scale: 1.02 }}
+              >
+                <div className="flex items-start gap-4">
+                  <motion.div
+                    className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <i className={`fas ${feature.icon} text-accent text-2xl group-hover:text-white`} />
+                  </motion.div>
+                  
+                  <div className="flex-1">
+                    <p className="text-base text-gray-700 leading-relaxed group-hover:text-primary transition-colors">
+                      {feature.text}
+                    </p>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
 
@@ -168,67 +162,61 @@ export const Products: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {products.map((product, index) => {
-              const productRef = useRef(null);
-              const productInView = useInView(productRef, { once: false, amount: 0.3 });
+            {products.map((product, index) => (
+              <motion.div
+                key={index}
+                className="group cursor-pointer"
+                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 30 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.05,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                whileHover={{ y: -12, scale: 1.05 }}
+              >
+                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-[3/4] bg-gray-100">
+                  {/* Product Image */}
+                  <motion.img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.6 }}
+                  />
 
-              return (
-                <motion.div
-                  key={index}
-                  ref={productRef}
-                  className="group cursor-pointer"
-                  initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                  animate={productInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 30 }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: index * 0.05,
-                    ease: [0.22, 1, 0.36, 1]
-                  }}
-                  whileHover={{ y: -12, scale: 1.05 }}
-                >
-                  <div className="relative overflow-hidden rounded-lg shadow-lg aspect-[3/4] bg-gray-100">
-                    {/* Product Image */}
-                    <motion.img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.15 }}
-                      transition={{ duration: 0.6 }}
-                    />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
 
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
-
-                    {/* Product Name */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <motion.h3 
-                        className="text-white font-bold text-sm md:text-base mb-2 leading-tight"
-                        initial={{ y: 10, opacity: 0.8 }}
-                        whileHover={{ y: 0, opacity: 1 }}
-                      >
-                        {product.name}
-                      </motion.h3>
-                      
-                      <motion.button
-                        className="text-accent text-xs font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-                        whileHover={{ x: 5 }}
-                      >
-                        {t('product_view_details')}
-                        <i className="fas fa-arrow-right text-xs" />
-                      </motion.button>
-                    </div>
-
-                    {/* Hover Border Effect */}
-                    <motion.div
-                      className="absolute inset-0 border-4 border-accent pointer-events-none rounded-lg"
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                  {/* Product Name */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <motion.h3 
+                      className="text-white font-bold text-sm md:text-base mb-2 leading-tight"
+                      initial={{ y: 10, opacity: 0.8 }}
+                      whileHover={{ y: 0, opacity: 1 }}
+                    >
+                      {product.name}
+                    </motion.h3>
+                    
+                    <motion.button
+                      className="text-accent text-xs font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
+                      whileHover={{ x: 5 }}
+                    >
+                      {t('product_view_details')}
+                      <i className="fas fa-arrow-right text-xs" />
+                    </motion.button>
                   </div>
-                </motion.div>
-              );
-            })}
+
+                  {/* Hover Border Effect */}
+                  <motion.div
+                    className="absolute inset-0 border-4 border-accent pointer-events-none rounded-lg"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileHover={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
