@@ -94,19 +94,17 @@ export const Brands: React.FC = () => {
               </motion.div>
               
               {/* Subtitle */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
               >
-                Cinco marcas excepcionales,{' '}
-                <span className="text-white font-medium">una pasión compartida</span>
-                : la excelencia ecuestre
-              </motion.p>
-              
-              {/* Stats Row */}
+                {t('brands_subtitle')}{' '}
+                <span className="text-white font-medium">{t('brands_subtitle_highlight')}</span>
+                {t('brands_subtitle_end')}
+              </motion.p>              {/* Stats Row */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -118,21 +116,21 @@ export const Brands: React.FC = () => {
                   <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
                     <span className="text-accent font-bold text-sm">5</span>
                   </div>
-                  <span className="text-sm uppercase tracking-wider">Marcas</span>
+                  <span className="text-sm uppercase tracking-wider">{t('brands_stat_brands')}</span>
                 </div>
                 <div className="w-px h-6 bg-gray-700" />
                 <div className="flex items-center gap-2 text-gray-400">
                   <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
                     <i className="fas fa-globe text-accent text-xs" />
                   </div>
-                  <span className="text-sm uppercase tracking-wider">Presencia Global</span>
+                  <span className="text-sm uppercase tracking-wider">{t('brands_stat_global')}</span>
                 </div>
                 <div className="w-px h-6 bg-gray-700" />
                 <div className="flex items-center gap-2 text-gray-400">
                   <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
                     <i className="fas fa-award text-accent text-xs" />
                   </div>
-                  <span className="text-sm uppercase tracking-wider">Calidad Premium</span>
+                  <span className="text-sm uppercase tracking-wider">{t('brands_stat_quality')}</span>
                 </div>
               </motion.div>
             </motion.div>

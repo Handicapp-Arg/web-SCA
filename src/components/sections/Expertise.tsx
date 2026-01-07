@@ -108,24 +108,24 @@ export const Expertise: React.FC = () => {
             <SectionHeader title={t('products_title')} />
             <div className="text-center mb-12">
               <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-4">
-                Artesanía de clase mundial con los más altos estándares de calidad
+                {t('expertise_subtitle')}
               </p>
               <p className="text-sm text-gray-500 max-w-3xl mx-auto">
-                Cada montura es diseñada por un{' '}
+                {t('expertise_description')}{' '}
                 <TechTooltip 
                   term={t('term_fitter_title')}
                   definition={t('term_fitter_desc')}
                 >
                   {t('term_fitter_title')}
                 </TechTooltip>
-                {' '}certificado, garantizando que los{' '}
+                {' '}{t('expertise_certified')}{' '}
                 <TechTooltip 
                   term={t('term_panel_title')}
                   definition={t('term_panel_desc')}
                 >
                   {t('term_panel_title')}
                 </TechTooltip>
-                {' '}se ajusten perfectamente a cada caballo.
+                {' '}{t('expertise_fit_perfectly')}
               </p>
             </div>
             
@@ -155,7 +155,7 @@ export const Expertise: React.FC = () => {
             {/* Product Images Gallery */}
             <div className="text-center mb-10">
               <p className="text-gray-600 text-lg">
-                Diseños únicos para cada disciplina ecuestre
+                {t('product_lines_subtitle')}
               </p>
             </div>
             

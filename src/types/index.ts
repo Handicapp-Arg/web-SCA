@@ -46,6 +46,12 @@ export interface TranslationKeys {
 
   // Brands Section
   brands_title: string;
+  brands_subtitle: string;
+  brands_subtitle_highlight: string;
+  brands_subtitle_end: string;
+  brands_stat_brands: string;
+  brands_stat_global: string;
+  brands_stat_quality: string;
   partner_store_title: string;
   partner_store_desc: string;
   partner_store_btn: string;
@@ -57,6 +63,11 @@ export interface TranslationKeys {
 
   // Expertise Section
   expertise_title: string;
+  expertise_subtitle: string;
+  expertise_description: string;
+  expertise_certified: string;
+  expertise_ensuring: string;
+  expertise_fit_perfectly: string;
   exp_german_title: string;
   exp_german_desc: string;
   exp_steam_title: string;
@@ -65,6 +76,7 @@ export interface TranslationKeys {
   exp_trees_desc: string;
   ceo_bio: string;
   product_lines_title: string;
+  product_lines_subtitle: string;
   cat_jumping: string;
   cat_dressage: string;
   cat_eventing: string;
