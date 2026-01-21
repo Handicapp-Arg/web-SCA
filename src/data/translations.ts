@@ -104,6 +104,14 @@ export const translations: Translations = {
     products_desc_3: 'The tree is carefully reviewed and adjusted to ensure its symmetry before assembling the final product.',
     products_desc_4: 'Once the tree is finished, we verify, through a laser system, that the asymmetry is adequate.',
     product_view_details: 'View Details',
+    
+    // Event Popup
+    event_badge: 'SPOGA HORSE 2026',
+    event_title: 'Visit Our Stand',
+    event_description: 'Discover the new standard in Argentine saddle manufacturing. Exclusive product reveals.',
+    event_cta_button: 'Book Meeting',
+    event_location: 'Hall 11.2 | Stand B-050',
+    event_dates: 'September 7-9, 2026',
   },
   de: {
     nav_concept: 'Konzept',
@@ -204,6 +212,14 @@ export const translations: Translations = {
     products_desc_3: 'Der Baum wird sorgfältig überprüft und angepasst, um seine Symmetrie vor der Montage des Endprodukts zu gewährleisten.',
     products_desc_4: 'Sobald der Baum fertig ist, überprüfen wir mittels eines Lasersystems, dass die Asymmetrie angemessen ist.',
     product_view_details: 'Details Anzeigen',
+    
+    // Event Popup
+    event_badge: 'SPOGA HORSE 2026',
+    event_title: 'Besuchen Sie Unseren Stand',
+    event_description: 'Entdecken Sie den neuen Standard in der argentinischen Sattelherstellung. Exklusive Produktvorstellungen.',
+    event_cta_button: 'Meeting Buchen',
+    event_location: 'Halle 11.2 | Stand B-050',
+    event_dates: '7-9. September 2026',
   },
   es: {
     nav_concept: 'Concepto',
@@ -304,5 +320,13 @@ export const translations: Translations = {
     products_desc_3: 'El armazón se revisa cuidadosamente y se ajusta para garantizar su simetría antes de ensamblar el producto final.',
     products_desc_4: 'Una vez terminado el armazón, verificamos, mediante un sistema láser, que la asimetría sea la adecuada.',
     product_view_details: 'Ver Detalles',
+    
+    // Event Popup
+    event_badge: 'SPOGA HORSE 2026',
+    event_title: 'Visite Nuestro Stand',
+    event_description: 'Descubra el nuevo estándar en fabricación argentina de monturas. Revelaciones exclusivas de productos.',
+    event_cta_button: 'Reservar Reunión',
+    event_location: 'Hall 11.2 | Stand B-050',
+    event_dates: '7-9 de Septiembre, 2026',
   },
 };

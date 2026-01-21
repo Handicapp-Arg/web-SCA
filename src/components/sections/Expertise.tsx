@@ -83,7 +83,7 @@ export const Expertise: React.FC = () => {
                 <img 
                   src="/images/profile.webp" 
                   alt="Santiago A. Salerno" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-[60%_center]"
                 />
               </div>
               <div className="flex-1 text-center md:text-left">
