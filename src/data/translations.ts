@@ -70,7 +70,7 @@ export const translations: Translations = {
     exp_steam_desc: 'Exclusive steam preparation system that softens panels for perfect adaptation to the horse\'s back.',
     exp_trees_title: 'In-House Trees',
     exp_trees_desc: 'We manufacture our own saddle trees, ensuring quality control from the very core of the product.',
-    ceo_bio: '"As a Riding Instructor and former member of the National Eventing Team, I understand the rider\'s needs from the saddle up."',
+    ceo_bio: 'As a Riding Instructor and former member of the National Eventing Team, I understand the rider\'s needs from the saddle up.',
     product_lines_title: 'Our Product Lines',
     product_lines_subtitle: 'Unique designs for every equestrian discipline',
     cat_jumping: 'Jumping',
@@ -111,9 +111,9 @@ export const translations: Translations = {
     
     // Event Popup
     event_badge: 'SPOGA HORSE 2026',
-    event_title: 'Visit Our Stand',
-    event_description: 'Discover the new standard in Argentine saddle manufacturing. Exclusive product reveals.',
-    event_cta_button: 'Book Meeting',
+    event_title: 'Meet Us at SPOGA HORSE',
+    event_description: 'Experience the pinnacle of Argentine craftsmanship at the world\'s leading equestrian trade fair. Discover our premium saddle collections designed for polo, eventing, and elite equestrian disciplines.',
+    event_cta_button: 'Schedule Private Meeting',
     event_location: 'Hall 11.2 | Stand B-050',
     event_dates: 'September 7-9, 2026',
     
@@ -251,7 +251,7 @@ export const translations: Translations = {
     exp_steam_desc: 'Exklusives Dampfvorbereitungssystem, das die Polster für perfekte Anpassung an den Pferderücken erweicht.',
     exp_trees_title: 'Eigene Sattelbäume',
     exp_trees_desc: 'Wir fertigen unsere eigenen Sattelbäume und gewährleisten Qualitätskontrolle vom Kern des Produkts an.',
-    ceo_bio: '"Als Reitlehrer und ehemaliges Mitglied des Nationalen Vielseitigkeitsteams verstehe ich die Bedürfnisse des Reiters vom Sattel aus."',
+    ceo_bio: 'Als Reitlehrer und ehemaliges Mitglied des Nationalen Vielseitigkeitsteams verstehe ich die Bedürfnisse des Reiters vom Sattel aus.',
     product_lines_title: 'Unsere Produktlinien',
     product_lines_subtitle: 'Einzigartige Designs für jede Reitsportdisziplin',
     cat_jumping: 'Springen',
@@ -292,9 +292,9 @@ export const translations: Translations = {
     
     // Event Popup
     event_badge: 'SPOGA HORSE 2026',
-    event_title: 'Besuchen Sie Unseren Stand',
-    event_description: 'Entdecken Sie den neuen Standard in der argentinischen Sattelherstellung. Exklusive Produktvorstellungen.',
-    event_cta_button: 'Meeting Buchen',
+    event_title: 'Treffen Sie Uns auf der SPOGA HORSE',
+    event_description: 'Erleben Sie den Höhepunkt argentinischer Handwerkskunst auf der weltweit führenden Reitsportmesse. Entdecken Sie unsere Premium-Sattelkollektionen für Polo, Vielseitigkeit und Elite-Reitsportdisziplinen.',
+    event_cta_button: 'Privates Treffen Vereinbaren',
     event_location: 'Halle 11.2 | Stand B-050',
     event_dates: '7-9. September 2026',
     
@@ -432,7 +432,7 @@ export const translations: Translations = {
     exp_steam_desc: 'Sistema exclusivo de preparación con vapor que suaviza los bastos para una adaptación perfecta al lomo del caballo.',
     exp_trees_title: 'Armazones Propios',
     exp_trees_desc: 'Fabricamos nuestros propios armazones, asegurando el control de calidad desde el núcleo mismo del producto.',
-    ceo_bio: '"Como Instructor de Equitación y ex miembro del Equipo Nacional de Prueba Completa, entiendo las necesidades del jinete desde la montura."',
+    ceo_bio: 'Como Instructor de Equitación y ex miembro del Equipo Nacional de Prueba Completa, entiendo las necesidades del jinete desde la montura.',
     product_lines_title: 'Nuestras Líneas de Producto',
     product_lines_subtitle: 'Diseños únicos para cada disciplina ecuestre',
     cat_jumping: 'Salto',
@@ -473,9 +473,9 @@ export const translations: Translations = {
     
     // Event Popup
     event_badge: 'SPOGA HORSE 2026',
-    event_title: 'Visite Nuestro Stand',
-    event_description: 'Descubra el nuevo estándar en fabricación argentina de monturas. Revelaciones exclusivas de productos.',
-    event_cta_button: 'Reservar Reunión',
+    event_title: 'Encuéntrenos en SPOGA HORSE',
+    event_description: 'Experimente la excelencia de la artesanía argentina en la feria ecuestre más importante del mundo. Descubra nuestras colecciones premium de monturas diseñadas para polo, prueba completa y disciplinas ecuestres de élite.',
+    event_cta_button: 'Agendar Reunión Privada',
     event_location: 'Hall 11.2 | Stand B-050',
     event_dates: '7-9 de Septiembre, 2026',
     

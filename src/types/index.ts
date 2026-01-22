@@ -107,6 +107,14 @@ export interface TranslationKeys {
   // Footer
   footer: string;
 
+  // Event Popup
+  event_badge: string;
+  event_title: string;
+  event_description: string;
+  event_cta_button: string;
+  event_location: string;
+  event_dates: string;
+
   // Connect Page
   connect_tagline: string;
   connect_subtitle: string;
