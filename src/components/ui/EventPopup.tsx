@@ -93,7 +93,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                 
                 {/* Premium Badge on Image */}
                 <div className="absolute top-6 left-6 z-10">
-                  <div className="bg-gradient-to-r from-accent to-yellow-600 text-white px-6 py-3 rounded-lg shadow-2xl">
+                  <div className="bg-gradient-to-r from-accent via-accent to-accent/80 text-white px-6 py-3 rounded-lg shadow-2xl border border-accent/30">
                     <div className="flex items-center gap-2">
                       <i className="fas fa-trophy text-lg" />
                       <div>
@@ -166,7 +166,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                 >
                   <button
                     onClick={handleBookMeeting}
-                    className="group relative px-10 py-4 bg-gradient-to-r from-accent to-yellow-600 hover:from-yellow-600 hover:to-accent text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-accent/50 overflow-hidden"
+                    className="group relative px-10 py-4 bg-accent hover:bg-accent/90 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-accent/50 overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center gap-3 text-lg">
                       <i className="fas fa-calendar-check" />
