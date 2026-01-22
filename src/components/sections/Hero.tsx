@@ -96,10 +96,52 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-10 font-light leading-relaxed max-w-2xl mx-auto md:mx-0"
+            className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl mx-auto md:mx-0"
           >
             {t('hero_subtitle')}
           </motion.p>
+
+          {/* Sustainability Features */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="mb-8"
+          >
+            <div className="inline-flex flex-wrap items-center gap-3 mb-4 justify-center md:justify-start">
+              <span className="px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-accent text-xs font-semibold uppercase tracking-wider">
+                {t('hero_sustainability_title')}
+              </span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto md:mx-0">
+              {[
+                { key: 'hero_facility_feat_1', icon: 'fa-layer-group' },
+                { key: 'hero_facility_feat_2', icon: 'fa-lightbulb' },
+                { key: 'hero_facility_feat_3', icon: 'fa-recycle' },
+                { key: 'hero_facility_feat_4', icon: 'fa-leaf' },
+              ].map((feat, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 px-3 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg"
+                >
+                  <i className={`fas ${feat.icon} text-accent text-sm`} />
+                  <span className="text-white text-xs font-medium">{t(feat.key)}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CEO Unique Value */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mb-10 p-4 bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent rounded-r-lg max-w-2xl mx-auto md:mx-0"
+          >
+            <p className="text-white/90 text-sm md:text-base font-medium italic leading-relaxed">
+              {t('hero_ceo_unique')}
+            </p>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div

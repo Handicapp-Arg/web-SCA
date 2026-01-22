@@ -6,9 +6,13 @@ import type { Translations } from '@/types';
  */
 export const translations: Translations = {
   en: {
+    nav_factory: 'Factory',
+    nav_oem: 'OEM',
+    nav_quality: 'Quality',
+    nav_bespoke: 'Bespoke',
+    nav_contact: 'Contact',
     nav_concept: 'Concept',
     nav_services: 'Services',
-    nav_contact: 'Contact',
     hero_title: 'Global OEM Saddle Manufacturing',
     hero_subtitle: 'Your strategic partner. Bridging Argentine craftsmanship with European market demands for premium brands.',
     hero_cta: 'Partner with Us',
@@ -23,7 +27,7 @@ export const translations: Translations = {
     feat_5: 'Specialized Saddle Fitter Team',
     services_title: 'Our Capabilities',
     srv_1_title: 'Private Label (OEM)',
-    srv_1_desc: 'Full-service manufacturing for your brand. Custom trees, designs, and material specifications tailored to your market.',
+    srv_1_desc: 'Full-service manufacturing for your brand. We organize client visits to Buenos Aires, provide comprehensive support throughout the production process, and handle all logistics from factory to your market. Custom trees, designs, and materials tailored to your needs.',
     srv_2_title: 'Performance Lines',
     srv_2_desc: 'Specialized production for high-demand disciplines: Jumping, Dressage, and Polo. Built for durability and balance.',
     srv_3_title: 'Logistics Solutions',
@@ -97,7 +101,7 @@ export const translations: Translations = {
     connect_website: 'Visit Website',
     
     // Products Section
-    products_title: 'JUMPING SADDLES',
+    products_title: 'SCA SADDLES',
     products_subtitle: 'Our Saddles',
     products_desc_1: 'All our products are handcrafted with the finest materials, using a vegetable tanning process.',
     products_desc_2: 'The leathers are worked exclusively with chemical products of vegetable origin.',
@@ -112,11 +116,84 @@ export const translations: Translations = {
     event_cta_button: 'Book Meeting',
     event_location: 'Hall 11.2 | Stand B-050',
     event_dates: 'September 7-9, 2026',
+    
+    // Sustainability & Facility (Hero enhancements)
+    hero_sustainability_title: 'State-of-the-Art Sustainable Facility',
+    hero_facility_feat_1: 'Cellulose Insulation',
+    hero_facility_feat_2: 'LED Lighting',
+    hero_facility_feat_3: 'Scrap Recycling',
+    hero_facility_feat_4: 'Vegetable Tanned Leather',
+    hero_ceo_unique: 'The only factory where the CEO is a professional rider, riding instructor, and saddle fitting specialist',
+    
+    // Manufacturing Process
+    manufacturing_title: 'Our Manufacturing Process',
+    manufacturing_subtitle: 'Precision, technology and craftsmanship in every step',
+    process_steam_title: 'Steam Fitting Technology',
+    process_steam_desc: 'Exclusive steam preparation system that softens panels for perfect adaptation to each horse\'s back. A unique process that ensures superior comfort.',
+    process_trees_title: 'In-House Saddle Trees',
+    process_trees_desc: 'We manufacture our own saddle trees with rigorous symmetry testing. Each tree is laser-verified before assembly to guarantee structural perfection.',
+    process_quality_title: 'Continuous Quality Control',
+    process_quality_desc: 'Laser systems at each assembly station ensure symmetry and precision throughout the entire manufacturing line. Nothing leaves our facility without approval.',
+    
+    // Product Value Proposition
+    product_value_title: 'Crafted by Professionals, Approved by Experts',
+    product_value_subtitle: 'Each saddle is designed by our team of professionals and approved by our certified saddle fitters, guaranteeing perfect fit and performance.',
+    product_feat_1_title: '100% Handcrafted',
+    product_feat_1_desc: 'Finest materials, state-of-the-art machinery, and master saddlers with over 20 years of experience.',
+    product_feat_2_title: 'Premium Raw Materials',
+    product_feat_2_desc: 'Rigorous quality control and exclusive use of vegetable-tanned leathers from certified suppliers.',
+    product_feat_3_title: 'Precision Tree Manufacturing',
+    product_feat_3_desc: 'Symmetry testing and custom adaptation to specific measurements before final use.',
+    product_feat_4_title: 'Assembly Line Excellence',
+    product_feat_4_desc: 'Laser-equipped workstations at every station for continuous symmetry and construction control.',
+    
+    // Bespoke Section
+    bespoke_badge: 'Exclusive Service',
+    bespoke_title: 'BESPOKE Custom Saddles',
+    bespoke_subtitle: 'When standard excellence isn\'t enough. Fully customized saddles for those who demand the extraordinary.',
+    bespoke_feat_1_title: 'Unlimited Customization',
+    bespoke_feat_1_desc: 'From materials to design, every detail is tailored to your exact specifications and vision.',
+    bespoke_feat_2_title: 'Special Projects',
+    bespoke_feat_2_desc: 'We take on unique challenges and create one-of-a-kind pieces that push the boundaries of traditional saddle making.',
+    bespoke_feat_3_title: 'Direct Collaboration',
+    bespoke_feat_3_desc: 'Work directly with our master craftsmen throughout the entire process, from concept to delivery.',
+    bespoke_cta: 'Start Your Custom Project',
+    
+    // Elite Riders & Validations
+    validation_title: 'Trusted by the Best',
+    validation_subtitle: 'Our saddles are backed by German validation, professional fitters, and world-class athletes.',
+    validation_german_title: 'German Validation',
+    validation_german_desc: 'Rigorously tested and approved by Germany\'s most demanding saddle fitters, the global standard of quality.',
+    validation_fitters_title: 'Pro Saddle Fitter Network',
+    validation_fitters_desc: 'Our own network of certified saddle fitters ensures perfect fit and provides ongoing support across Europe.',
+    validation_riders_title: 'Elite Performance',
+    validation_riders_desc: 'Trusted by professional riders competing at the highest levels of international equestrian sport.',
+    riders_title: 'Used by World-Class Athletes',
+    riders_subtitle: 'Our saddles are trusted by professional riders competing at World Championships and Olympic Games.',
+    rider_milthaler_discipline: 'Show Jumping',
+    rider_milthaler_achievements: 'International competitor and Grand Prix champion',
+    rider_teixeira_discipline: 'Eventing',
+    rider_teixeira_achievements: 'Olympic and World Championship competitor',
+    
+    // Enhanced OEM Section
+    oem_support_title: 'Complete OEM Support',
+    oem_support_desc: 'We organize client visits to Buenos Aires, provide comprehensive support throughout the production process, and handle all logistics from factory to your market.',
+    
+    // Team Excellence
+    team_title: 'Highly Specialized Team',
+    team_subtitle: 'Master craftsmen with decades of experience combined with cutting-edge technology',
+    team_experience: '20+ years average experience',
+    team_training: 'Continuous professional development',
+    team_certification: 'German-certified saddle fitting specialists',
   },
   de: {
+    nav_factory: 'Fabrik',
+    nav_oem: 'OEM',
+    nav_quality: 'Qualität',
+    nav_bespoke: 'Bespoke',
+    nav_contact: 'Kontakt',
     nav_concept: 'Konzept',
     nav_services: 'Leistungen',
-    nav_contact: 'Kontakt',
     hero_title: 'Globale OEM Sattelherstellung',
     hero_subtitle: 'Ihr strategischer Partner. Wir verbinden argentinisches Handwerk mit den Anforderungen des europäischen Marktes für Premiummarken.',
     hero_cta: 'Werden Sie Partner',
@@ -131,7 +208,7 @@ export const translations: Translations = {
     feat_5: 'Spezialisiertes Sattelfachleute-Team',
     services_title: 'Unsere Leistungen',
     srv_1_title: 'Private Label (OEM)',
-    srv_1_desc: 'Full-Service-Herstellung für Ihre Marke. Maßgeschneiderte Sattelbäume, Designs und Materialspezifikationen.',
+    srv_1_desc: 'Full-Service-Herstellung für Ihre Marke. Wir organisieren Kundenbesuche in Buenos Aires, bieten umfassende Unterstützung während des gesamten Produktionsprozesses und kümmern uns um alle Logistik von der Fabrik bis zu Ihrem Markt. Maßgeschneiderte Sattelbäume, Designs und Materialien nach Ihren Bedürfnissen.',
     srv_2_title: 'Performance Linien',
     srv_2_desc: 'Spezialisierte Produktion für anspruchsvolle Disziplinen: Springen, Dressur und Polo. Gebaut für Haltbarkeit und Balance.',
     srv_3_title: 'Logistiklösungen',
@@ -205,7 +282,7 @@ export const translations: Translations = {
     connect_website: 'Website Besuchen',
     
     // Products Section
-    products_title: 'SPRINGSÄTTEL',
+    products_title: 'SCA SÄTTEL',
     products_subtitle: 'Unsere Sättel',
     products_desc_1: 'Alle unsere Produkte werden handgefertigt mit den besten Materialien unter Verwendung eines pflanzlichen Gerbverfahrens.',
     products_desc_2: 'Die Leder werden ausschließlich mit chemischen Produkten pflanzlichen Ursprungs bearbeitet.',
@@ -220,11 +297,84 @@ export const translations: Translations = {
     event_cta_button: 'Meeting Buchen',
     event_location: 'Halle 11.2 | Stand B-050',
     event_dates: '7-9. September 2026',
+    
+    // Sustainability & Facility
+    hero_sustainability_title: 'Hochmoderne Nachhaltige Anlage',
+    hero_facility_feat_1: 'Zellulosedämmung',
+    hero_facility_feat_2: 'LED-Beleuchtung',
+    hero_facility_feat_3: 'Schrott-Recycling',
+    hero_facility_feat_4: 'Pflanzlich gegerbtes Leder',
+    hero_ceo_unique: 'Die einzige Fabrik, in der der CEO professioneller Reiter, Reitlehrer und Sattelfachmann ist',
+    
+    // Manufacturing Process
+    manufacturing_title: 'Unser Herstellungsprozess',
+    manufacturing_subtitle: 'Präzision, Technologie und Handwerkskunst in jedem Schritt',
+    process_steam_title: 'Dampf-Anpassungstechnologie',
+    process_steam_desc: 'Exklusives Dampfvorbereitungssystem, das die Polster für perfekte Anpassung an jeden Pferderücken erweicht. Ein einzigartiger Prozess für überlegenen Komfort.',
+    process_trees_title: 'Eigene Sattelbaum-Herstellung',
+    process_trees_desc: 'Wir fertigen unsere eigenen Sattelbäume mit rigoroser Symmetrieprüfung. Jeder Baum wird vor der Montage lasergeprüft, um strukturelle Perfektion zu garantieren.',
+    process_quality_title: 'Kontinuierliche Qualitätskontrolle',
+    process_quality_desc: 'Lasersysteme an jeder Montagestation gewährleisten Symmetrie und Präzision während der gesamten Fertigungslinie. Nichts verlässt unsere Anlage ohne Freigabe.',
+    
+    // Product Value Proposition
+    product_value_title: 'Von Profis gefertigt, von Experten genehmigt',
+    product_value_subtitle: 'Jeder Sattel wird von unserem Expertenteam entworfen und von unseren zertifizierten Sattelfachleuten genehmigt, was perfekte Passform und Leistung garantiert.',
+    product_feat_1_title: '100% Handgefertigt',
+    product_feat_1_desc: 'Beste Materialien, modernste Maschinen und Meistersattler mit über 20 Jahren Erfahrung.',
+    product_feat_2_title: 'Premium-Rohmaterialien',
+    product_feat_2_desc: 'Rigorose Qualitätskontrolle und ausschließliche Verwendung von pflanzlich gegerbten Ledern von zertifizierten Lieferanten.',
+    product_feat_3_title: 'Präzisions-Baum-Herstellung',
+    product_feat_3_desc: 'Symmetrieprüfung und kundenspezifische Anpassung an spezifische Maße vor endgültiger Verwendung.',
+    product_feat_4_title: 'Montagelinien-Exzellenz',
+    product_feat_4_desc: 'Laserausgestattete Arbeitsplätze an jeder Station für kontinuierliche Symmetrie- und Konstruktionskontrolle.',
+    
+    // Bespoke Section
+    bespoke_badge: 'Exklusiver Service',
+    bespoke_title: 'BESPOKE Maßsättel',
+    bespoke_subtitle: 'Wenn Standardexzellenz nicht ausreicht. Vollständig angepasste Sättel für diejenigen, die das Außergewöhnliche verlangen.',
+    bespoke_feat_1_title: 'Unbegrenzte Anpassung',
+    bespoke_feat_1_desc: 'Von Materialien bis Design wird jedes Detail nach Ihren genauen Spezifikationen und Ihrer Vision maßgeschneidert.',
+    bespoke_feat_2_title: 'Spezielle Projekte',
+    bespoke_feat_2_desc: 'Wir nehmen einzigartige Herausforderungen an und schaffen Einzelstücke, die die Grenzen traditioneller Sattelfertigung verschieben.',
+    bespoke_feat_3_title: 'Direkte Zusammenarbeit',
+    bespoke_feat_3_desc: 'Arbeiten Sie direkt mit unseren Meisterhandwerkern während des gesamten Prozesses, vom Konzept bis zur Lieferung.',
+    bespoke_cta: 'Starten Sie Ihr Custom-Projekt',
+    
+    // Elite Riders & Validations
+    validation_title: 'Vertraut von den Besten',
+    validation_subtitle: 'Unsere Sättel werden durch deutsche Validierung, professionelle Fitter und Weltklasse-Athleten unterstützt.',
+    validation_german_title: 'Deutsche Validierung',
+    validation_german_desc: 'Rigoros getestet und von Deutschlands anspruchsvollsten Sattelfachleuten genehmigt, dem globalen Qualitätsstandard.',
+    validation_fitters_title: 'Pro Sattelfachleute-Netzwerk',
+    validation_fitters_desc: 'Unser eigenes Netzwerk zertifizierter Sattelfachleute gewährleistet perfekte Passform und bietet kontinuierliche Unterstützung in ganz Europa.',
+    validation_riders_title: 'Elite-Leistung',
+    validation_riders_desc: 'Vertraut von professionellen Reitern, die auf höchstem Niveau des internationalen Reitsports konkurrieren.',
+    riders_title: 'Verwendet von Weltklasse-Athleten',
+    riders_subtitle: 'Unsere Sättel werden von professionellen Reitern verwendet, die bei Weltmeisterschaften und Olympischen Spielen antreten.',
+    rider_milthaler_discipline: 'Springreiten',
+    rider_milthaler_achievements: 'Internationaler Teilnehmer und Grand-Prix-Champion',
+    rider_teixeira_discipline: 'Vielseitigkeit',
+    rider_teixeira_achievements: 'Olympia- und Weltmeisterschaftsteilnehmer',
+    
+    // Enhanced OEM Section
+    oem_support_title: 'Komplette OEM-Unterstützung',
+    oem_support_desc: 'Wir organisieren Kundenbesuche in Buenos Aires, bieten umfassende Unterstützung während des gesamten Produktionsprozesses und kümmern uns um alle Logistik von der Fabrik bis zu Ihrem Markt.',
+    
+    // Team Excellence
+    team_title: 'Hochspezialisiertes Team',
+    team_subtitle: 'Meisterhandwerker mit Jahrzehnten von Erfahrung kombiniert mit modernster Technologie',
+    team_experience: 'Durchschnittlich 20+ Jahre Erfahrung',
+    team_training: 'Kontinuierliche berufliche Weiterentwicklung',
+    team_certification: 'Deutsch zertifizierte Sattelfachleute',
   },
   es: {
+    nav_factory: 'Fábrica',
+    nav_oem: 'OEM',
+    nav_quality: 'Calidad',
+    nav_bespoke: 'Bespoke',
+    nav_contact: 'Contacto',
     nav_concept: 'Concepto',
     nav_services: 'Servicios',
-    nav_contact: 'Contacto',
     hero_title: 'Fabricación Global de OEM',
     hero_subtitle: 'Su socio estratégico. Uniendo la artesanía argentina con las demandas del mercado europeo para marcas premium.',
     hero_cta: 'Asóciate con Nosotros',
@@ -239,7 +389,7 @@ export const translations: Translations = {
     feat_5: 'Equipo de Saddle Fitters Especializados',
     services_title: 'Nuestras Capacidades',
     srv_1_title: 'Marca Blanca (OEM)',
-    srv_1_desc: 'Fabricación integral para su marca. Armazones personalizados, diseños y especificaciones de materiales adaptados a su mercado.',
+    srv_1_desc: 'Fabricación integral para su marca. Organizamos visitas de clientes a Buenos Aires, brindamos soporte integral durante todo el proceso de producción y manejamos toda la logística desde la fábrica hasta su mercado. Armazones, diseños y materiales personalizados según sus necesidades.',
     srv_2_title: 'Líneas de Rendimiento',
     srv_2_desc: 'Producción especializada para disciplinas de alta demanda: Salto, Doma y Polo. Construido para durabilidad y equilibrio.',
     srv_3_title: 'Soluciones Logísticas',
@@ -328,5 +478,74 @@ export const translations: Translations = {
     event_cta_button: 'Reservar Reunión',
     event_location: 'Hall 11.2 | Stand B-050',
     event_dates: '7-9 de Septiembre, 2026',
+    
+    // Sustainability & Facility
+    hero_sustainability_title: 'Planta Modelo Sustentable',
+    hero_facility_feat_1: 'Aislación de Celulosa',
+    hero_facility_feat_2: 'Iluminación LED',
+    hero_facility_feat_3: 'Reciclado de Scrap',
+    hero_facility_feat_4: 'Cueros Curtido Vegetal',
+    hero_ceo_unique: 'La única fábrica donde el CEO es jinete profesional, instructor de equitación y especialista en saddle fitting',
+    
+    // Manufacturing Process
+    manufacturing_title: 'Nuestro Proceso de Fabricación',
+    manufacturing_subtitle: 'Precisión, tecnología y artesanía en cada paso',
+    process_steam_title: 'Tecnología de Ajuste a Vapor',
+    process_steam_desc: 'Sistema exclusivo de preparación con vapor que suaviza los bastos para una adaptación perfecta al lomo de cada caballo. Un proceso único que garantiza comodidad superior.',
+    process_trees_title: 'Fabricación Propia de Armazones',
+    process_trees_desc: 'Fabricamos nuestros propios armazones con rigurosas pruebas de simetría. Cada armazón es verificado con láser antes del ensamblaje para garantizar perfección estructural.',
+    process_quality_title: 'Control de Calidad Continuo',
+    process_quality_desc: 'Sistemas láser en cada estación de ensamblaje garantizan simetría y precisión en toda la línea de producción. Nada sale de nuestra planta sin aprobación.',
+    
+    // Product Value Proposition
+    product_value_title: 'Diseñadas por Profesionales, Aprobadas por Expertos',
+    product_value_subtitle: 'Cada montura es diseñada por nuestro equipo de profesionales y aprobada por nuestros saddle fitters certificados, garantizando ajuste perfecto y rendimiento.',
+    product_feat_1_title: '100% Hechas a Mano',
+    product_feat_1_desc: 'Los mejores materiales, maquinaria de última generación y talabarteros maestros con más de 20 años de experiencia.',
+    product_feat_2_title: 'Materia Prima Premium',
+    product_feat_2_desc: 'Riguroso control de calidad y uso exclusivo de cueros de curtido vegetal de proveedores certificados.',
+    product_feat_3_title: 'Fabricación Precisa de Armazones',
+    product_feat_3_desc: 'Pruebas de simetría y adaptación personalizada a medidas específicas antes del uso final.',
+    product_feat_4_title: 'Excelencia en Línea de Montaje',
+    product_feat_4_desc: 'Caballetes equipados con láser en cada estación para control continuo de simetría y confección.',
+    
+    // Bespoke Section
+    bespoke_badge: 'Servicio Exclusivo',
+    bespoke_title: 'Monturas BESPOKE a Medida',
+    bespoke_subtitle: 'Cuando la excelencia estándar no es suficiente. Monturas totalmente personalizadas para quienes exigen lo extraordinario.',
+    bespoke_feat_1_title: 'Customización Ilimitada',
+    bespoke_feat_1_desc: 'Desde materiales hasta diseño, cada detalle se adapta a sus especificaciones exactas y visión.',
+    bespoke_feat_2_title: 'Proyectos Especiales',
+    bespoke_feat_2_desc: 'Asumimos desafíos únicos y creamos piezas únicas que empujan los límites de la talabartería tradicional.',
+    bespoke_feat_3_title: 'Colaboración Directa',
+    bespoke_feat_3_desc: 'Trabaje directamente con nuestros maestros artesanos durante todo el proceso, desde el concepto hasta la entrega.',
+    bespoke_cta: 'Inicie Su Proyecto Personalizado',
+    
+    // Elite Riders & Validations
+    validation_title: 'Confianza de los Mejores',
+    validation_subtitle: 'Nuestras monturas están respaldadas por validación alemana, fitters profesionales y atletas de clase mundial.',
+    validation_german_title: 'Validación Alemana',
+    validation_german_desc: 'Rigurosamente probadas y aprobadas por los saddle fitters más exigentes de Alemania, el estándar global de calidad.',
+    validation_fitters_title: 'Red de Saddle Fitters Profesionales',
+    validation_fitters_desc: 'Nuestra propia red de saddle fitters certificados garantiza un ajuste perfecto y brinda soporte continuo en toda Europa.',
+    validation_riders_title: 'Rendimiento de Elite',
+    validation_riders_desc: 'Confianza de jinetes profesionales que compiten al más alto nivel del deporte ecuestre internacional.',
+    riders_title: 'Usadas por Atletas de Clase Mundial',
+    riders_subtitle: 'Nuestras monturas son confiadas por jinetes profesionales que compiten en Campeonatos Mundiales y Juegos Olímpicos.',
+    rider_milthaler_discipline: 'Salto',
+    rider_milthaler_achievements: 'Competidor internacional y campeón de Grand Prix',
+    rider_teixeira_discipline: 'Prueba Completa',
+    rider_teixeira_achievements: 'Competidor olímpico y de campeonatos mundiales',
+    
+    // Enhanced OEM Section
+    oem_support_title: 'Soporte OEM Completo',
+    oem_support_desc: 'Organizamos visitas de clientes a Buenos Aires, brindamos soporte integral durante todo el proceso de producción y manejamos toda la logística desde la fábrica hasta su mercado.',
+    
+    // Team Excellence
+    team_title: 'Equipo Altamente Especializado',
+    team_subtitle: 'Maestros artesanos con décadas de experiencia combinados con tecnología de vanguardia',
+    team_experience: 'Promedio de 20+ años de experiencia',
+    team_training: 'Desarrollo profesional continuo',
+    team_certification: 'Especialistas en saddle fitting certificados en Alemania',
   },
 };

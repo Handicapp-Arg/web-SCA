@@ -17,7 +17,6 @@ interface EventPopupProps {
 export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose }) => {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
-  const STORAGE_KEY = 'spoga-popup-dismissed';
 
   useEffect(() => {
     // Show popup on every page load

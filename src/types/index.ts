@@ -8,15 +8,25 @@ export type Language = 'en' | 'de' | 'es';
  */
 export interface TranslationKeys {
   // Navigation
+  nav_factory: string;
+  nav_oem: string;
+  nav_quality: string;
+  nav_bespoke: string;
+  nav_contact: string;
   nav_concept: string;
   nav_services: string;
-  nav_contact: string;
 
   // Hero Section
   hero_title: string;
   hero_subtitle: string;
   hero_cta: string;
   hero_brands_btn: string;
+  hero_sustainability_title: string;
+  hero_facility_feat_1: string;
+  hero_facility_feat_2: string;
+  hero_facility_feat_3: string;
+  hero_facility_feat_4: string;
+  hero_ceo_unique: string;
 
   // Concept Section
   concept_title: string;
@@ -114,6 +124,75 @@ export interface TranslationKeys {
   products_desc_3: string;
   products_desc_4: string;
   product_view_details: string;
+
+  // Event Popup
+  event_badge: string;
+  event_title: string;
+  event_description: string;
+  event_cta_button: string;
+  event_location: string;
+  event_dates: string;
+
+  // Manufacturing Process
+  manufacturing_title: string;
+  manufacturing_subtitle: string;
+  process_steam_title: string;
+  process_steam_desc: string;
+  process_trees_title: string;
+  process_trees_desc: string;
+  process_quality_title: string;
+  process_quality_desc: string;
+
+  // Product Value Proposition
+  product_value_title: string;
+  product_value_subtitle: string;
+  product_feat_1_title: string;
+  product_feat_1_desc: string;
+  product_feat_2_title: string;
+  product_feat_2_desc: string;
+  product_feat_3_title: string;
+  product_feat_3_desc: string;
+  product_feat_4_title: string;
+  product_feat_4_desc: string;
+
+  // Bespoke Section
+  bespoke_badge: string;
+  bespoke_title: string;
+  bespoke_subtitle: string;
+  bespoke_feat_1_title: string;
+  bespoke_feat_1_desc: string;
+  bespoke_feat_2_title: string;
+  bespoke_feat_2_desc: string;
+  bespoke_feat_3_title: string;
+  bespoke_feat_3_desc: string;
+  bespoke_cta: string;
+
+  // Elite Riders & Validations
+  validation_title: string;
+  validation_subtitle: string;
+  validation_german_title: string;
+  validation_german_desc: string;
+  validation_fitters_title: string;
+  validation_fitters_desc: string;
+  validation_riders_title: string;
+  validation_riders_desc: string;
+  riders_title: string;
+  riders_subtitle: string;
+  rider_milthaler_discipline: string;
+  rider_milthaler_achievements: string;
+  rider_teixeira_discipline: string;
+  rider_teixeira_achievements: string;
+
+  // Enhanced OEM Section
+  oem_support_title: string;
+  oem_support_desc: string;
+
+  // Team Excellence
+  team_title: string;
+  team_subtitle: string;
+  team_experience: string;
+  team_training: string;
+  team_certification: string;
 }
 
 /**

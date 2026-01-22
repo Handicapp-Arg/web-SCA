@@ -11,16 +11,32 @@ interface ServiceCardProps {
   title: string;
   description: string;
   delay?: number;
+  featured?: boolean;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay = 0 }) => (
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay = 0, featured = false }) => (
   <RevealWrapper delay={delay}>
-    <div className="h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-1 group flex flex-col">
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-accent/20 text-accent mb-6 group-hover:bg-accent group-hover:text-white group-hover:scale-110 transition-all duration-300">
+    <div className={`h-full backdrop-blur-sm border rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 group flex flex-col ${
+      featured 
+        ? 'bg-gradient-to-br from-accent/20 to-accent/10 border-accent/40 hover:border-accent hover:shadow-2xl hover:shadow-accent/30' 
+        : 'bg-gradient-to-br from-white/10 to-white/5 border-white/20 hover:border-accent hover:shadow-lg hover:shadow-accent/20'
+    }`}>
+      {featured && (
+        <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-full">
+          Featured
+        </div>
+      )}
+      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 group-hover:scale-110 transition-all duration-300 ${
+        featured 
+          ? 'bg-accent text-white' 
+          : 'bg-accent/20 text-accent group-hover:bg-accent group-hover:text-white'
+      }`}>
         <i className={`fas ${icon} text-3xl`} />
       </div>
       
-      <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-4 group-hover:text-accent transition-colors">
+      <h3 className={`text-xl md:text-2xl font-display font-bold mb-4 group-hover:text-accent transition-colors ${
+        featured ? 'text-accent' : 'text-white'
+      }`}>
         {title}
       </h3>
       
@@ -66,6 +82,7 @@ export const Services: React.FC = () => {
               title={t(service.titleKey)}
               description={t(service.descKey)}
               delay={index * 100}
+              featured={index === 0}
             />
           ))}
         </div>

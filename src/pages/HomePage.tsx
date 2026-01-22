@@ -1,6 +1,16 @@
 import React from 'react';
 import { Navbar, Footer } from '@/components/layout';
-import { Hero, Concept, Services, Expertise, Brands, Contact } from '@/components/sections';
+import { 
+  Hero, 
+  Concept, 
+  Services, 
+  ManufacturingProcess,
+  Expertise, 
+  EliteRiders,
+  Bespoke,
+  Brands, 
+  Contact 
+} from '@/components/sections';
 import { EventPopup } from '@/components/ui';
 
 /**
@@ -14,8 +24,11 @@ export const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Concept />
-        <Services />
+        <EliteRiders />
+        <ManufacturingProcess />
         <Expertise />
+        <Services />
+        <Bespoke />
         <Brands />
         <Contact />
       </main>

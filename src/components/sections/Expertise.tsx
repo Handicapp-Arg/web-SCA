@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SectionHeader, RevealWrapper, TechTooltip } from '@/components/ui';
 import type { TranslationKeys } from '@/types';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * Expertise Section Component
@@ -11,6 +11,41 @@ import { motion } from 'framer-motion';
 export const Expertise: React.FC = () => {
   const { t } = useLanguage();
   const [hoveredProduct, setHoveredProduct] = React.useState<number | null>(null);
+  const [currentPartner, setCurrentPartner] = React.useState(0);
+
+  const partners = [
+    {
+      name: 'Santiago A. Salerno',
+      role: 'role_partner',
+      bio: 'ceo_bio',
+      image: '/images/profile.webp',
+      imagePosition: 'object-[60%_center]',
+    },
+    {
+      name: 'Partner Name',
+      role: 'role_partner_2',
+      bio: 'Partner quote about the business, commitment to quality, and vision for the future of SCA.',
+      image: null,
+      imagePosition: 'object-center',
+    },
+  ];
+
+  const nextPartner = () => {
+    setCurrentPartner((prev) => (prev + 1) % partners.length);
+  };
+
+  const prevPartner = () => {
+    setCurrentPartner((prev) => (prev - 1 + partners.length) % partners.length);
+  };
+
+  // Auto-play carousel
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      nextPartner();
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const features: Array<{ icon: string; titleKey: keyof TranslationKeys; descKey: keyof TranslationKeys }> = [
     { icon: 'fa-certificate', titleKey: 'exp_german_title', descKey: 'exp_german_desc' },
@@ -65,40 +100,91 @@ export const Expertise: React.FC = () => {
           </div>
         </RevealWrapper>
 
-        {/* CEO Spotlight - Enhanced */}
+        {/* CEO Spotlight - Carousel */}
         <RevealWrapper delay={200}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative bg-gradient-to-r from-primary to-primary/90 rounded-2xl p-10 md:p-12 mb-20 overflow-hidden shadow-2xl"
-          >
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-2xl" />
-            
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
-                <img 
-                  src="/images/profile.webp" 
-                  alt="Santiago A. Salerno" 
-                  className="w-full h-full object-cover object-[60%_center]"
-                />
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  Santiago A. Salerno
-                </h3>
-                <span className="inline-block px-4 py-1.5 bg-accent text-white text-xs uppercase tracking-wider font-bold rounded-full mb-6">
-                  {t('role_partner')}
-                </span>
-                <p className="text-lg md:text-xl text-white/90 italic leading-relaxed max-w-3xl">
-                  "{t('ceo_bio')}"
-                </p>
-              </div>
+          <div className="relative mb-20 max-w-7xl mx-auto px-4 md:px-8">
+            <div className="relative bg-gradient-to-r from-primary to-primary/90 rounded-2xl p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl">
+              {/* Decorative Elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-2xl" />
+              
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentPartner}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-12 px-4 md:px-8"
+                >
+                  <div className="flex-shrink-0 w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+                    {partners[currentPartner].image ? (
+                      <img 
+                        src={partners[currentPartner].image} 
+                        alt={partners[currentPartner].name}
+                        className={`w-full h-full object-cover ${partners[currentPartner].imagePosition}`}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-600 to-gray-700">
+                        <i className="fas fa-user text-5xl text-gray-400" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex-1 text-center md:text-left min-h-[180px] md:min-h-[200px] flex flex-col justify-center">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+                      {partners[currentPartner].name}
+                    </h3>
+                    <span className="inline-block px-4 py-1.5 bg-accent text-white text-xs uppercase tracking-wider font-bold rounded-full mb-4 md:mb-6 w-fit mx-auto md:mx-0">
+                      {t(partners[currentPartner].role as keyof TranslationKeys)}
+                    </span>
+                    <p className="text-base md:text-lg lg:text-xl text-white/90 italic leading-relaxed">
+                      "{typeof partners[currentPartner].bio === 'string' && partners[currentPartner].bio.includes('_') 
+                        ? t(partners[currentPartner].bio as keyof TranslationKeys)
+                        : partners[currentPartner].bio}"
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              {partners.length > 1 && (
+                <>
+                  <button
+                    onClick={prevPartner}
+                    className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/5 hover:bg-white/15 backdrop-blur-md border border-white/20 hover:border-white/40 text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 z-10"
+                    aria-label="Previous partner"
+                  >
+                    <i className="fas fa-chevron-left text-sm md:text-base" />
+                  </button>
+                  <button
+                    onClick={nextPartner}
+                    className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/5 hover:bg-white/15 backdrop-blur-md border border-white/20 hover:border-white/40 text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 z-10"
+                    aria-label="Next partner"
+                  >
+                    <i className="fas fa-chevron-right text-sm md:text-base" />
+                  </button>
+                </>
+              )}
+
+              {/* Dots Indicator */}
+              {partners.length > 1 && (
+                <div className="flex justify-center gap-3 mt-10">
+                  {partners.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentPartner(index)}
+                      className={`transition-all duration-300 rounded-full ${
+                        index === currentPartner 
+                          ? 'bg-accent w-10 h-3' 
+                          : 'bg-white/30 hover:bg-white/50 w-3 h-3'
+                      }`}
+                      aria-label={`Go to partner ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
-          </motion.div>
+          </div>
         </RevealWrapper>
 
         {/* Nuestras Líneas de Producto - Unified Section */}

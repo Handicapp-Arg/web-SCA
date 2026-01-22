@@ -6,3 +6,6 @@ export { Expertise } from './Expertise';
 export { Brands } from './Brands';
 export { Glossary } from './Glossary';
 export { Contact } from './Contact';
+export { ManufacturingProcess } from './ManufacturingProcess';
+export { Bespoke } from './Bespoke';
+export { EliteRiders } from './EliteRiders';

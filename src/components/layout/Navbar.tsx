@@ -90,13 +90,25 @@ export const Navbar: React.FC = () => {
                   onClick={() => scrollToSection('concept')}
                   className="text-white/80 hover:text-accent font-semibold text-sm uppercase tracking-wider transition-colors"
                 >
-                  {t('nav_concept')}
+                  {t('nav_factory')}
                 </button>
                 <button
                   onClick={() => scrollToSection('services')}
                   className="text-white/80 hover:text-accent font-semibold text-sm uppercase tracking-wider transition-colors"
                 >
-                  {t('nav_services')}
+                  {t('nav_oem')}
+                </button>
+                <button
+                  onClick={() => scrollToSection('expertise')}
+                  className="text-white/80 hover:text-accent font-semibold text-sm uppercase tracking-wider transition-colors"
+                >
+                  {t('nav_quality')}
+                </button>
+                <button
+                  onClick={() => scrollToSection('bespoke')}
+                  className="text-white/80 hover:text-accent font-semibold text-sm uppercase tracking-wider transition-colors"
+                >
+                  {t('nav_bespoke')}
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}
@@ -176,13 +188,25 @@ export const Navbar: React.FC = () => {
               onClick={() => scrollToSection('concept')}
               className="text-white text-lg font-semibold uppercase tracking-wider"
             >
-              {t('nav_concept')}
+              {t('nav_factory')}
             </button>
             <button
               onClick={() => scrollToSection('services')}
               className="text-white text-lg font-semibold uppercase tracking-wider"
             >
-              {t('nav_services')}
+              {t('nav_oem')}
+            </button>
+            <button
+              onClick={() => scrollToSection('expertise')}
+              className="text-white text-lg font-semibold uppercase tracking-wider"
+            >
+              {t('nav_quality')}
+            </button>
+            <button
+              onClick={() => scrollToSection('bespoke')}
+              className="text-white text-lg font-semibold uppercase tracking-wider"
+            >
+              {t('nav_bespoke')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
