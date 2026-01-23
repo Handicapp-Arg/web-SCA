@@ -114,8 +114,8 @@ export const translations: Translations = {
     event_title: 'Meet Us at SPOGA HORSE',
     event_description: 'Experience the pinnacle of Argentine craftsmanship at the world\'s leading equestrian trade fair. Discover our premium saddle collections designed for polo, eventing, and elite equestrian disciplines.',
     event_cta_button: 'Schedule Private Meeting',
-    event_location: 'Hall 11.2 | Stand B-050',
-    event_dates: 'September 7-9, 2026',
+    event_location: 'Hall 08.1 | G016',
+    event_dates: 'February 7-9, 2026',
     
     // Sustainability & Facility (Hero enhancements)
     hero_sustainability_title: 'State-of-the-Art Sustainable Facility',
@@ -295,8 +295,8 @@ export const translations: Translations = {
     event_title: 'Treffen Sie Uns auf der SPOGA HORSE',
     event_description: 'Erleben Sie den Höhepunkt argentinischer Handwerkskunst auf der weltweit führenden Reitsportmesse. Entdecken Sie unsere Premium-Sattelkollektionen für Polo, Vielseitigkeit und Elite-Reitsportdisziplinen.',
     event_cta_button: 'Privates Treffen Vereinbaren',
-    event_location: 'Halle 11.2 | Stand B-050',
-    event_dates: '7-9. September 2026',
+    event_location: 'Halle 08.1 | G016',
+    event_dates: '7-9. Februar 2026',
     
     // Sustainability & Facility
     hero_sustainability_title: 'Hochmoderne Nachhaltige Anlage',
@@ -476,8 +476,8 @@ export const translations: Translations = {
     event_title: 'Encuéntrenos en SPOGA HORSE',
     event_description: 'Experimente la excelencia de la artesanía argentina en la feria ecuestre más importante del mundo. Descubra nuestras colecciones premium de monturas diseñadas para polo, prueba completa y disciplinas ecuestres de élite.',
     event_cta_button: 'Agendar Reunión Privada',
-    event_location: 'Hall 11.2 | Stand B-050',
-    event_dates: '7-9 de Septiembre, 2026',
+    event_location: 'Hall 08.1 | G016',
+    event_dates: '7-9 de Febrero, 2026',
     
     // Sustainability & Facility
     hero_sustainability_title: 'Planta Modelo Sustentable',

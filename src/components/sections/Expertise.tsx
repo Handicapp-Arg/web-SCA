@@ -22,10 +22,10 @@ export const Expertise: React.FC = () => {
       imagePosition: 'object-[60%_center]',
     },
     {
-      name: 'Partner Name',
+      name: 'Anoush Bargh',
       role: 'role_partner_2',
       bio: 'Partner quote about the business, commitment to quality, and vision for the future of SCA.',
-      image: null,
+      image: '/images/Anoushbargh.jpg',
       imagePosition: 'object-center',
     },
   ];

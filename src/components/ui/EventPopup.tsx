@@ -52,7 +52,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/45 backdrop-blur-sm"
             onClick={handleClose}
           >
             <motion.div
@@ -81,34 +81,19 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
               </div>
 
               <div className="flex flex-col md:flex-row relative">
-                {/* Visual Section - Premium Gradient & Image */}
-                <div className="w-full md:w-5/12 h-96 md:h-auto relative overflow-hidden">
-                  {/* Premium Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-primary to-black">
-                    <div className="absolute inset-0" style={{
-                      backgroundImage: "url('https://images.unsplash.com/photo-1542361345-89e58247f2d5?w=800&h=1000&fit=crop&q=90')",
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      mixBlendMode: 'overlay',
-                      opacity: 0.6
-                    }} />
-                  </div>
-                  
-                  {/* Premium Badge on Image */}
-                  <div className="absolute top-6 left-6 z-10">
-                    <div className="bg-gradient-to-r from-accent via-accent to-accent/80 text-white px-6 py-3 rounded-lg shadow-2xl border border-accent/30">
-                      <div className="flex items-center gap-2">
-                        <i className="fas fa-trophy text-lg" />
-                        <div>
-                          <div className="text-xs font-semibold uppercase tracking-widest opacity-90">World Premier Event</div>
-                          <div className="text-sm font-bold">SPOGA HORSE 2026</div>
-                        </div>
-                      </div>
+                {/* Logo Section - SPOGA HORSE */}
+                <div className="w-full md:w-5/12 h-96 md:h-auto relative overflow-hidden" style={{ backgroundColor: '#0B1F3D' }}>
+                  {/* Logo Principal con fondo azul uniforme */}
+                  <div className="absolute inset-0 flex items-center justify-center p-8 z-10" style={{ backgroundColor: '#0B1F3D' }}>
+                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#0B1F3D' }}>
+                      <img 
+                        src="/images/spogahorse_logo.jpg" 
+                        alt="SPOGA HORSE 2026" 
+                        className="w-full h-full object-contain"
+                        style={{ mixBlendMode: 'lighten' }}
+                      />
                     </div>
                   </div>
-
-                  {/* Decorative Corner Element */}
-                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent/20 rounded-tl-full" />
                 </div>
 
                 {/* Content Section - Enhanced */}
@@ -179,13 +164,14 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                     </button>
                     
-                    {/* Location & Dates - Premium */}
-                    <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                      <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                        <i className="fas fa-map-marker-alt text-accent text-lg" />
+                    {/* Stand Location & Dates */}
+                    <div className="flex items-center gap-4 p-5 bg-gradient-to-r from-accent/10 to-accent/5 backdrop-blur-sm rounded-xl border border-accent/30 shadow-lg">
+                      <div className="w-14 h-14 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0">
+                        <i className="fas fa-map-marker-alt text-accent text-xl" />
                       </div>
                       <div className="flex-1">
-                        <div className="text-white font-semibold text-base">{t('event_location')}</div>
+                        <div className="text-white font-bold text-lg mb-1">Hall 08.1 | G016</div>
+                        <div className="text-gray-300 text-sm mb-1">Visit us at SPOGA HORSE 2026</div>
                         <div className="text-gray-400 text-sm flex items-center gap-2">
                           <i className="far fa-calendar" />
                           {t('event_dates')}
@@ -205,13 +191,19 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-          className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center bg-gradient-to-br from-accent to-yellow-600 text-white rounded-full shadow-2xl w-14 h-14 hover:scale-110 focus:outline-none"
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.95 }}
+          className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center rounded-full shadow-2xl w-14 h-14 focus:outline-none overflow-hidden ring-2 ring-white shadow-[0_0_0_3px_rgba(0,0,0,0.15)] group"
           onClick={() => { setIsVisible(true); setShowBubble(false); }}
           aria-label="Abrir evento SPOGA HORSE 2026"
         >
-          <i className="fas fa-trophy text-2xl" />
+          <img 
+            src="/images/spogahorse_logo.jpg" 
+            alt="SPOGA HORSE 2026" 
+            className="w-full h-full object-cover scale-105"
+          />
           <span
-            className="absolute -top-2 -right-2 text-gray-200 hover:text-white text-base font-bold transition-colors bg-transparent p-0 border-none"
+            className="absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center text-white text-lg font-bold bg-gray-900/80 hover:bg-gray-900 rounded-full shadow-lg transition-all cursor-pointer z-10"
             style={{ pointerEvents: 'auto' }}
             onClick={e => { e.stopPropagation(); setShowBubble(false); }}
             aria-label="Cerrar globito flotante"
