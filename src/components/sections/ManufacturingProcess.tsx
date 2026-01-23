@@ -70,12 +70,15 @@ export const ManufacturingProcess: React.FC = () => {
               >
                 {/* Media */}
                 <div className="mb-6 overflow-hidden rounded-xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
-                  <ImagePlaceholder
-                    aspectRatio={4 / 3}
-                    label={process.placeholderLabel}
-                    icon={process.icon}
-                    gradient="from-primary/10 to-accent/10"
-                  />
+                  {index === 0 && (
+                    <img src="/images/vapor.jpg" alt="Vapor" className="w-full h-auto object-cover aspect-[4/3]" />
+                  )}
+                  {index === 1 && (
+                    <img src="/images/armazones.JPG" alt="Armazones" className="w-full h-auto object-cover aspect-[4/3]" />
+                  )}
+                  {index === 2 && (
+                    <img src="/images/calidad.JPG" alt="Calidad" className="w-full h-auto object-cover aspect-[4/3]" />
+                  )}
                 </div>
 
                 {/* Content */}
