@@ -3,198 +3,224 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 
 /**
- * Hero Section Component
- * Full-screen hero with background image and CTA
+ * Hero Section - Premium Marketing Focused
+ * Designed for luxury, exclusivity, and conversion
+ * UX: Single viewport, clear hierarchy, engaging interactions
  */
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
-  const [showScroll, setShowScroll] = React.useState(true);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setShowScroll(false);
-      } else {
-        setShowScroll(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Parallax Effect */}
-      <motion.div 
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: 'easeOut' }}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/image1.webp)',
-        }}
-      />
-      
-      {/* Multi-layer Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" />
-      
-      {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23fff' stroke-width='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px'
-        }} />
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Cinematic Background */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center scale-105"
+          style={{ backgroundImage: 'url(/images/image1.webp)' }}
+        />
+        {/* Triple Layer Vignette - Creates Focus */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/40 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-black/80" />
       </div>
-      
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0">
-          {/* Main Title */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6 uppercase"
-          >
-            {(() => {
-              const title = t('hero_title');
-              const parts = title.split('OEM');
-              const firstPart = parts[0].trim();
-              const words = firstPart.split(' ');
-              const firstLine = words[0];
-              const secondLine = words.slice(1).join(' ');
-              return (
-                <>
-                  <span className="block text-white">{firstLine}</span>
-                  <span className="block text-white">
-                    {secondLine}{' '}
-                    <span className="text-accent drop-shadow-[0_0_30px_rgba(56,189,248,0.5)]">
-                      OEM
-                    </span>
-                  </span>
-                </>
-              );
-            })()}
-          </motion.h1>
+
+      {/* Luxury Gold Accent Lines - Subtle Prestige */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-30" />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-30" />
+
+      {/* Content - Strategic Hierarchy (100vh optimized) */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+        <div className="w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 sm:py-16">
           
-          {/* Decorative Line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center gap-3 mb-6 md:origin-left justify-center md:justify-start"
-          >
-            <div className="flex-1 md:flex-none md:w-16 h-0.5 bg-gradient-to-r from-transparent md:from-accent to-accent rounded-full shadow-lg shadow-accent/30" />
-            <div className="w-1.5 h-1.5 rounded-full bg-accent shadow-lg shadow-accent/50 flex-shrink-0" />
-            <div className="flex-1 md:flex-none md:w-10 h-0.5 bg-gradient-to-l from-transparent md:from-accent/30 to-accent/30 rounded-full" />
-          </motion.div>
-          
-          {/* Subtitle */}
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl mx-auto md:mx-0"
-          >
-            {t('hero_subtitle')}
-          </motion.p>
-
-          {/* Sustainability Features */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="mb-8"
-          >
-            <div className="inline-flex flex-wrap items-center gap-3 mb-4 justify-center md:justify-start">
-              <span className="px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-accent text-xs font-semibold uppercase tracking-wider">
-                {t('hero_sustainability_title')}
-              </span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto md:mx-0">
-              {[
-                { key: 'hero_facility_feat_1', icon: 'fa-layer-group' },
-                { key: 'hero_facility_feat_2', icon: 'fa-lightbulb' },
-                { key: 'hero_facility_feat_3', icon: 'fa-recycle' },
-                { key: 'hero_facility_feat_4', icon: 'fa-leaf' },
-              ].map((feat, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-2 px-3 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg"
-                >
-                  <i className={`fas ${feat.icon} text-accent text-sm`} />
-                  <span className="text-white text-xs font-medium">{t(feat.key)}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* CEO Unique Value */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mb-10 p-4 bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent rounded-r-lg max-w-2xl mx-auto md:mx-0"
-          >
-            <p className="text-white/90 text-sm md:text-base font-medium italic leading-relaxed">
-              {t('hero_ceo_unique')}
-            </p>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center md:justify-start"
-          >
-            <button 
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              className="group relative inline-flex items-center gap-3 px-7 py-3.5 bg-accent hover:bg-accent/90 text-white rounded-full font-bold text-sm md:text-base uppercase tracking-wide shadow-2xl shadow-accent/30 hover:shadow-accent/50 transition-all duration-300 hover:scale-105"
-            >
-              <span>{t('hero_cta')}</span>
-              <i className="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+          {/* LEFT COLUMN - Main Message */}
+          <div className="space-y-4 sm:space-y-6">
             
-            <button
-              onClick={() => {
-                const element = document.getElementById('brands');
-                if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              className="group inline-flex items-center gap-3 px-7 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white/30 hover:border-white/50 text-white rounded-full font-bold text-sm md:text-base uppercase tracking-wide transition-all duration-300 hover:scale-105"
+            {/* Elite Badge - Creates Exclusivity */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
             >
-              <span>{t('hero_brands_btn')}</span>
-            </button>
-          </motion.div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-accent/20 to-transparent border border-accent/40 rounded-full backdrop-blur-xl">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="text-accent font-bold text-xs uppercase tracking-widest">
+                  Elite Argentine Craftsmanship
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Power Headline - Compact & Punchy */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <h1 className="font-display font-black uppercase leading-[1.05] tracking-tight">
+                <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2">
+                  Where Champions
+                </span>
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                  <span className="relative inline-block">
+                    <span className="text-accent">Ride</span>
+                    <div className="absolute inset-0 blur-2xl bg-accent/30 -z-10" />
+                  </span>
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* Value Proposition - Clear & Concise */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-xl">
+                Premium OEM saddles crafted by 
+                <span className="text-accent font-semibold"> the only manufacturer with a riding CEO</span>
+                —trusted by elite riders worldwide.
+              </p>
+            </motion.div>
+
+            {/* Dual CTA - Prominent */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-col sm:flex-row gap-3 pt-2"
+            >
+              {/* Primary CTA */}
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group relative px-8 py-4 bg-accent text-black font-black text-sm sm:text-base uppercase tracking-wider rounded-full overflow-hidden shadow-2xl shadow-accent/40 hover:shadow-accent/60 transition-all duration-300 hover:scale-[1.02]"
+              >
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Start Partnership
+                  <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-sm" />
+                </span>
+              </button>
+
+              {/* Secondary CTA */}
+              <button
+                onClick={() => document.getElementById('brands')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border-2 border-accent/60 hover:border-accent text-white font-bold text-sm sm:text-base uppercase tracking-wider rounded-full transition-all duration-300 hover:scale-[1.02]"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  Explore Brands
+                  <i className="fas fa-chevron-right text-sm" />
+                </span>
+              </button>
+            </motion.div>
+
+            {/* Sustainability Pills - Compact */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex flex-wrap items-center gap-2 text-xs pt-2"
+            >
+              <i className="fas fa-leaf text-accent" />
+              <span className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-gray-300">
+                LED Facility
+              </span>
+              <span className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-gray-300">
+                Vegetable Tanned
+              </span>
+              <span className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-gray-300">
+                Zero Waste
+              </span>
+            </motion.div>
+          </div>
+
+          {/* RIGHT COLUMN - Social Proof & Stats */}
+          <div className="space-y-6">
+            
+            {/* Stats Grid - Interactive */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="grid grid-cols-2 gap-3 sm:gap-4"
+            >
+              {[
+                { metric: '5', label: 'Premium Brands', icon: 'fa-award' },
+                { metric: '100%', label: 'Handcrafted', icon: 'fa-hands' },
+                { metric: '2', label: 'Continents', icon: 'fa-globe-americas' },
+                { metric: '30+', label: 'Years', icon: 'fa-certificate' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group relative cursor-pointer"
+                >
+                  {/* Glow on hover */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0 rounded-xl opacity-0 group-hover:opacity-100 blur transition-opacity duration-500" />
+                  
+                  <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-5 text-center group-hover:border-accent/40 group-hover:bg-white/10 transition-all duration-300">
+                    <i className={`fas ${item.icon} text-accent text-lg sm:text-xl mb-2 group-hover:scale-110 transition-transform`} />
+                    <div className="text-3xl sm:text-4xl font-black text-white mb-1">
+                      {item.metric}
+                    </div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider font-semibold">
+                      {item.label}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CEO Quote - Trust Anchor */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="relative group cursor-pointer"
+            >
+              {/* Border accent */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent/60 to-transparent rounded-full" />
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent/30 rounded-full blur-sm" />
+              
+              <div className="pl-5 pr-4 py-4 bg-gradient-to-r from-accent/10 to-transparent rounded-r-xl hover:from-accent/15 transition-colors">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center">
+                    <i className="fas fa-quote-right text-accent text-xs" />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <p className="text-white text-sm sm:text-base leading-relaxed mb-2">
+                      "{t('hero_ceo_unique')}"
+                    </p>
+                    <span className="text-accent text-xs font-bold uppercase tracking-widest">
+                      CEO Santiago Salerno
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </div>
-      
-      {/* Scroll Indicator */}
-      {showScroll && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-          className="absolute bottom-16 sm:bottom-8 left-0 right-0 flex justify-center z-20"
-        >
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-white/60 text-xs uppercase tracking-widest">Scroll</span>
-            <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
-              <motion.div 
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-1.5 h-2 rounded-full bg-accent"
-              />
-            </div>
-          </div>
-        </motion.div>
-      )}
+
+      {/* Scroll Indicator - Minimal */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity">
+          <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-accent to-transparent" />
+          <motion.i 
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="fas fa-chevron-down text-accent text-sm"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 };

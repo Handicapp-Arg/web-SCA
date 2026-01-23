@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { RevealWrapper } from '@/components/ui';
-import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import type { TranslationKeys } from '@/types';
 
 /**
@@ -69,32 +68,48 @@ export const Bespoke: React.FC = () => {
           <RevealWrapper delay={100}>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <ImagePlaceholder
-                  aspectRatio={3 / 4}
-                  label="Custom Design 1"
-                  icon="fa-star"
-                  gradient="from-accent/20 to-primary/20"
-                />
-                <ImagePlaceholder
-                  aspectRatio={4 / 3}
-                  label="Custom Design 2"
-                  icon="fa-crown"
-                  gradient="from-primary/20 to-accent/20"
-                />
+                <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+                  <img
+                    src="/images/custom1.JPG"
+                    alt="Custom Design 1"
+                    className="w-full h-auto object-cover aspect-[3/4] group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-semibold">Custom Design 1</span>
+                  </div>
+                </div>
+                <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+                  <img
+                    src="/images/custom2.JPG"
+                    alt="Custom Design 2"
+                    className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-semibold">Custom Design 2</span>
+                  </div>
+                </div>
               </div>
               <div className="space-y-4 pt-8">
-                <ImagePlaceholder
-                  aspectRatio={4 / 3}
-                  label="Special Project"
-                  icon="fa-magic"
-                  gradient="from-accent/20 to-primary/20"
-                />
-                <ImagePlaceholder
-                  aspectRatio={3 / 4}
-                  label="Unique Creation"
-                  icon="fa-palette"
-                  gradient="from-primary/20 to-accent/20"
-                />
+                <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+                  <img
+                    src="/images/especialproject.JPG"
+                    alt="Special Project"
+                    className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-semibold">Special Project</span>
+                  </div>
+                </div>
+                <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+                  <img
+                    src="/images/unique.JPG"
+                    alt="Unique Creation"
+                    className="w-full h-auto object-cover aspect-[3/4] group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-semibold">Unique Creation</span>
+                  </div>
+                </div>
               </div>
             </div>
           </RevealWrapper>
