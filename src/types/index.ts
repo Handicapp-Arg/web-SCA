@@ -27,6 +27,26 @@ export interface TranslationKeys {
   hero_facility_feat_3: string;
   hero_facility_feat_4: string;
   hero_ceo_unique: string;
+  
+  // Sustainable Model Plant Section
+  sustainable_plant_title: string;
+  sustainable_plant_subtitle: string;
+  sustainable_plant_ceo_title: string;
+  sustainable_plant_ceo_desc: string;
+  sustainable_plant_facility_title: string;
+  sustainable_plant_facility_desc: string;
+  sustainable_feat_1_title: string;
+  sustainable_feat_1_desc: string;
+  sustainable_feat_2_title: string;
+  sustainable_feat_2_desc: string;
+  sustainable_feat_3_title: string;
+  sustainable_feat_3_desc: string;
+  sustainable_feat_4_title: string;
+  sustainable_feat_4_desc: string;
+  sustainable_ceo_credential_1: string;
+  sustainable_ceo_credential_2: string;
+  sustainable_ceo_credential_3: string;
+  sustainable_ceo_credential_4: string;
 
   // Concept Section
   concept_title: string;

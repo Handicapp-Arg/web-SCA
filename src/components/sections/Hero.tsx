@@ -2,8 +2,6 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 
-const backgroundImage = '/images/image1.webp';
-
 export const Hero: React.FC = () => {
 	const { t } = useLanguage();
 
@@ -12,12 +10,18 @@ export const Hero: React.FC = () => {
 			className="relative h-screen min-h-[600px] flex items-center justify-center bg-black overflow-hidden"
 			aria-label="Ultra Premium Hero Section"
 		>
-			{/* Cinematic Background */}
+			{/* Video Background */}
 			<div className="absolute inset-0">
-				<div
-					className="absolute inset-0 bg-cover bg-center scale-105"
-					style={{ backgroundImage: `url(${backgroundImage})` }}
-				/>
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					className="absolute inset-0 w-full h-full object-cover"
+				>
+					<source src="https://res.cloudinary.com/dh2m9ychv/video/upload/v1769168951/videohandicapp_we6klr.mp4" type="video/mp4" />
+				</video>
+				{/* Overlays para mejor legibilidad del texto */}
 				<div className="absolute inset-0 bg-gradient-radial from-transparent via-black/40 to-black" />
 				<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
 				<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-black/80" />
@@ -42,9 +46,9 @@ export const Hero: React.FC = () => {
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.1 }}
-					  className="font-display font-black uppercase leading-tight tracking-tight text-white text-4xl sm:text-5xl md:text-6xl mb-2"
+					className="font-display font-black uppercase leading-tight tracking-tight text-white text-4xl sm:text-5xl md:text-6xl mb-2"
 				>
-					  {t('hero_title')}
+					{t('hero_title')}
 				</motion.h1>
 
 				{/* Description */}
@@ -54,7 +58,7 @@ export const Hero: React.FC = () => {
 					transition={{ duration: 0.8, delay: 0.3 }}
 					className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-2xl mx-auto"
 				>
-					  {t('hero_subtitle')}
+					{t('hero_subtitle')}
 				</motion.p>
 
 				{/* CTA Button */}

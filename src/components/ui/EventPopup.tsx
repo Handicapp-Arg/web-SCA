@@ -186,31 +186,110 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
         )}
       </AnimatePresence>
       {showBubble && (
-        <motion.button
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.95 }}
-          className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center rounded-full shadow-2xl w-14 h-14 focus:outline-none overflow-hidden ring-2 ring-white shadow-[0_0_0_3px_rgba(0,0,0,0.15)] group"
-          onClick={() => { setIsVisible(true); setShowBubble(false); }}
-          aria-label="Abrir evento SPOGA HORSE 2026"
-        >
-          <img 
-            src="/images/spogahorse_logo.jpg" 
-            alt="SPOGA HORSE 2026" 
-            className="w-full h-full object-cover scale-105"
-          />
-          <span
-            className="absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center text-white text-lg font-bold bg-gray-900/80 hover:bg-gray-900 rounded-full shadow-lg transition-all cursor-pointer z-10"
-            style={{ pointerEvents: 'auto' }}
-            onClick={e => { e.stopPropagation(); setShowBubble(false); }}
-            aria-label="Cerrar globito flotante"
+        <div className="fixed bottom-6 right-6 z-[9999]">
+          {/* Animated Pulse Rings */}
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            animate={{
+              scale: [1, 1.4, 1.4, 1],
+              opacity: [0.6, 0, 0, 0.6],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           >
-            ×
-          </span>
-        </motion.button>
+            <div className="w-full h-full rounded-full bg-accent/30 blur-sm" />
+          </motion.div>
+          
+          <motion.div
+            className="absolute inset-0 rounded-full"
+            animate={{
+              scale: [1, 1.3, 1.3, 1],
+              opacity: [0.8, 0, 0, 0.8],
+            }}
+            transition={{
+              duration: 3,
+              delay: 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <div className="w-full h-full rounded-full bg-accent/40 blur-md" />
+          </motion.div>
+
+          {/* Main Floating Button */}
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ 
+              scale: 1, 
+              opacity: 1,
+              y: [0, -8, 0],
+            }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ 
+              scale: { type: 'spring', stiffness: 260, damping: 20 },
+              opacity: { duration: 0.3 },
+              y: {
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }
+            }}
+            whileHover={{ 
+              scale: 1.15,
+              rotate: [0, -5, 5, -5, 0],
+              transition: { rotate: { duration: 0.5 } }
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="relative flex items-center justify-center rounded-full shadow-2xl w-14 h-14 focus:outline-none overflow-hidden ring-2 ring-white shadow-[0_0_0_3px_rgba(0,0,0,0.15)] group"
+            onClick={() => { setIsVisible(true); setShowBubble(false); }}
+            aria-label="Abrir evento SPOGA HORSE 2026"
+          >
+            {/* Glow Effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0"
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+            
+            <img 
+              src="/images/spogahorse_logo.jpg" 
+              alt="SPOGA HORSE 2026" 
+              className="w-full h-full object-cover scale-105 relative z-10"
+            />
+            
+            {/* Sparkle Effect */}
+            <motion.div
+              className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full opacity-0"
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0.5, 1.5, 0.5],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            
+            <span
+              className="absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center text-white text-lg font-bold bg-gray-900/80 hover:bg-gray-900 rounded-full shadow-lg transition-all cursor-pointer z-20"
+              style={{ pointerEvents: 'auto' }}
+              onClick={e => { e.stopPropagation(); setShowBubble(false); }}
+              aria-label="Cerrar globito flotante"
+            >
+              ×
+            </span>
+          </motion.button>
+        </div>
       )}
     </>
   );

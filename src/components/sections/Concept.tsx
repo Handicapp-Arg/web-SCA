@@ -71,50 +71,6 @@ export const Concept: React.FC = () => {
             </div>
           </RevealWrapper>
         </div>
-
-        {/* Facility Showcase */}
-        <RevealWrapper delay={300}>
-          <div className="mt-20">
-            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
-              {t('hero_sustainability_title')}
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="space-y-3">
-                <ImagePlaceholder
-                  aspectRatio={4 / 3}
-                  label="Factory Exterior"
-                  icon="fa-industry"
-                  gradient="from-primary/10 to-accent/10"
-                />
-                <p className="text-center text-sm font-semibold text-gray-700">
-                  Model Facility
-                </p>
-              </div>
-              <div className="space-y-3">
-                <ImagePlaceholder
-                  aspectRatio={4 / 3}
-                  label="Modern Offices"
-                  icon="fa-building"
-                  gradient="from-accent/10 to-primary/10"
-                />
-                <p className="text-center text-sm font-semibold text-gray-700">
-                  Professional Workspace
-                </p>
-              </div>
-              <div className="space-y-3">
-                <ImagePlaceholder
-                  aspectRatio={4 / 3}
-                  label="Team Working"
-                  icon="fa-users"
-                  gradient="from-primary/10 to-accent/10"
-                />
-                <p className="text-center text-sm font-semibold text-gray-700">
-                  Expert Craftsmen
-                </p>
-              </div>
-            </div>
-          </div>
-        </RevealWrapper>
       </div>
     </section>
   );

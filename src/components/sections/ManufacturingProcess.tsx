@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SectionHeader, RevealWrapper } from '@/components/ui';
-import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import type { TranslationKeys } from '@/types';
+import { useState, useEffect } from 'react';
 
 interface ProcessItem {
   titleKey: string;
@@ -19,6 +19,41 @@ interface ProcessItem {
  */
 export const ManufacturingProcess: React.FC = () => {
   const { t } = useLanguage();
+  const [currentPartner, setCurrentPartner] = useState(0);
+
+  const partners = [
+    {
+      name: 'Santiago A. Salerno',
+      role: 'role_partner',
+      bio: 'ceo_bio',
+      image: '/images/profile.webp',
+      imagePosition: 'object-[60%_center]',
+    },
+    {
+      name: 'Anoush Bargh',
+      role: 'role_partner_2',
+      bio: 'Partner quote about the business, commitment to quality, and vision for the future of SCA.',
+      image: '/images/Anoushbargh.jpg',
+      imagePosition: 'object-center',
+    },
+  ];
+
+  const nextPartner = () => {
+    setCurrentPartner((prev) => (prev + 1) % partners.length);
+  };
+
+  const prevPartner = () => {
+    setCurrentPartner((prev) => (prev - 1 + partners.length) % partners.length);
+  };
+
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPartner((prev) => (prev + 1) % partners.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [partners.length]);
 
   const processes: ProcessItem[] = [
     {
@@ -45,9 +80,10 @@ export const ManufacturingProcess: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 bg-white overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
       
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <RevealWrapper>
@@ -60,7 +96,7 @@ export const ManufacturingProcess: React.FC = () => {
         </RevealWrapper>
 
         {/* Process Grid */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-20">
           {processes.map((process, index) => (
             <RevealWrapper key={index} delay={index * 100}>
               <motion.div
@@ -99,6 +135,93 @@ export const ManufacturingProcess: React.FC = () => {
             </RevealWrapper>
           ))}
         </div>
+
+        {/* Partners Carousel */}
+        <RevealWrapper delay={200}>
+          <div className="relative mb-20 max-w-7xl mx-auto px-4 md:px-8">
+            <div className="relative bg-gradient-to-r from-primary to-primary/90 rounded-2xl p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl">
+              {/* Decorative Elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-2xl" />
+              
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentPartner}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="relative flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-12 px-4 md:px-8"
+                >
+                  <div className="flex-shrink-0 w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+                    {partners[currentPartner].image ? (
+                      <img 
+                        src={partners[currentPartner].image} 
+                        alt={partners[currentPartner].name}
+                        className={`w-full h-full object-cover ${partners[currentPartner].imagePosition}`}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-600 to-gray-700">
+                        <i className="fas fa-user text-5xl text-gray-400" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex-1 text-center md:text-left min-h-[180px] md:min-h-[200px] flex flex-col justify-center">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+                      {partners[currentPartner].name}
+                    </h3>
+                    <span className="inline-block px-4 py-1.5 bg-accent text-white text-xs uppercase tracking-wider font-bold rounded-full mb-4 md:mb-6 w-fit mx-auto md:mx-0">
+                      {t(partners[currentPartner].role as keyof TranslationKeys)}
+                    </span>
+                    <p className="text-base md:text-lg lg:text-xl text-white/90 italic leading-relaxed">
+                      "{typeof partners[currentPartner].bio === 'string' && partners[currentPartner].bio.includes('_') 
+                        ? t(partners[currentPartner].bio as keyof TranslationKeys)
+                        : partners[currentPartner].bio}"
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              {partners.length > 1 && (
+                <>
+                  <button
+                    onClick={prevPartner}
+                    className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/5 hover:bg-white/15 backdrop-blur-md border border-white/20 hover:border-white/40 text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 z-10"
+                    aria-label="Previous partner"
+                  >
+                    <i className="fas fa-chevron-left text-sm md:text-base" />
+                  </button>
+                  <button
+                    onClick={nextPartner}
+                    className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/5 hover:bg-white/15 backdrop-blur-md border border-white/20 hover:border-white/40 text-white/70 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-105 z-10"
+                    aria-label="Next partner"
+                  >
+                    <i className="fas fa-chevron-right text-sm md:text-base" />
+                  </button>
+                </>
+              )}
+
+              {/* Dots Indicator */}
+              {partners.length > 1 && (
+                <div className="flex justify-center gap-3 mt-10">
+                  {partners.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentPartner(index)}
+                      className={`transition-all duration-300 rounded-full ${
+                        index === currentPartner 
+                          ? 'bg-accent w-10 h-3' 
+                          : 'bg-white/30 hover:bg-white/50 w-3 h-3'
+                      }`}
+                      aria-label={`Go to partner ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </RevealWrapper>
       </div>
     </section>
   );
