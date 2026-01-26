@@ -7,6 +7,7 @@ export type Language = 'en' | 'de' | 'es';
  * Translation Keys Interface
  */
 export interface TranslationKeys {
+  hero_badge: string;
   // Navigation
   nav_factory: string;
   nav_oem: string;
