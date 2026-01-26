@@ -58,7 +58,7 @@ export const ManufacturingProcess: React.FC = () => {
             {t('manufacturing_subtitle')}
           </p>
           <p className="text-center text-accent font-bold text-xl max-w-3xl mx-auto mb-16">
-            Talabarteros con más de 20 años de experiencia en el rubro
+            {t('manufacturing_craftsmen')}
           </p>
         </RevealWrapper>
 

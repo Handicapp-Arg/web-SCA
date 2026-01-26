@@ -37,25 +37,6 @@ export const Hero: React.FC = () => {
                       flex flex-col items-center text-center gap-8">
 
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span
-            className="
-              inline-flex items-center gap-2 px-4 py-2
-              border border-accent/40 rounded-full
-              text-accent font-bold text-xs
-              uppercase tracking-widest
-              bg-black/30 backdrop-blur-sm
-            "
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            {t('hero_badge')}
-          </span>
-        </motion.div>
-
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

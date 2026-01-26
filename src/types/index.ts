@@ -23,7 +23,6 @@ export interface TranslationKeys {
   event_desc_2: string;
   event_welcome_pack: string;
   event_desc_2_end: string;
-  hero_badge: string;
   // Navigation
   nav_factory: string;
   nav_oem: string;
@@ -180,6 +179,7 @@ export interface TranslationKeys {
   // Manufacturing Process
   manufacturing_title: string;
   manufacturing_subtitle: string;
+  manufacturing_craftsmen: string;
   process_steam_title: string;
   process_steam_desc: string;
   process_trees_title: string;

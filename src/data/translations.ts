@@ -6,7 +6,6 @@ import type { Translations } from '@/types';
  */
 export const translations: Translations = {
   en: {
-    hero_badge: 'Premier Launch',
     event_contact_btn: 'Contact Us',
     event_whatsapp_btn: 'WhatsApp',
     event_welcome_title: 'We look forward to seeing you at',
@@ -179,6 +178,7 @@ export const translations: Translations = {
     // Manufacturing Process
     manufacturing_title: 'Our Manufacturing Process',
     manufacturing_subtitle: 'Precision, technology and craftsmanship in every step',
+    manufacturing_craftsmen: 'Master leather craftsmen with over 20 years of experience',
     process_steam_title: 'Steam Fitting Technology',
     process_steam_desc: 'Exclusive steam preparation system that softens panels for perfect adaptation to each horse\'s back. A unique process that ensures superior comfort.',
     process_trees_title: 'In-House Saddle Trees',
@@ -238,7 +238,7 @@ export const translations: Translations = {
     team_certification: 'German-certified saddle fitting specialists',
   },
   de: {
-    hero_badge: 'Weltpremiere',
+
     event_contact_btn: 'Kontaktieren Sie Uns',
     event_whatsapp_btn: 'WhatsApp',
     event_welcome_title: 'Wir freuen uns auf Sie bei',
@@ -411,6 +411,7 @@ export const translations: Translations = {
     // Manufacturing Process
     manufacturing_title: 'Unser Herstellungsprozess',
     manufacturing_subtitle: 'Präzision, Technologie und Handwerkskunst in jedem Schritt',
+    manufacturing_craftsmen: 'Meister-Sattler mit über 20 Jahren Erfahrung',
     process_steam_title: 'Dampf-Anpassungstechnologie',
     process_steam_desc: 'Exklusives Dampfvorbereitungssystem, das die Polster für perfekte Anpassung an jeden Pferderücken erweicht. Ein einzigartiger Prozess für überlegenen Komfort.',
     process_trees_title: 'Eigene Sattelbaum-Herstellung',
@@ -470,7 +471,7 @@ export const translations: Translations = {
     team_certification: 'Deutsch zertifizierte Sattelfachleute',
   },
   es: {
-    hero_badge: 'Estreno Mundial',
+
     event_contact_btn: 'Contacto',
     event_whatsapp_btn: 'WhatsApp',
     event_welcome_title: 'Te esperamos en',
@@ -642,8 +643,7 @@ export const translations: Translations = {
     
     // Manufacturing Process
     manufacturing_title: 'Nuestro Proceso de Fabricación',
-    manufacturing_subtitle: 'Precisión, tecnología y artesanía en cada paso',
-    process_steam_title: 'Tecnología de Ajuste a Vapor',
+    manufacturing_subtitle: 'Precisión, tecnología y artesanía en cada paso',    manufacturing_craftsmen: 'Maestros talabarteros con más de 20 años de experiencia',    process_steam_title: 'Tecnología de Ajuste a Vapor',
     process_steam_desc: 'Sistema exclusivo de preparación con vapor que suaviza los bastos para una adaptación perfecta al lomo de cada caballo. Un proceso único que garantiza comodidad superior.',
     process_trees_title: 'Fabricación Propia de Armazones',
     process_trees_desc: 'Fabricamos nuestros propios armazones con rigurosas pruebas de simetría. Cada armazón es verificado con láser antes del ensamblaje para garantizar perfección estructural.',
