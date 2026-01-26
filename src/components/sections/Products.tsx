@@ -165,7 +165,7 @@ export const Products: React.FC = () => {
             {t('products_subtitle')}
           </h3>
           <p className="text-center text-gray-600 mb-12 text-lg">
-            Diseños únicos para cada disciplina ecuestre
+            {t('products_subtitle_desc')}
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

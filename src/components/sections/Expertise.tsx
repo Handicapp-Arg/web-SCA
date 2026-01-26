@@ -98,7 +98,7 @@ export const Expertise: React.FC = () => {
         <RevealWrapper>
           <SectionHeader title={t('sustainable_plant_title')} />
           <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-16">
-            <span className="font-bold text-accent">Nueva planta modelo sustentable</span> donde la experiencia se encuentra con la responsabilidad ambiental y la innovación
+            <span className="font-bold text-accent">{t('sustainable_plant_intro_highlight')}</span> {t('sustainable_plant_intro')}
           </p>
         </RevealWrapper>
 

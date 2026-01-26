@@ -93,9 +93,9 @@ export const Concept: React.FC = () => {
                 {/* Text Overlay - Mismo estilo que la de abajo */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-bold text-lg md:text-xl uppercase tracking-wide drop-shadow-lg">
-                    State-of-the-Art Facility
+                    {t('concept_img_facility_title')}
                   </p>
-                  <p className="text-white/80 text-sm mt-2">Modern manufacturing in Buenos Aires</p>
+                  <p className="text-white/80 text-sm mt-2">{t('concept_img_facility_desc')}</p>
                   <div className="mt-3 w-16 h-1 bg-white/60 rounded-full" />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export const Concept: React.FC = () => {
                   {/* Text Overlay */}
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white font-bold text-base md:text-lg uppercase tracking-wide drop-shadow-lg">
-                      Expert Craftsmanship
+                      {t('concept_img_craftsmanship')}
                     </p>
                     <div className="mt-2 w-16 h-1 bg-white/60 rounded-full" />
                   </div>
@@ -134,7 +134,7 @@ export const Concept: React.FC = () => {
                     {/* Text Overlay */}
                     <div className="absolute bottom-4 left-4 right-4">
                       <p className="text-white font-bold text-base md:text-lg uppercase tracking-wide drop-shadow-lg">
-                        Argentine Premium Leather
+                        {t('concept_img_leather')}
                       </p>
                       <div className="mt-2 w-16 h-1 bg-white/60 rounded-full" />
                     </div>
