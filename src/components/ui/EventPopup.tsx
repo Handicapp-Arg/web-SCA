@@ -353,7 +353,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
               transition: { rotate: { duration: 0.5 } }
             }}
             whileTap={{ scale: 0.95 }}
-            className="relative flex items-center justify-center rounded-full shadow-2xl w-14 h-14 focus:outline-none overflow-hidden ring-2 ring-white shadow-[0_0_0_3px_rgba(0,0,0,0.15)] group"
+            className="relative flex items-center justify-center rounded-full shadow-2xl w-20 h-20 focus:outline-none overflow-hidden ring-2 ring-white shadow-[0_0_0_3px_rgba(0,0,0,0.15)] group"
             onClick={() => { setIsVisible(true); setShowBubble(false); }}
             aria-label="Abrir evento SPOGA HORSE 2026"
           >
