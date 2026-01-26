@@ -32,14 +32,18 @@ export const useLocale = () => {
     }
 
     const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
+    
     // Remove current locale prefix if exists, preserve rest of path
     const pathWithoutLocale = currentPath.replace(/^\/(en|es|de)/, '') || '';
+    
     // Ensure path starts with / if not empty
     const cleanPath = pathWithoutLocale && !pathWithoutLocale.startsWith('/') 
       ? `/${pathWithoutLocale}` 
       : pathWithoutLocale;
-    // Navigate to new locale with same path
-    navigate(`/${newLocale}${cleanPath}`);
+    
+    // Navigate to new locale with same path and hash
+    navigate(`/${newLocale}${cleanPath}${currentHash}`);
   };
 
   /**
