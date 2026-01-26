@@ -183,8 +183,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       transition={{ delay: 0.3 }}
                       className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight"
                     >
-                      Te esperamos en<br />
-                      <span className="text-primary">Spoga Horse</span>
+                      {t('event_welcome_title')}<br />
+                      <span className="text-primary">{t('event_welcome_location')}</span>
                     </motion.h2>
 
                     {/* Description */}
@@ -194,7 +194,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       transition={{ delay: 0.4 }}
                       className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed"
                     >
-                      Será un placer recibirte en nuestro stand para mostrarte la <strong className="text-gray-900">Nueva Colección 2026</strong> personalmente.
+                      {t('event_desc_1')} <strong className="text-gray-900">{t('event_collection')}</strong>.
                     </motion.p>
 
                     <motion.p
@@ -203,7 +203,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       transition={{ delay: 0.45 }}
                       className="text-gray-600 text-base md:text-lg mb-12 leading-relaxed"
                     >
-                      Avísanos que vendrás para tener listo tu <strong className="text-accent">Welcome Pack</strong> y dedicarte el tiempo que mereces.
+                      {t('event_desc_2')} <strong className="text-accent">{t('event_welcome_pack')}</strong> {t('event_desc_2_end')}
                     </motion.p>
 
                     {/* CTA Buttons */}
