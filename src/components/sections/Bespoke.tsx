@@ -31,7 +31,7 @@ export const Bespoke: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 bg-gradient-to-br from-gray-900 via-primary to-gray-900 overflow-hidden">
+    <section id="bespoke" className="relative py-20 md:py-32 bg-gradient-to-br from-gray-900 via-primary to-gray-900 overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
