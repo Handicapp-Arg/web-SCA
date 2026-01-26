@@ -47,8 +47,23 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
 
   const handleContact = () => {
     handleClose();
-    // Navigate to Connect page
-    navigate(`/${language}/connect`);
+    
+    // Check if we're on the home page
+    const currentPath = window.location.pathname;
+    const isHomePage = currentPath.match(/^\/(en|es|de)\/?$/);
+    
+    if (isHomePage) {
+      // We're on home page, just scroll to contact section
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    } else {
+      // We're on another page, navigate to home with contact hash
+      navigate(`/${language}#contact`);
+    }
   };
 
   return (
