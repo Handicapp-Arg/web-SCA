@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 import { getWhatsAppLink } from '@/lib/contactUtils';
 
 interface EventPopupProps {
@@ -16,7 +17,8 @@ interface EventPopupProps {
  * Features localStorage persistence to avoid showing multiple times
  */
 export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose }) => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
 
@@ -44,11 +46,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
 
   const handleContact = () => {
     handleClose();
-    // Navigate to contact section
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Navigate to Connect page
+    navigate(`/${locale}/connect`);
   };
 
   return (
