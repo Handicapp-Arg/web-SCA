@@ -114,7 +114,7 @@ export const translations: Translations = {
     connect_website: 'Visit Website',
     
     // Products Section
-    products_title: 'SCA SADDLES',
+  products_title: 'SCA SADDLES',
     products_subtitle: 'Our Saddles',
     products_subtitle_desc: 'Unique designs for every equestrian discipline',
     products_desc_1: 'All our products are handcrafted with the finest materials, state-of-the-art machinery, and leather craftsmen with over 20 years of experience in the industry.',
@@ -347,7 +347,7 @@ export const translations: Translations = {
     connect_website: 'Website Besuchen',
     
     // Products Section
-    products_title: 'SCA SADDLES',
+  products_title: 'SCA SÄTTEL',
     products_subtitle: 'Unsere Sättel',
     products_subtitle_desc: 'Einzigartige Designs für jede Reitsportdisziplin',
     products_desc_1: 'Alle unsere Produkte werden handgefertigt mit den besten Materialien, modernster Technologie und Sattlern mit über 20 Jahren Erfahrung.',
@@ -580,7 +580,7 @@ export const translations: Translations = {
     connect_website: 'Visitar Sitio Web',
     
     // Products Section
-    products_title: 'SCA SADDLES',
+  products_title: 'MONTURAS SCA',
     products_subtitle: 'Nuestras Monturas',
     products_subtitle_desc: 'Diseños únicos para cada disciplina ecuestre',
     products_desc_1: 'Todos nuestros productos están fabricados a mano con los mejores materiales, utilizando maquinaria de última generación y maestros talabarteros con más de 20 años de experiencia en el rubro.',

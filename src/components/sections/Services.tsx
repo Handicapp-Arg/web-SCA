@@ -21,11 +21,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
         ? 'bg-gradient-to-br from-accent/20 to-accent/10 border-accent/40 hover:border-accent hover:shadow-2xl hover:shadow-accent/30' 
         : 'bg-gradient-to-br from-white/10 to-white/5 border-white/20 hover:border-accent hover:shadow-lg hover:shadow-accent/20'
     }`}>
-      {featured && (
-        <div className="absolute top-4 right-4 px-3 py-1 bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-full">
-          Featured
-        </div>
-      )}
+      {/* Featured badge eliminado */}
       <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 group-hover:scale-110 transition-all duration-300 ${
         featured 
           ? 'bg-accent text-white' 
@@ -76,13 +72,13 @@ export const Services: React.FC = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={t(service.titleKey)}
-              description={t(service.descKey)}
-              delay={index * 100}
-              featured={index === 0}
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={t(service.titleKey)}
+                description={t(service.descKey)}
+                delay={index * 100}
+                featured={false} // No destacar ninguno, todos oscuros
             />
           ))}
         </div>

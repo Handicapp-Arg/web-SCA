@@ -357,6 +357,37 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
             onClick={() => { setIsVisible(true); setShowBubble(false); }}
             aria-label="Abrir evento SPOGA HORSE 2026"
           >
+            {/* Golden Glow Effect */}
+            <motion.div
+              className="absolute inset-0 pointer-events-none z-0"
+              style={{ borderRadius: '50%' }}
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{
+                opacity: [0, 0.85, 0],
+                scale: [0.7, 1.25, 1.5],
+                filter: [
+                  'blur(0px)',
+                  'blur(16px)',
+                  'blur(0px)'
+                ]
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                repeatDelay: 2.5,
+                ease: 'easeInOut',
+              }}
+            >
+              <div
+                className="w-full h-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(255,215,0,0.45) 0%, rgba(255,215,0,0.15) 60%, rgba(255,215,0,0.0) 100%)',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                }}
+              />
+            </motion.div>
             {/* Glow Effect */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0"
