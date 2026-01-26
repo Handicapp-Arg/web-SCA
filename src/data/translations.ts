@@ -6,6 +6,7 @@ import type { Translations } from '@/types';
  */
 export const translations: Translations = {
   en: {
+    hero_badge: 'Premier Launch',
     nav_factory: 'Factory',
     nav_oem: 'OEM',
     nav_quality: 'Quality',
@@ -228,6 +229,7 @@ export const translations: Translations = {
     team_certification: 'German-certified saddle fitting specialists',
   },
   de: {
+    hero_badge: 'Weltpremiere',
     nav_factory: 'Fabrik',
     nav_oem: 'OEM',
     nav_quality: 'Qualität',
@@ -446,6 +448,7 @@ export const translations: Translations = {
     team_certification: 'Deutsch zertifizierte Sattelfachleute',
   },
   es: {
+    hero_badge: 'Estreno Mundial',
     nav_factory: 'Fábrica',
     nav_oem: 'OEM',
     nav_quality: 'Calidad',

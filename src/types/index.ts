@@ -7,6 +7,14 @@ export type Language = 'en' | 'de' | 'es';
  * Translation Keys Interface
  */
 export interface TranslationKeys {
+  // Event Popup
+  event_badge: string;
+  event_title: string;
+  event_description: string;
+  event_cta_button: string;
+  event_location: string;
+  event_dates: string;
+  hero_badge: string;
   // Navigation
   nav_factory: string;
   nav_oem: string;
@@ -130,13 +138,6 @@ export interface TranslationKeys {
   // Footer
   footer: string;
 
-  // Event Popup
-  event_badge: string;
-  event_title: string;
-  event_description: string;
-  event_cta_button: string;
-  event_location: string;
-  event_dates: string;
 
   // Connect Page
   connect_tagline: string;
@@ -166,14 +167,6 @@ export interface TranslationKeys {
   term_saddle_fitter_def: string;
   term_panels_title: string;
   term_panels_def: string;
-
-  // Event Popup
-  event_badge: string;
-  event_title: string;
-  event_description: string;
-  event_cta_button: string;
-  event_location: string;
-  event_dates: string;
 
   // Manufacturing Process
   manufacturing_title: string;
