@@ -47,6 +47,9 @@ export interface TranslationKeys {
   sustainable_ceo_credential_2: string;
   sustainable_ceo_credential_3: string;
   sustainable_ceo_credential_4: string;
+  partner_quote: string;
+  sustainable_plant_team_title: string;
+  sustainable_plant_team_subtitle: string;
 
   // Concept Section
   concept_title: string;
@@ -152,6 +155,17 @@ export interface TranslationKeys {
   products_desc_3: string;
   products_desc_4: string;
   product_view_details: string;
+  products_intro: string;
+  products_intro_end: string;
+  products_intro_final: string;
+  products_cat_jumping: string;
+  products_cat_dressage: string;
+  products_cat_allpurpose: string;
+  products_cat_trekking: string;
+  term_saddle_fitter_title: string;
+  term_saddle_fitter_def: string;
+  term_panels_title: string;
+  term_panels_def: string;
 
   // Event Popup
   event_badge: string;

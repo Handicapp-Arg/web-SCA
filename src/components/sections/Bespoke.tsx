@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { RevealWrapper } from '@/components/ui';
+import { RevealWrapper, SectionHeader } from '@/components/ui';
 import type { TranslationKeys } from '@/types';
 
 /**
@@ -41,26 +41,23 @@ export const Bespoke: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <RevealWrapper>
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-block px-4 py-1.5 bg-accent/20 border border-accent/50 rounded-full mb-6"
-            >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <div className="inline-block px-4 py-1.5 bg-accent/20 border border-accent/50 rounded-full mb-6">
               <span className="text-accent text-sm font-semibold uppercase tracking-wider">
                 {t('bespoke_badge')}
               </span>
-            </motion.div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('bespoke_title')}
-            </h2>
-            
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {t('bespoke_subtitle')}
-            </p>
-          </div>
+            </div>
+          </motion.div>
+          <SectionHeader 
+            title={t('bespoke_title')} 
+            subtitle={t('bespoke_subtitle')}
+            light
+          />
         </RevealWrapper>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

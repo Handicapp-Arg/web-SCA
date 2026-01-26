@@ -103,11 +103,22 @@ export const translations: Translations = {
     // Products Section
     products_title: 'SCA SADDLES',
     products_subtitle: 'Our Saddles',
-    products_desc_1: 'All our products are handcrafted with the finest materials, using a vegetable tanning process.',
-    products_desc_2: 'The leathers are worked exclusively with chemical products of vegetable origin.',
-    products_desc_3: 'The tree is carefully reviewed and adjusted to ensure its symmetry before assembling the final product.',
-    products_desc_4: 'Once the tree is finished, we verify, through a laser system, that the asymmetry is adequate.',
+    products_desc_1: 'All our products are handcrafted with the finest materials, state-of-the-art machinery, and leather craftsmen with over 20 years of experience in the industry.',
+    products_desc_2: 'Raw materials undergo rigorous quality testing before being added to stock. Part of our leathers are vegetable tanned.',
+    products_desc_3: 'The saddle tree undergoes symmetry tests and is adjusted to the required measurements before being used.',
+    products_desc_4: 'Our assembly line features laser-equipped sawhorses at each station to verify symmetry and saddle construction.',
     product_view_details: 'View Details',
+    products_intro: 'Each saddle is designed by a certified',
+    products_intro_end: ', ensuring that the',
+    products_intro_final: 'fit perfectly to each horse.',
+    products_cat_jumping: 'JUMPING',
+    products_cat_dressage: 'DRESSAGE',
+    products_cat_allpurpose: 'ALL PURPOSE',
+    products_cat_trekking: 'TREKKING',
+    term_saddle_fitter_title: 'Saddle Fitter',
+    term_saddle_fitter_def: 'Certified professional who specializes in ensuring proper saddle fit for horse and rider comfort and performance.',
+    term_panels_title: 'Panels (Bastos)',
+    term_panels_def: 'Padded cushions on the underside of the saddle that distribute the rider\'s weight evenly across the horse\'s back.',
     
     // Event Popup
     event_badge: 'SPOGA HORSE 2026',
@@ -144,6 +155,9 @@ export const translations: Translations = {
     sustainable_ceo_credential_2: 'Trained in Germany',
     sustainable_ceo_credential_3: 'Professional Riding Instructor',
     sustainable_ceo_credential_4: 'Former National Team Rider',
+    partner_quote: 'At SCA, we combine decades of equestrian expertise with cutting-edge manufacturing. Our commitment to quality and innovation drives us to create saddles that exceed the expectations of professional riders worldwide.',
+    sustainable_plant_team_title: 'Our Leadership',
+    sustainable_plant_team_subtitle: 'Expert team behind our sustainable vision',
     
     // Manufacturing Process
     manufacturing_title: 'Our Manufacturing Process',
@@ -180,7 +194,7 @@ export const translations: Translations = {
     bespoke_cta: 'Start Your Custom Project',
     
     // Elite Riders & Validations
-    validation_title: 'Trusted by the Best',
+    validation_title: 'ELITE PROFESSIONAL RIDERS',
     validation_subtitle: 'Our saddles are backed by German validation, professional fitters, and world-class athletes.',
     validation_german_title: 'German Validation',
     validation_german_desc: 'Rigorously tested and approved by Germany\'s most demanding saddle fitters, the global standard of quality.',
@@ -302,13 +316,24 @@ export const translations: Translations = {
     connect_website: 'Website Besuchen',
     
     // Products Section
-    products_title: 'SCA SÄTTEL',
+    products_title: 'SCA SADDLES',
     products_subtitle: 'Unsere Sättel',
-    products_desc_1: 'Alle unsere Produkte werden handgefertigt mit den besten Materialien unter Verwendung eines pflanzlichen Gerbverfahrens.',
-    products_desc_2: 'Die Leder werden ausschließlich mit chemischen Produkten pflanzlichen Ursprungs bearbeitet.',
-    products_desc_3: 'Der Baum wird sorgfältig überprüft und angepasst, um seine Symmetrie vor der Montage des Endprodukts zu gewährleisten.',
-    products_desc_4: 'Sobald der Baum fertig ist, überprüfen wir mittels eines Lasersystems, dass die Asymmetrie angemessen ist.',
+    products_desc_1: 'Alle unsere Produkte werden handgefertigt mit den besten Materialien, modernster Technologie und Sattlern mit über 20 Jahren Erfahrung.',
+    products_desc_2: 'Rohstoffe werden strengen Qualitätsprüfungen unterzogen, bevor sie in den Bestand aufgenommen werden. Ein Teil unserer Leder wird pflanzlich gegerbt.',
+    products_desc_3: 'Der Sattelbaum wird auf Symmetrie getestet und auf die erforderlichen Maße angepasst, bevor er verwendet wird.',
+    products_desc_4: 'Unsere Montagelinie verfügt über laserausgrüstete Böcke an jeder Station zur Überprüfung von Symmetrie und Sattelkonstruktion.',
     product_view_details: 'Details Anzeigen',
+    products_intro: 'Jeder Sattel wird von einem zertifizierten',
+    products_intro_end: 'entworfen und stellt sicher, dass die',
+    products_intro_final: 'perfekt zu jedem Pferd passen.',
+    products_cat_jumping: 'SPRINGEN',
+    products_cat_dressage: 'DRESSUR',
+    products_cat_allpurpose: 'VIELSEITIGKEIT',
+    products_cat_trekking: 'TREKKING',
+    term_saddle_fitter_title: 'Sattelfachmann',
+    term_saddle_fitter_def: 'Zertifizierter Fachmann, der sich darauf spezialisiert hat, die richtige Sattelpassform für Komfort und Leistung von Pferd und Reiter sicherzustellen.',
+    term_panels_title: 'Sattelkissen (Panels)',
+    term_panels_def: 'Gepolsterte Kissen an der Unterseite des Sattels, die das Gewicht des Reiters gleichmäßig über den Rücken des Pferdes verteilen.',
     
     // Event Popup
     event_badge: 'SPOGA HORSE 2026',
@@ -345,6 +370,9 @@ export const translations: Translations = {
     sustainable_ceo_credential_2: 'Ausgebildet in Deutschland',
     sustainable_ceo_credential_3: 'Professioneller Reitlehrer',
     sustainable_ceo_credential_4: 'Ehemaliger Nationalmannschaftsreiter',
+    partner_quote: 'Bei SCA kombinieren wir jahrzehntelange Reiterfahrung mit modernster Fertigung. Unser Engagement für Qualität und Innovation treibt uns an, Sättel zu schaffen, die die Erwartungen professioneller Reiter weltweit übertreffen.',
+    sustainable_plant_team_title: 'Unsere Führung',
+    sustainable_plant_team_subtitle: 'Expertenteam hinter unserer nachhaltigen Vision',
     
     // Manufacturing Process
     manufacturing_title: 'Unser Herstellungsprozess',
@@ -381,7 +409,7 @@ export const translations: Translations = {
     bespoke_cta: 'Starten Sie Ihr Custom-Projekt',
     
     // Elite Riders & Validations
-    validation_title: 'Vertraut von den Besten',
+    validation_title: 'ELITE PROFIREITER',
     validation_subtitle: 'Unsere Sättel werden durch deutsche Validierung, professionelle Fitter und Weltklasse-Athleten unterstützt.',
     validation_german_title: 'Deutsche Validierung',
     validation_german_desc: 'Rigoros getestet und von Deutschlands anspruchsvollsten Sattelfachleuten genehmigt, dem globalen Qualitätsstandard.',
@@ -503,13 +531,24 @@ export const translations: Translations = {
     connect_website: 'Visitar Sitio Web',
     
     // Products Section
-    products_title: 'Nuestras Líneas de Producto',
+    products_title: 'SCA SADDLES',
     products_subtitle: 'Nuestras Monturas',
-    products_desc_1: 'Todos nuestros productos están fabricados a mano con los mejores materiales, utilizando un proceso de curtido vegetal.',
-    products_desc_2: 'Los cueros se trabajan exclusivamente con productos químicos de origen vegetal.',
-    products_desc_3: 'El armazón se revisa cuidadosamente y se ajusta para garantizar su simetría antes de ensamblar el producto final.',
-    products_desc_4: 'Una vez terminado el armazón, verificamos, mediante un sistema láser, que la asimetría sea la adecuada.',
+    products_desc_1: 'Todos nuestros productos están fabricados a mano con los mejores materiales, maquinaria de última generación, y talabarteros con más de 20 años de experiencia en el rubro.',
+    products_desc_2: 'La materia prima se somete a un riguroso estudio de calidad antes de ser pasada a stock. Parte de nuestros cueros son de curtido de origen vegetal.',
+    products_desc_3: 'El armazón se somete a pruebas de simetría y se adapta a la medida requerida antes de ser utilizado.',
+    products_desc_4: 'Nuestra línea de montaje cuenta con caballetes con láser incorporado en cada estación para ir verificando la simetría y confección de la montura.',
     product_view_details: 'Ver Detalles',
+    products_intro: 'Cada montura es diseñada por un',
+    products_intro_end: 'certificado, garantizando que los',
+    products_intro_final: 'se ajusten perfectamente a cada caballo.',
+    products_cat_jumping: 'SALTO',
+    products_cat_dressage: 'ADIESTRAMIENTO',
+    products_cat_allpurpose: 'TODO PROPÓSITO',
+    products_cat_trekking: 'TREKKING',
+    term_saddle_fitter_title: 'Saddle Fitter',
+    term_saddle_fitter_def: 'Profesional certificado especializado en asegurar el ajuste adecuado de la montura para la comodidad y el rendimiento del caballo y jinete.',
+    term_panels_title: 'Bastos (Panels)',
+    term_panels_def: 'Cojines acolchados en la parte inferior de la montura que distribuyen el peso del jinete uniformemente sobre el lomo del caballo.',
     
     // Event Popup
     event_badge: 'SPOGA HORSE 2026',
@@ -546,6 +585,9 @@ export const translations: Translations = {
     sustainable_ceo_credential_2: 'Capacitado en Alemania',
     sustainable_ceo_credential_3: 'Instructor Profesional de Equitación',
     sustainable_ceo_credential_4: 'Ex Jinete del Equipo Nacional',
+    partner_quote: 'En SCA, combinamos décadas de experiencia ecuestre con fabricación de vanguardia. Nuestro compromiso con la calidad e innovación nos impulsa a crear monturas que superan las expectativas de jinetes profesionales en todo el mundo.',
+    sustainable_plant_team_title: 'Nuestro Liderazgo',
+    sustainable_plant_team_subtitle: 'Equipo experto detrás de nuestra visión sustentable',
     
     // Manufacturing Process
     manufacturing_title: 'Nuestro Proceso de Fabricación',
@@ -582,7 +624,7 @@ export const translations: Translations = {
     bespoke_cta: 'Inicie Su Proyecto Personalizado',
     
     // Elite Riders & Validations
-    validation_title: 'Confianza de los Mejores',
+    validation_title: 'JINETES PROFESIONALES DE ÉLITE',
     validation_subtitle: 'Nuestras monturas están respaldadas por validación alemana, fitters profesionales y atletas de clase mundial.',
     validation_german_title: 'Validación Alemana',
     validation_german_desc: 'Rigurosamente probadas y aprobadas por los saddle fitters más exigentes de Alemania, el estándar global de calidad.',

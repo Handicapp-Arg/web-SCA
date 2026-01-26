@@ -9,7 +9,8 @@ import {
   EliteRiders,
   Bespoke,
   Brands, 
-  Contact 
+  Contact,
+  Products 
 } from '@/components/sections';
 import { EventPopup } from '@/components/ui';
 
@@ -24,10 +25,11 @@ export const HomePage: React.FC = () => {
       <main>
         <Hero />
         <Concept />
-        <EliteRiders />
-        <ManufacturingProcess />
         <Expertise />
+        <ManufacturingProcess />
+        <Products />
         <Services />
+        <EliteRiders />
         <Bespoke />
         <Brands />
         <Contact />

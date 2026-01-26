@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SectionHeader, RevealWrapper } from '@/components/ui';
 import type { TranslationKeys } from '@/types';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * Sustainable Model Plant Section
@@ -10,6 +10,43 @@ import { motion } from 'framer-motion';
  */
 export const Expertise: React.FC = () => {
   const { t } = useLanguage();
+  const [currentPartner, setCurrentPartner] = useState(0);
+
+  const partners = [
+    {
+      name: 'Santiago A. Salerno',
+      role: 'role_partner',
+      bio: 'ceo_bio',
+      image: '/images/profile.webp',
+      imagePosition: 'object-[60%_center]',
+      showCredentials: true,
+    },
+    {
+      name: 'Anoush Bargh',
+      role: 'role_partner_2',
+      bio: 'partner_quote',
+      image: '/images/Anoushbargh.jpg',
+      imagePosition: 'object-center',
+      showCredentials: false,
+    },
+  ];
+
+  const nextPartner = () => {
+    setCurrentPartner((prev) => (prev + 1) % partners.length);
+  };
+
+  const prevPartner = () => {
+    setCurrentPartner((prev) => (prev - 1 + partners.length) % partners.length);
+  };
+
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPartner((prev) => (prev + 1) % partners.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [partners.length]);
 
   const sustainabilityFeatures = [
     {
@@ -48,7 +85,7 @@ export const Expertise: React.FC = () => {
   return (
     <section
       id="expertise"
-      className="relative py-20 md:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden"
+      className="relative py-20 md:py-32 bg-white overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
@@ -61,116 +98,180 @@ export const Expertise: React.FC = () => {
         <RevealWrapper>
           <SectionHeader title={t('sustainable_plant_title')} />
           <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-16">
-            {t('sustainable_plant_subtitle')}
+            <span className="font-bold text-accent">Nueva planta modelo sustentable</span> donde la experiencia se encuentra con la responsabilidad ambiental y la innovación
           </p>
         </RevealWrapper>
 
-        {/* CEO Expertise Card */}
+        {/* Sustainability Features Grid */}
         <RevealWrapper delay={100}>
-          <div className="mb-20">
-            <div className="bg-gradient-to-br from-primary to-primary/90 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Image Side */}
-                <div className="relative h-64 lg:h-auto min-h-[400px]">
-                  <img 
-                    src="/images/profile.webp" 
-                    alt="CEO Santiago A. Salerno"
-                    className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent lg:bg-gradient-to-r" />
-                  
-                  {/* CEO Name Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 bg-gradient-to-t from-black/60 to-transparent lg:hidden">
-                    <h3 className="text-2xl font-bold text-white">Santiago A. Salerno</h3>
-                    <p className="text-white/90 text-sm uppercase tracking-wider">{t('role_partner')}</p>
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            {sustainabilityFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+              >
+                {/* Gradient Accent */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color}`} />
+                
+                {/* Icon */}
+                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <i className={`fas ${feature.icon} text-2xl`} />
                 </div>
+                
+                {/* Content */}
+                <h4 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300">
+                  {t(feature.titleKey as keyof TranslationKeys)}
+                </h4>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  {t(feature.descKey as keyof TranslationKeys)}
+                </p>
 
-                {/* Content Side */}
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="hidden lg:block mb-6">
-                    <h3 className="text-3xl font-bold text-white mb-2">Santiago A. Salerno</h3>
-                    <span className="inline-block px-4 py-1.5 bg-accent text-white text-xs uppercase tracking-wider font-bold rounded-full">
-                      {t('role_partner')}
-                    </span>
-                  </div>
-
-                  <h4 className="text-xl font-bold text-white mb-4 lg:mt-0 mt-4">
-                    {t('sustainable_plant_ceo_title')}
-                  </h4>
-                  
-                  <p className="text-white/90 text-base leading-relaxed mb-6">
-                    {t('sustainable_plant_ceo_desc')}
-                  </p>
-
-                  {/* Credentials Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {ceoCredentials.map((credential, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20"
-                      >
-                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                          <i className={`fas ${credential.icon} text-white text-sm`} />
-                        </div>
-                        <span className="text-white text-sm font-medium">
-                          {t(credential.textKey as keyof TranslationKeys)}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+                {/* Decorative Element */}
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-gray-50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            ))}
           </div>
         </RevealWrapper>
 
-        {/* Sustainable Facility Section */}
-        <RevealWrapper delay={200}>
-          <div className="mb-12 text-center">
-            <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-4">
-              {t('sustainable_plant_facility_title')}
+        {/* Team Section */}
+        <RevealWrapper delay={150}>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-4 uppercase">
+              {t('sustainable_plant_team_title')}
             </h3>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              {t('sustainable_plant_facility_desc')}
+              {t('sustainable_plant_team_subtitle')}
             </p>
           </div>
+        </RevealWrapper>
 
-          {/* Sustainability Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sustainabilityFeatures.map((feature, index) => (
-              <RevealWrapper key={index} delay={index * 100}>
+        {/* Partners Carousel */}
+        <RevealWrapper delay={200}>
+          <div className="mb-20 px-6 md:px-10">
+            <div className="relative bg-gradient-to-br from-primary to-primary/90 rounded-2xl overflow-hidden shadow-2xl">
+              {/* Decorative Elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-2xl" />
+              
+              <AnimatePresence mode="wait">
                 <motion.div
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                  key={currentPartner}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
-                  {/* Gradient Accent */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color}`} />
-                  
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <i className={`fas ${feature.icon} text-2xl`} />
-                  </div>
-                  
-                  {/* Content */}
-                  <h4 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300">
-                    {t(feature.titleKey as keyof TranslationKeys)}
-                  </h4>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {t(feature.descKey as keyof TranslationKeys)}
-                  </p>
+                  <div className="grid lg:grid-cols-2 gap-0 h-[600px] lg:h-[550px]">
+                    {/* Image Side */}
+                    <div className="relative h-80 lg:h-full">
+                      <img 
+                        src={partners[currentPartner].image} 
+                        alt={partners[currentPartner].name}
+                        className={`absolute inset-0 w-full h-full object-cover ${partners[currentPartner].imagePosition}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent lg:bg-gradient-to-r" />
+                      
+                      {/* Partner Name Overlay - Mobile */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 bg-gradient-to-t from-black/60 to-transparent lg:hidden">
+                        <h3 className="text-2xl font-bold text-white">{partners[currentPartner].name}</h3>
+                        <p className="text-white/90 text-sm uppercase tracking-wider">{t(partners[currentPartner].role as keyof TranslationKeys)}</p>
+                      </div>
+                    </div>
 
-                  {/* Decorative Element */}
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-gray-50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Content Side */}
+                    <div className="p-8 lg:p-12 flex flex-col justify-center h-full overflow-y-auto">
+                      <div className="hidden lg:block mb-6">
+                        <h3 className="text-3xl font-bold text-white mb-2">{partners[currentPartner].name}</h3>
+                        <span className="inline-block px-4 py-1.5 bg-accent text-white text-xs uppercase tracking-wider font-bold rounded-full">
+                          {t(partners[currentPartner].role as keyof TranslationKeys)}
+                        </span>
+                      </div>
+
+                      {/* CEO Section with Title */}
+                      {partners[currentPartner].showCredentials && (
+                        <>
+                          <h4 className="text-xl font-bold text-white mb-4 lg:mt-0 mt-4">
+                            {t('sustainable_plant_ceo_title')}
+                          </h4>
+                          
+                          <p className="text-white/90 text-base leading-relaxed mb-6">
+                            {t('sustainable_plant_ceo_desc')}
+                          </p>
+
+                          {/* Credentials Grid */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {ceoCredentials.map((credential, index) => (
+                              <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20"
+                              >
+                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+                                  <i className={`fas ${credential.icon} text-white text-sm`} />
+                                </div>
+                                <span className="text-white text-sm font-medium">
+                                  {t(credential.textKey as keyof TranslationKeys)}
+                                </span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      {/* Partner Section - Simple Bio */}
+                      {!partners[currentPartner].showCredentials && (
+                        <p className="text-white/90 text-lg leading-relaxed italic mt-4 lg:mt-0">
+                          "{typeof partners[currentPartner].bio === 'string' && partners[currentPartner].bio.includes('_') 
+                            ? t(partners[currentPartner].bio as keyof TranslationKeys)
+                            : partners[currentPartner].bio}"
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </motion.div>
-              </RevealWrapper>
-            ))}
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevPartner}
+                className="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/80 hover:bg-primary backdrop-blur-md border-2 border-white/40 hover:border-white/60 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-20 shadow-xl"
+                aria-label="Previous partner"
+              >
+                <i className="fas fa-chevron-left text-sm lg:text-base" />
+              </button>
+              <button
+                onClick={nextPartner}
+                className="absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/80 hover:bg-primary backdrop-blur-md border-2 border-white/40 hover:border-white/60 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-20 shadow-xl"
+                aria-label="Next partner"
+              >
+                <i className="fas fa-chevron-right text-sm lg:text-base" />
+              </button>
+
+              {/* Dots Indicator */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+                {partners.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentPartner(index)}
+                    className={`transition-all duration-300 rounded-full ${
+                      index === currentPartner 
+                        ? 'bg-accent w-10 h-3' 
+                        : 'bg-white/30 hover:bg-white/50 w-3 h-3'
+                    }`}
+                    aria-label={`Go to partner ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </RevealWrapper>
       </div>

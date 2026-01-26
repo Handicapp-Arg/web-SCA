@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getWhatsAppLink } from '@/lib/contactUtils';
 
 interface EventPopupProps {
   /** Delay in milliseconds before showing the popup */
@@ -34,9 +35,16 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
     onClose?.();
   };
 
-  const handleBookMeeting = () => {
+  const handleWhatsApp = () => {
+    const message = 'Hola, estaré en SPOGA HORSE 2026 y me gustaría coordinar una reunión en su stand.';
+    const whatsappLink = getWhatsAppLink('4915204717170', message);
+    window.open(whatsappLink, '_blank');
     handleClose();
-    // Scroll to contact section
+  };
+
+  const handleContact = () => {
+    handleClose();
+    // Navigate to contact section
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -60,125 +68,212 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
-              className="relative w-full max-w-5xl bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl overflow-hidden"
+              className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 hover:scale-110"
+                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 text-gray-600 transition-all duration-200 hover:scale-110"
                 aria-label="Close popup"
               >
                 <span className="text-2xl leading-none">&times;</span>
               </button>
 
-              {/* Premium Background Pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0" style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0L60 30L30 60L0 30z' stroke='%23C9A961' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
-                  backgroundSize: '60px 60px'
-                }} />
-              </div>
-
               <div className="flex flex-col md:flex-row relative">
                 {/* Logo Section - SPOGA HORSE */}
-                <div className="w-full md:w-5/12 h-96 md:h-auto relative overflow-hidden" style={{ backgroundColor: '#0B1F3D' }}>
-                  {/* Logo Principal con fondo azul uniforme */}
-                  <div className="absolute inset-0 flex items-center justify-center p-8 z-10" style={{ backgroundColor: '#0B1F3D' }}>
-                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#0B1F3D' }}>
-                      <img 
-                        src="/images/spogahorse_logo.jpg" 
-                        alt="SPOGA HORSE 2026" 
-                        className="w-full h-full object-contain"
-                        style={{ mixBlendMode: 'lighten' }}
-                      />
-                    </div>
+                <div className="w-full md:w-5/12 p-8 md:p-10 flex flex-col items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#000f26' }}>
+                  {/* Animated Border Light Effect */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
+                    <motion.div
+                      className="absolute top-0 right-0 w-1 h-32 bg-gradient-to-b from-transparent via-accent to-transparent"
+                      animate={{
+                        y: ['-100%', '400%'],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
                   </div>
+
+                  {/* Logo */}
+                  <motion.div 
+                    className="w-full mb-8 relative z-10"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2, duration: 0.5 }}
+                  >
+                    <img 
+                      src="/images/spogahorse_logo.jpg" 
+                      alt="SPOGA HORSE 2026" 
+                      className="w-full h-auto object-contain"
+                    />
+                  </motion.div>
+
+                  {/* Stand Location & Dates with Animation */}
+                  <motion.div 
+                    className="w-full flex items-center gap-4 p-5 bg-gradient-to-r from-accent/10 to-accent/5 backdrop-blur-sm rounded-xl border border-accent/30 shadow-lg relative overflow-hidden z-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    {/* Shine Effect */}
+                    <motion.div
+                      className="absolute inset-0 w-full h-full"
+                      style={{
+                        background: 'linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.1), transparent)',
+                      }}
+                      animate={{
+                        x: ['-100%', '200%'],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        repeatDelay: 2,
+                      }}
+                    />
+                    <div className="w-14 h-14 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0 relative z-10">
+                      <i className="fas fa-map-marker-alt text-accent text-xl" />
+                    </div>
+                    <div className="flex-1 relative z-10">
+                      <div className="text-white font-bold text-lg mb-1">Hall 08.1 | G016</div>
+                      <div className="text-gray-300 text-sm mb-1">Visit us at SPOGA HORSE 2026</div>
+                      <div className="text-gray-400 text-sm flex items-center gap-2">
+                        <i className="far fa-calendar" />
+                        {t('event_dates')}
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
 
                 {/* Content Section - Enhanced */}
-                <div className="flex-1 p-8 md:p-12 lg:p-14 flex flex-col justify-center relative">
-                  {/* Decorative Line */}
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-[2px] bg-gradient-to-r from-accent to-transparent" />
-                    <span className="text-accent text-xs uppercase tracking-[0.2em] font-bold">Cologne, Germany</span>
-                  </div>
+                <div className="flex-1 p-8 md:p-12 lg:p-14 flex flex-col justify-center relative bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden">
+                  {/* Decorative Background Elements */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                  
+                  {/* Subtle Pattern Overlay */}
+                  <div className="absolute inset-0 opacity-[0.03]" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                    backgroundSize: '30px 30px'
+                  }} />
 
-                  {/* Title - Enhanced */}
-                  <motion.h2
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight"
-                  >
-                    {t('event_title')}
-                  </motion.h2>
-
-                  {/* Description - Enhanced */}
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed font-light"
-                  >
-                    {t('event_description')}
-                  </motion.p>
-
-                  {/* Features List */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="flex flex-wrap gap-4 mb-10"
-                  >
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <i className="fas fa-star text-accent" />
-                      <span className="text-sm">Premium Saddles</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <i className="fas fa-globe text-accent" />
-                      <span className="text-sm">Global Presence</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <i className="fas fa-award text-accent" />
-                      <span className="text-sm">Argentine Craftsmanship</span>
-                    </div>
-                  </motion.div>
-
-                  {/* CTA Section - Premium */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="space-y-6"
-                  >
-                    <button
-                      onClick={handleBookMeeting}
-                      className="group relative px-10 py-4 bg-accent hover:bg-accent/90 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-accent/50 overflow-hidden"
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Location Badge */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 }}
+                      className="inline-flex items-center gap-2 mb-6"
                     >
-                      <span className="relative z-10 flex items-center gap-3 text-lg">
-                        <i className="fas fa-calendar-check" />
-                        {t('event_cta_button')}
-                        <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                    </button>
-                    
-                    {/* Stand Location & Dates */}
-                    <div className="flex items-center gap-4 p-5 bg-gradient-to-r from-accent/10 to-accent/5 backdrop-blur-sm rounded-xl border border-accent/30 shadow-lg">
-                      <div className="w-14 h-14 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0">
-                        <i className="fas fa-map-marker-alt text-accent text-xl" />
+                      <div className="flex items-center gap-2 text-accent">
+                        <i className="fas fa-map-marker-alt text-sm" />
+                        <span className="text-sm font-bold uppercase tracking-wider">Colonia, Alemania</span>
                       </div>
-                      <div className="flex-1">
-                        <div className="text-white font-bold text-lg mb-1">Hall 08.1 | G016</div>
-                        <div className="text-gray-300 text-sm mb-1">Visit us at SPOGA HORSE 2026</div>
-                        <div className="text-gray-400 text-sm flex items-center gap-2">
-                          <i className="far fa-calendar" />
-                          {t('event_dates')}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+
+                    {/* Title */}
+                    <motion.h2
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                      className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight"
+                    >
+                      Te esperamos en<br />
+                      <span className="text-primary">Spoga Horse</span>
+                    </motion.h2>
+
+                    {/* Description */}
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                      className="text-gray-600 text-base md:text-lg mb-4 leading-relaxed"
+                    >
+                      Será un placer recibirte en nuestro stand para mostrarte la <strong className="text-gray-900">Nueva Colección 2026</strong> personalmente.
+                    </motion.p>
+
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.45 }}
+                      className="text-gray-600 text-base md:text-lg mb-12 leading-relaxed"
+                    >
+                      Avísanos que vendrás para tener listo tu <strong className="text-accent">Welcome Pack</strong> y dedicarte el tiempo que mereces.
+                    </motion.p>
+
+                    {/* CTA Buttons */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                      className="space-y-3"
+                    >
+                      {/* Primary Button - Coordinar Reunión */}
+                      <motion.button
+                        onClick={handleContact}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full bg-gradient-to-r from-primary via-primary-dark to-primary text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group"
+                      >
+                        {/* Shimmer Effect */}
+                        <motion.div
+                          className="absolute inset-0 w-full h-full"
+                          style={{
+                            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                          }}
+                          animate={{
+                            x: ['-100%', '200%'],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            repeatDelay: 1,
+                          }}
+                        />
+                        <i className="fas fa-calendar-check text-lg relative z-10" />
+                        <span className="relative z-10">COORDINAR REUNIÓN</span>
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
+                      </motion.button>
+
+                      {/* Secondary Button - WhatsApp */}
+                      <motion.button
+                        onClick={handleWhatsApp}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full bg-gradient-to-r from-[#25D366] via-[#1ebe5d] to-[#25D366] text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group"
+                      >
+                        {/* Shimmer Effect */}
+                        <motion.div
+                          className="absolute inset-0 w-full h-full"
+                          style={{
+                            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                          }}
+                          animate={{
+                            x: ['-100%', '200%'],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            repeatDelay: 1,
+                            delay: 0.5,
+                          }}
+                        />
+                        <i className="fab fa-whatsapp text-lg relative z-10" />
+                        <span className="relative z-10">Avisar por WhatsApp</span>
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
+                      </motion.button>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>

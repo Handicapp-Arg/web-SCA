@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { RevealWrapper } from '@/components/ui';
+import { RevealWrapper, SectionHeader } from '@/components/ui';
 import { motion } from 'framer-motion';
 
 /**
@@ -67,6 +67,24 @@ export const Brands: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Premium Header */}
         <RevealWrapper>
+          <SectionHeader 
+            title={t('brands_title')} 
+            light
+          />
+          
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-center text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
+          >
+            {t('brands_subtitle')}{' '}
+            <span className="text-white font-medium">{t('brands_subtitle_highlight')}</span>
+            {t('brands_subtitle_end')}
+          </motion.p>
+
           <div className="text-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -75,41 +93,7 @@ export const Brands: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              {/* Decorative Background */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-3xl -z-10" />
-              
-              {/* Main Title */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 uppercase text-white">
-                {t('brands_title')}
-              </h2>
-              
-              {/* Animated Divider */}
-              <motion.div 
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="flex items-center justify-center gap-3 mb-8"
-              >
-                <div className="w-16 h-[2px] bg-gradient-to-r from-transparent to-accent/50" />
-                <div className="w-3 h-3 rounded-full bg-accent shadow-lg shadow-accent/50" />
-                <div className="w-32 h-[3px] bg-gradient-to-r from-accent via-accent/80 to-accent rounded-full shadow-lg shadow-accent/30" />
-                <div className="w-3 h-3 rounded-full bg-accent shadow-lg shadow-accent/50" />
-                <div className="w-16 h-[2px] bg-gradient-to-l from-transparent to-accent/50" />
-              </motion.div>
-              
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
-              >
-                {t('brands_subtitle')}{' '}
-                <span className="text-white font-medium">{t('brands_subtitle_highlight')}</span>
-                {t('brands_subtitle_end')}
-              </motion.p>              {/* Stats Row */}
+              {/* Stats Row */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

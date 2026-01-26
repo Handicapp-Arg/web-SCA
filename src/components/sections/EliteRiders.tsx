@@ -10,6 +10,7 @@ interface Rider {
   discipline: string;
   achievements: string;
   placeholderLabel: string;
+  image?: string;
 }
 
 /**
@@ -24,31 +25,15 @@ export const EliteRiders: React.FC = () => {
       name: 'Carlos Milthaler',
       discipline: t('rider_milthaler_discipline' as keyof TranslationKeys),
       achievements: t('rider_milthaler_achievements' as keyof TranslationKeys),
-      placeholderLabel: 'Carlos Milthaler',
+      placeholderLabel: 'Carlos Milthaler - Professional Jumping Rider',
+      image: '/images/CarlosMilthaler.jpg',
     },
     {
       name: 'Vitor Teixeira',
       discipline: t('rider_teixeira_discipline' as keyof TranslationKeys),
       achievements: t('rider_teixeira_achievements' as keyof TranslationKeys),
-      placeholderLabel: 'Vitor Teixeira',
-    },
-  ];
-
-  const validations = [
-    {
-      icon: 'fa-certificate',
-      titleKey: 'validation_german_title',
-      descKey: 'validation_german_desc',
-    },
-    {
-      icon: 'fa-users',
-      titleKey: 'validation_fitters_title',
-      descKey: 'validation_fitters_desc',
-    },
-    {
-      icon: 'fa-trophy',
-      titleKey: 'validation_riders_title',
-      descKey: 'validation_riders_desc',
+      placeholderLabel: 'Vitor Teixeira - Olympic Dressage Rider',
+      image: '/images/VitorAlvesTeixeira.jpg',
     },
   ];
 
@@ -68,115 +53,102 @@ export const EliteRiders: React.FC = () => {
         {/* Main Header */}
         <RevealWrapper>
           <SectionHeader title={t('validation_title' as keyof TranslationKeys)} />
-          <p className="text-center text-gray-600 text-xl max-w-3xl mx-auto mb-20 leading-relaxed">
-            {t('validation_subtitle' as keyof TranslationKeys)}
+          <p className="text-center text-gray-600 text-xl max-w-3xl mx-auto mb-16 leading-relaxed">
+            {t('riders_subtitle' as keyof TranslationKeys)}
           </p>
         </RevealWrapper>
 
-        {/* German Validation - DESTACADO */}
-        <RevealWrapper delay={100}>
-          <div className="mb-20 max-w-5xl mx-auto">
-            <div className="relative bg-gradient-to-br from-primary via-primary/95 to-gray-900 rounded-3xl p-12 md:p-16 overflow-hidden shadow-2xl">
-              {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-              
-              <div className="relative text-center">
-                <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-accent/20 border-4 border-accent/40 text-accent text-4xl mb-6 mx-auto shadow-lg shadow-accent/20">
-                  <i className="fas fa-certificate" />
+        {/* Elite Riders Grid - Diseño Principal */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          {riders.map((rider, index) => (
+            <RevealWrapper key={index} delay={100 + index * 100}>
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-accent/20 transition-all duration-500"
+              >
+                {/* Image Container */}
+                <div className="relative h-96 md:h-[450px] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                  {rider.image ? (
+                    <img
+                      src={rider.image}
+                      alt={rider.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    />
+                  ) : (
+                    <ImagePlaceholder
+                      aspectRatio={3 / 4}
+                      label={rider.placeholderLabel}
+                      icon="fa-user-tie"
+                      gradient="from-primary/30 to-accent/30"
+                      className="rounded-none"
+                    />
+                  )}
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Decorative Border on Hover */}
+                  <motion.div
+                    className="absolute inset-0 border-4 border-accent pointer-events-none opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0.95 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </div>
-                
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  {t('validation_german_title' as keyof TranslationKeys)}
-                </h3>
-                
-                <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
-                  {t('validation_german_desc' as keyof TranslationKeys)}
-                </p>
 
-                <div className="flex flex-wrap justify-center gap-4 mt-8">
-                  <div className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-                    <span className="text-white font-semibold">🇩🇪 German Standard</span>
-                  </div>
-                  <div className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-                    <span className="text-white font-semibold">✓ Certified Quality</span>
-                  </div>
-                  <div className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-                    <span className="text-white font-semibold">🏆 International Recognition</span>
-                  </div>
+                {/* Content Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {/* Name */}
+                    <h4 className="text-3xl md:text-4xl font-display font-black text-white mb-3 drop-shadow-lg uppercase tracking-wide">
+                      {rider.name}
+                    </h4>
+                    
+                    {/* Discipline Badge */}
+                    <div className="inline-block px-4 py-2 bg-accent/90 backdrop-blur-sm rounded-full mb-4">
+                      <p className="text-sm font-bold text-white uppercase tracking-wider">
+                        {rider.discipline}
+                      </p>
+                    </div>
+                    
+                    {/* Achievements */}
+                    <p className="text-base md:text-lg text-gray-200 leading-relaxed">
+                      {rider.achievements}
+                    </p>
+                    
+                    {/* Decorative Line */}
+                    <div className="mt-4 h-1 w-20 bg-accent rounded-full" />
+                  </motion.div>
+                </div>
+              </motion.div>
+            </RevealWrapper>
+          ))}
+        </div>
+
+        {/* Validation Badge - Discreto al final */}
+        <RevealWrapper delay={300}>
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-2xl p-8 border-2 border-accent/20">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0">
+                  <i className="fas fa-certificate text-white text-2xl" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-xl font-bold text-primary mb-2">
+                    {t('validation_german_title' as keyof TranslationKeys)}
+                  </h4>
+                  <p className="text-gray-700 leading-relaxed">
+                    {t('validation_german_desc' as keyof TranslationKeys)}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </RevealWrapper>
-
-        {/* Other Validations */}
-        {/* Other Validations */}
-        <div className="grid md:grid-cols-2 gap-8 mb-24 max-w-4xl mx-auto">
-          {validations.slice(1).map((validation, index) => (
-            <RevealWrapper key={index} delay={200 + index * 100}>
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
-              >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-2xl mb-6 mx-auto">
-                  <i className={`fas ${validation.icon}`} />
-                </div>
-                <h3 className="text-xl font-bold text-primary text-center mb-4">
-                  {t(validation.titleKey as keyof TranslationKeys)}
-                </h3>
-                <p className="text-gray-600 text-center leading-relaxed">
-                  {t(validation.descKey as keyof TranslationKeys)}
-                </p>
-              </motion.div>
-            </RevealWrapper>
-          ))}
-        </div>
-
-        {/* Elite Riders */}
-        <RevealWrapper delay={300}>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              {t('riders_title' as keyof TranslationKeys)}
-            </h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('riders_subtitle' as keyof TranslationKeys)}
-            </p>
-          </div>
-        </RevealWrapper>
-
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {riders.map((rider, index) => (
-            <RevealWrapper key={index} delay={400 + index * 100}>
-              <motion.div
-                whileHover={{ y: -12 }}
-                className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200"
-              >
-                {/* Image */}
-                <div className="relative h-80 overflow-hidden">
-                  <ImagePlaceholder
-                    aspectRatio={4 / 5}
-                    label={rider.placeholderLabel}
-                    icon="fa-horse"
-                    gradient="from-primary/20 to-accent/20"
-                    className="rounded-none"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                </div>
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h4 className="text-2xl font-bold mb-2">{rider.name}</h4>
-                  <p className="text-accent font-semibold mb-2">{rider.discipline}</p>
-                  <p className="text-sm text-gray-200">{rider.achievements}</p>
-                </div>
-
-                {/* Hover Border */}
-                <div className="absolute inset-0 border-2 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
-              </motion.div>
-            </RevealWrapper>
-          ))}
-        </div>
       </div>
     </section>
   );

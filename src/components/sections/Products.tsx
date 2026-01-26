@@ -1,61 +1,67 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { SectionHeader, RevealWrapper, TechTooltip } from '@/components/ui';
 
 /**
- * Product Interface
+ * Product Category Interface
  */
-interface Product {
-  name: string;
+interface ProductCategory {
+  nameKey: string;
   image: string;
+  gradient: string;
 }
 
 /**
  * Products Section Component
- * Modern showcase of jumping saddles with parallax effects
+ * Showcase of 4 main saddle categories with tooltips
  */
 export const Products: React.FC = () => {
   const { t } = useLanguage();
   const sectionRef = useRef(null);
-  const headerRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
-  const headerInView = useInView(headerRef, { once: false, amount: 0.5 });
 
-  // Products list
-  const products: Product[] = [
-    { name: 'Invictus by Lucas Mesa', image: '/images/montura_salto.webp' },
-    { name: 'Malena', image: '/images/montura_adistramiento.webp' },
-    { name: 'Tribute', image: '/images/montura_todoproposito.webp' },
-    { name: 'Manu by Manuel Chechic', image: '/images/montura_trekking.webp' },
-    { name: 'Legacy by Américo Simonetti', image: '/images/montura_salto.webp' },
-    { name: 'Almil by Carlos Milthaler', image: '/images/montura_adistramiento.webp' },
-    { name: 'Ophelia', image: '/images/montura_todoproposito.webp' },
-    { name: 'Sophia', image: '/images/montura_trekking.webp' },
-    { name: 'Olympic by Vitor Teixeira', image: '/images/montura_salto.webp' },
-    { name: 'Maestro by Vitor Teixeira', image: '/images/montura_adistramiento.webp' },
+  // 4 Product Categories
+  const productCategories: ProductCategory[] = [
+    { 
+      nameKey: 'products_cat_jumping', 
+      image: '/images/montura_salto.webp',
+      gradient: ''
+    },
+    { 
+      nameKey: 'products_cat_dressage', 
+      image: '/images/montura_adistramiento.webp',
+      gradient: ''
+    },
+    { 
+      nameKey: 'products_cat_allpurpose', 
+      image: '/images/montura_todoproposito.webp',
+      gradient: ''
+    },
+    { 
+      nameKey: 'products_cat_trekking', 
+      image: '/images/montura_trekking.webp',
+      gradient: ''
+    },
   ];
 
-  // Process features - Información destacada
+  // Process features - 4 Puntos Clave de Calidad
   const processFeatures = [
     { 
-      text: t('products_desc_1'),
-      icon: 'fa-hand-sparkles',
-      title: 'Artesanía Premium'
+      descKey: 'products_desc_1',
+      icon: 'fa-hands',
     },
     { 
-      text: t('products_desc_2'),
+      descKey: 'products_desc_2',
       icon: 'fa-leaf',
-      title: 'Curtido Vegetal'
     },
     { 
-      text: t('products_desc_3'),
+      descKey: 'products_desc_3',
       icon: 'fa-ruler-combined',
-      title: 'Control de Simetría'
     },
     { 
-      text: t('products_desc_4'),
+      descKey: 'products_desc_4',
       icon: 'fa-crosshairs',
-      title: 'Verificación Láser'
     },
   ];
 
@@ -84,39 +90,33 @@ export const Products: React.FC = () => {
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          ref={headerRef}
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 60 }}
-          animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary mb-4 tracking-tight"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={headerInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {t('products_title')}
-          </motion.h2>
-          <motion.p 
-            className="text-xl md:text-2xl text-accent font-semibold mb-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            {t('products_subtitle')}
-          </motion.p>
-          
-          {/* Decorative Line */}
-          <motion.div
-            className="w-24 h-1 bg-accent mx-auto mt-6"
-            initial={{ scaleX: 0 }}
-            animate={headerInView ? { scaleX: 1 } : { scaleX: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+        {/* Header with Standard SectionHeader */}
+        <RevealWrapper>
+          <SectionHeader 
+            title={t('products_title')} 
           />
-        </motion.div>
+          
+          {/* Intro with Tooltips */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              {t('products_intro')}{' '}
+              <TechTooltip
+                term={t('term_saddle_fitter_title')}
+                definition={t('term_saddle_fitter_def')}
+              >
+                {t('term_saddle_fitter_title')}
+              </TechTooltip>
+              {t('products_intro_end')}{' '}
+              <TechTooltip
+                term={t('term_panels_title')}
+                definition={t('term_panels_def')}
+              >
+                {t('term_panels_title')}
+              </TechTooltip>{' '}
+              {t('products_intro_final')}
+            </p>
+          </div>
+        </RevealWrapper>
 
         {/* Process Features Grid - Información destacada */}
         <div className="mb-20">
@@ -129,7 +129,7 @@ export const Products: React.FC = () => {
             {processFeatures.map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-white border-l-4 border-accent rounded-r-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                className="bg-white border-l-4 border-accent rounded-r-lg p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group"
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -137,16 +137,16 @@ export const Products: React.FC = () => {
               >
                 <div className="flex items-start gap-4">
                   <motion.div
-                    className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <i className={`fas ${feature.icon} text-accent text-2xl group-hover:text-white`} />
+                    <i className={`fas ${feature.icon} text-accent text-xl group-hover:text-white`} />
                   </motion.div>
                   
                   <div className="flex-1">
-                    <p className="text-base text-gray-700 leading-relaxed group-hover:text-primary transition-colors">
-                      {feature.text}
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed group-hover:text-primary transition-colors">
+                      {t(feature.descKey)}
                     </p>
                   </div>
                 </div>
@@ -155,65 +155,53 @@ export const Products: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Products Grid */}
+        {/* Product Categories - 4 Main Types */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {products.map((product, index) => (
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-center text-primary mb-4">
+            {t('products_subtitle')}
+          </h3>
+          <p className="text-center text-gray-600 mb-12 text-lg">
+            Diseños únicos para cada disciplina ecuestre
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {productCategories.map((category, index) => (
               <motion.div
                 key={index}
                 className="group cursor-pointer"
-                initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 30 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 30 }}
                 transition={{ 
                   duration: 0.6, 
-                  delay: index * 0.05,
+                  delay: index * 0.1,
                   ease: [0.22, 1, 0.36, 1]
                 }}
                 whileHover={{ y: -12, scale: 1.05 }}
               >
-                <div className="relative overflow-hidden rounded-lg shadow-lg aspect-[3/4] bg-gray-100">
+                <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/5] bg-gradient-to-br from-slate-800 via-slate-700 to-cyan-900/80 group-hover:ring-2 group-hover:ring-cyan-400 transition-all duration-300">
                   {/* Product Image */}
-                  <motion.img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.6 }}
+                  <img
+                    src={category.image}
+                    alt={t(category.nameKey)}
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                   />
 
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/40" />
 
-                  {/* Product Name */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <motion.h3 
-                      className="text-white font-bold text-sm md:text-base mb-2 leading-tight"
-                      initial={{ y: 10, opacity: 0.8 }}
-                      whileHover={{ y: 0, opacity: 1 }}
-                    >
-                      {product.name}
-                    </motion.h3>
-                    
-                    <motion.button
-                      className="text-accent text-xs font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-                      whileHover={{ x: 5 }}
-                    >
-                      {t('product_view_details')}
-                      <i className="fas fa-arrow-right text-xs" />
-                    </motion.button>
+                  {/* Cyan accent line on hover */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Category Name - Below Image */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/95 to-slate-800/80 backdrop-blur-sm py-4 group-hover:from-cyan-900/95 group-hover:to-cyan-800/80 transition-all duration-300">
+                    <h4 className="text-white font-bold text-base md:text-lg uppercase tracking-wide text-center">
+                      {t(category.nameKey)}
+                    </h4>
                   </div>
-
-                  {/* Hover Border Effect */}
-                  <motion.div
-                    className="absolute inset-0 border-4 border-accent pointer-events-none rounded-lg"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileHover={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
                 </div>
               </motion.div>
             ))}
