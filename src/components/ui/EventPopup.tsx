@@ -17,7 +17,7 @@ interface EventPopupProps {
  * Features localStorage persistence to avoid showing multiple times
  */
 export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose }) => {
-  const { t, locale } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
@@ -47,7 +47,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
   const handleContact = () => {
     handleClose();
     // Navigate to Connect page
-    navigate(`/${locale}/connect`);
+    navigate(`/${language}/connect`);
   };
 
   return (
@@ -236,8 +236,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                             repeatDelay: 1,
                           }}
                         />
-                        <i className="fas fa-calendar-check text-lg relative z-10" />
-                        <span className="relative z-10">COORDINAR REUNIÓN</span>
+                        <i className="fas fa-address-card text-lg relative z-10" />
+                        <span className="relative z-10">{t('event_contact_btn').toUpperCase()}</span>
                         {/* Hover Glow */}
                         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
                       </motion.button>
@@ -267,7 +267,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                           }}
                         />
                         <i className="fab fa-whatsapp text-lg relative z-10" />
-                        <span className="relative z-10">Avisar por WhatsApp</span>
+                        <span className="relative z-10">{t('event_whatsapp_btn')}</span>
                         {/* Hover Glow */}
                         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
                       </motion.button>

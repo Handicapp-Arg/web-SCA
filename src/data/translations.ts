@@ -7,6 +7,8 @@ import type { Translations } from '@/types';
 export const translations: Translations = {
   en: {
     hero_badge: 'Premier Launch',
+    event_contact_btn: 'Contact Us',
+    event_whatsapp_btn: 'Notify via WhatsApp',
     nav_factory: 'Factory',
     nav_oem: 'OEM',
     nav_quality: 'Quality',
@@ -230,6 +232,8 @@ export const translations: Translations = {
   },
   de: {
     hero_badge: 'Weltpremiere',
+    event_contact_btn: 'Kontaktieren Sie Uns',
+    event_whatsapp_btn: 'Per WhatsApp Benachrichtigen',
     nav_factory: 'Fabrik',
     nav_oem: 'OEM',
     nav_quality: 'Qualität',
@@ -449,6 +453,8 @@ export const translations: Translations = {
   },
   es: {
     hero_badge: 'Estreno Mundial',
+    event_contact_btn: 'Contacto',
+    event_whatsapp_btn: 'Avisar por WhatsApp',
     nav_factory: 'Fábrica',
     nav_oem: 'OEM',
     nav_quality: 'Calidad',

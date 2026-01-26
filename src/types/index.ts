@@ -14,6 +14,8 @@ export interface TranslationKeys {
   event_cta_button: string;
   event_location: string;
   event_dates: string;
+  event_contact_btn: string;
+  event_whatsapp_btn: string;
   hero_badge: string;
   // Navigation
   nav_factory: string;
