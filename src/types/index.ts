@@ -47,6 +47,8 @@ export interface TranslationKeys {
   // Sustainable Model Plant Section
   sustainable_plant_title: string;
   sustainable_plant_subtitle: string;
+  sustainable_plant_intro_highlight: string;
+  sustainable_plant_intro: string;
   sustainable_plant_ceo_title: string;
   sustainable_plant_ceo_desc: string;
   sustainable_plant_facility_title: string;
@@ -71,6 +73,10 @@ export interface TranslationKeys {
   concept_title: string;
   concept_subtitle: string;
   concept_desc: string;
+  concept_img_facility_title: string;
+  concept_img_facility_desc: string;
+  concept_img_craftsmanship: string;
+  concept_img_leather: string;
   feat_1: string;
   feat_2: string;
   feat_3: string;
@@ -159,6 +165,7 @@ export interface TranslationKeys {
   // Products Section
   products_title: string;
   products_subtitle: string;
+  products_subtitle_desc: string;
   products_desc_1: string;
   products_desc_2: string;
   products_desc_3: string;

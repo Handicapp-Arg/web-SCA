@@ -146,7 +146,7 @@ export const Products: React.FC = () => {
                   
                   <div className="flex-1">
                     <p className="text-sm md:text-base text-gray-700 leading-relaxed group-hover:text-primary transition-colors">
-                      {t(feature.descKey)}
+                      {t(feature.descKey as any)}
                     </p>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export const Products: React.FC = () => {
                   {/* Product Image */}
                   <img
                     src={category.image}
-                    alt={t(category.nameKey)}
+                    alt={t(category.nameKey as any)}
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                   />
 
@@ -199,7 +199,7 @@ export const Products: React.FC = () => {
                   {/* Category Name - Below Image */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/95 to-slate-800/80 backdrop-blur-sm py-4 group-hover:from-cyan-900/95 group-hover:to-cyan-800/80 transition-all duration-300">
                     <h4 className="text-white font-bold text-base md:text-lg uppercase tracking-wide text-center">
-                      {t(category.nameKey)}
+                      {t(category.nameKey as any)}
                     </h4>
                   </div>
                 </div>
