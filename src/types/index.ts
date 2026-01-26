@@ -7,6 +7,13 @@ export type Language = 'en' | 'de' | 'es';
  * Translation Keys Interface
  */
 export interface TranslationKeys {
+  // Event Popup
+  event_badge: string;
+  event_title: string;
+  event_description: string;
+  event_cta_button: string;
+  event_location: string;
+  event_dates: string;
   hero_badge: string;
   // Navigation
   nav_factory: string;
