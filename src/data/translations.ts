@@ -8,7 +8,7 @@ export const translations: Translations = {
   en: {
     hero_badge: 'Premier Launch',
     event_contact_btn: 'Contact Us',
-    event_whatsapp_btn: 'Notify via WhatsApp',
+    event_whatsapp_btn: 'WhatsApp',
     event_welcome_title: 'We look forward to seeing you at',
     event_welcome_location: 'Spoga Horse',
     event_desc_1: 'It will be a pleasure to welcome you at our stand to personally show you the',
@@ -240,7 +240,7 @@ export const translations: Translations = {
   de: {
     hero_badge: 'Weltpremiere',
     event_contact_btn: 'Kontaktieren Sie Uns',
-    event_whatsapp_btn: 'Per WhatsApp Benachrichtigen',
+    event_whatsapp_btn: 'WhatsApp',
     event_welcome_title: 'Wir freuen uns auf Sie bei',
     event_welcome_location: 'Spoga Horse',
     event_desc_1: 'Es wird uns eine Freude sein, Sie an unserem Stand zu begrüßen und Ihnen persönlich die',
@@ -468,7 +468,7 @@ export const translations: Translations = {
   es: {
     hero_badge: 'Estreno Mundial',
     event_contact_btn: 'Contacto',
-    event_whatsapp_btn: 'Avisar por WhatsApp',
+    event_whatsapp_btn: 'WhatsApp',
     event_welcome_title: 'Te esperamos en',
     event_welcome_location: 'Spoga Horse',
     event_desc_1: 'Será un placer recibirte en nuestro stand para mostrarte la',

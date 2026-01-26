@@ -27,6 +27,11 @@ export const eventInfo = {
  */
 export const contactMessages = {
   whatsapp: `Hi, we met at ${eventInfo.name} ${eventInfo.location}. I'd like more information about SCA products.`,
+  whatsappPopup: {
+    en: `Hi, I'll be at SPOGA HORSE 2026 and would like to schedule a meeting at your stand.`,
+    de: `Hallo, ich werde auf der SPOGA HORSE 2026 sein und würde gerne ein Treffen an Ihrem Stand vereinbaren.`,
+    es: `Hola, estaré en SPOGA HORSE 2026 y me gustaría coordinar una reunión en su stand.`,
+  },
   email: {
     subject: `${eventInfo.name} ${eventInfo.year} - Information Request`,
     body: `Hi,\n\nWe met at ${eventInfo.name} in ${eventInfo.location}.\n\nI'd like to learn more about your OEM saddle manufacturing services.\n\nBest regards,`,

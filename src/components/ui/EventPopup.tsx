@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import { getWhatsAppLink } from '@/lib/contactUtils';
+import { companyContact, contactMessages } from '@/lib/connectData';
 
 interface EventPopupProps {
   /** Delay in milliseconds before showing the popup */
@@ -38,8 +39,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
   };
 
   const handleWhatsApp = () => {
-    const message = 'Hola, estaré en SPOGA HORSE 2026 y me gustaría coordinar una reunión en su stand.';
-    const whatsappLink = getWhatsAppLink('4915204717170', message);
+    const message = contactMessages.whatsappPopup[language] || contactMessages.whatsappPopup.en;
+    const whatsappLink = getWhatsAppLink(companyContact.phone, message);
     window.open(whatsappLink, '_blank');
     handleClose();
   };
@@ -267,7 +268,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                           }}
                         />
                         <i className="fab fa-whatsapp text-lg relative z-10" />
-                        <span className="relative z-10">{t('event_whatsapp_btn')}</span>
+                        <span className="relative z-10">{t('event_whatsapp_btn').toUpperCase()}</span>
                         {/* Hover Glow */}
                         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
                       </motion.button>
