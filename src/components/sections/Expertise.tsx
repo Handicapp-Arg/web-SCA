@@ -167,9 +167,9 @@ export const Expertise: React.FC = () => {
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
-                  <div className="grid lg:grid-cols-2 gap-0 h-[600px] lg:h-[550px]">
+                  <div className="grid lg:grid-cols-2 gap-0 h-[550px] sm:h-[500px] lg:h-[550px]">
                     {/* Image Side */}
-                    <div className="relative h-80 lg:h-full">
+                    <div className="relative h-64 sm:h-80 lg:h-full">
                       <img 
                         src={partners[currentPartner].image} 
                         alt={partners[currentPartner].name}
@@ -178,14 +178,14 @@ export const Expertise: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent lg:bg-gradient-to-r" />
                       
                       {/* Partner Name Overlay - Mobile */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 bg-gradient-to-t from-black/60 to-transparent lg:hidden">
-                        <h3 className="text-2xl font-bold text-white">{partners[currentPartner].name}</h3>
-                        <p className="text-white/90 text-sm uppercase tracking-wider">{t(partners[currentPartner].role as keyof TranslationKeys)}</p>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent lg:hidden">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white">{partners[currentPartner].name}</h3>
+                        <p className="text-white/90 text-xs sm:text-sm uppercase tracking-wider">{t(partners[currentPartner].role as keyof TranslationKeys)}</p>
                       </div>
                     </div>
 
                     {/* Content Side */}
-                    <div className="p-8 lg:p-12 flex flex-col justify-center h-full overflow-y-auto">
+                    <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center h-[286px] sm:h-[220px] lg:h-full overflow-hidden">
                       <div className="hidden lg:block mb-6">
                         <h3 className="text-3xl font-bold text-white mb-2">{partners[currentPartner].name}</h3>
                         <span className="inline-block px-4 py-1.5 bg-accent text-white text-xs uppercase tracking-wider font-bold rounded-full">
@@ -196,16 +196,16 @@ export const Expertise: React.FC = () => {
                       {/* CEO Section with Title */}
                       {partners[currentPartner].showCredentials && (
                         <>
-                          <h4 className="text-xl font-bold text-white mb-4 lg:mt-0 mt-4">
+                          <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                             {t('sustainable_plant_ceo_title')}
                           </h4>
                           
-                          <p className="text-white/90 text-base leading-relaxed mb-6">
+                          <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
                             {t('sustainable_plant_ceo_desc')}
                           </p>
 
-                          {/* Credentials Grid */}
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {/* Credentials Grid - Hidden on mobile */}
+                          <div className="hidden sm:grid grid-cols-2 gap-3">
                             {ceoCredentials.map((credential, index) => (
                               <motion.div
                                 key={index}
@@ -218,7 +218,7 @@ export const Expertise: React.FC = () => {
                                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                                   <i className={`fas ${credential.icon} text-white text-sm`} />
                                 </div>
-                                <span className="text-white text-sm font-medium">
+                                <span className="text-white text-sm font-medium leading-tight">
                                   {t(credential.textKey as keyof TranslationKeys)}
                                 </span>
                               </motion.div>
@@ -229,7 +229,7 @@ export const Expertise: React.FC = () => {
 
                       {/* Partner Section - Simple Bio */}
                       {!partners[currentPartner].showCredentials && (
-                        <p className="text-white/90 text-lg leading-relaxed italic mt-4 lg:mt-0">
+                        <p className="text-white/90 text-base sm:text-lg leading-relaxed italic">
                           "{typeof partners[currentPartner].bio === 'string' && partners[currentPartner].bio.includes('_') 
                             ? t(partners[currentPartner].bio as keyof TranslationKeys)
                             : partners[currentPartner].bio}"
@@ -243,17 +243,17 @@ export const Expertise: React.FC = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevPartner}
-                className="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/80 hover:bg-primary backdrop-blur-md border-2 border-white/40 hover:border-white/60 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-20 shadow-xl"
+                className="absolute left-2 top-4 sm:top-1/2 sm:-translate-y-1/2 lg:left-4 w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full bg-primary/90 hover:bg-primary backdrop-blur-md border-2 border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-20 shadow-xl"
                 aria-label="Previous partner"
               >
-                <i className="fas fa-chevron-left text-sm lg:text-base" />
+                <i className="fas fa-chevron-left text-xs sm:text-sm lg:text-base" />
               </button>
               <button
                 onClick={nextPartner}
-                className="absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/80 hover:bg-primary backdrop-blur-md border-2 border-white/40 hover:border-white/60 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-20 shadow-xl"
+                className="absolute right-2 top-4 sm:top-1/2 sm:-translate-y-1/2 lg:right-4 w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full bg-primary/90 hover:bg-primary backdrop-blur-md border-2 border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-20 shadow-xl"
                 aria-label="Next partner"
               >
-                <i className="fas fa-chevron-right text-sm lg:text-base" />
+                <i className="fas fa-chevron-right text-xs sm:text-sm lg:text-base" />
               </button>
 
               {/* Dots Indicator */}

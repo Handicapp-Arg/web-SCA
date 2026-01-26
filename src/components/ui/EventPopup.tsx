@@ -35,6 +35,17 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
   const handleClose = () => {
     setIsVisible(false);
     setShowBubble(true);
+    
+    // Reiniciar video del Hero en móvil cuando se cierra el popup
+    setTimeout(() => {
+      const video = document.querySelector('video');
+      if (video) {
+        video.play().catch(() => {
+          // Ignorar error si el navegador bloquea autoplay
+        });
+      }
+    }, 300);
+    
     onClose?.();
   };
 
@@ -75,7 +86,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4 bg-black/45 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/45 backdrop-blur-sm"
             onClick={handleClose}
           >
             <motion.div

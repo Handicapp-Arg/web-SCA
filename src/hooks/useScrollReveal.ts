@@ -21,7 +21,7 @@ export const useScrollReveal = (
   options: UseScrollRevealOptions = {}
 ): boolean => {
   const [isVisible, setIsVisible] = useState(false);
-  const { threshold = 0.1, rootMargin = '0px' } = options;
+  const { threshold = 0.2, rootMargin = '50px' } = options;
 
   useEffect(() => {
     const element = ref.current;
