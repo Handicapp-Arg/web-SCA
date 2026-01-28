@@ -9,7 +9,7 @@ export const companyContact: ContactData = {
   position: 'Managing Partner',
   email: 'santiago@horsebrandcompany.com.ar',
   phone: '+5401156650533',
-  website: 'https://www.sca-saddles.com',
+  website: 'https://www.saddlecompanyargentina.com/en',
   address: 'Cochabamba 478, Villa Martelli, Buenos Aires, Argentina',
 };
 
