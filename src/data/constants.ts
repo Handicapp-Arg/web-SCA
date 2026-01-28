@@ -32,7 +32,7 @@ export const contacts: ContactInfo[] = [
     location: 'Buenos Aires, Argentina',
     name: 'Santiago A. Salerno',
     roleKey: 'role_partner',
-    address: 'Cochabamba 478, Villa Martelli, BA.',
+    address: 'Cochabamba 476, Villa Martelli, BA.',
     phone: '+5401156650533',
     email: 'santiago@horsebrandcompany.com.ar',
   },

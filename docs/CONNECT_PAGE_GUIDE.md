@@ -59,7 +59,7 @@ export const companyContact: ContactData = {
   email: 'santiago@horsebrandcompany.com.ar',
   phone: '+5401156650533',
   website: 'https://www.sca-saddles.com',
-  address: 'Cochabamba 478, Villa Martelli, Buenos Aires, Argentina',
+  address: 'Cochabamba 476, Villa Martelli, Buenos Aires, Argentina',
 };
 ```
 
