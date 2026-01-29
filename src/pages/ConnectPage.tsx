@@ -59,9 +59,7 @@ export const ConnectPage: React.FC = () => {
             {/* Logo */}
             <div className="mb-4 flex justify-center">
               <img
-                src="/images/logoSCA - blanco.webp"
-                loading="lazy"
-                decoding="async"
+                src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/logoSCA%20-%20blanco.webp`}
                 alt="SCA Logo"
                 className="h-24 md:h-32 w-auto object-contain"
               />

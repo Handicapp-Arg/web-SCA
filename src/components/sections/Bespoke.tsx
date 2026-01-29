@@ -67,7 +67,7 @@ export const Bespoke: React.FC = () => {
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
-                    src="/images/custom1.JPG"
+                    src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/custom1.webp`}
                     alt="Custom Design 1"
                     loading="lazy"
                     decoding="async"
@@ -79,7 +79,7 @@ export const Bespoke: React.FC = () => {
                 </div>
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
-                    src="/images/custom2.JPG"
+                    src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/custom2.webp`}
                     alt="Custom Design 2"
                     loading="lazy"
                     decoding="async"
@@ -93,7 +93,7 @@ export const Bespoke: React.FC = () => {
               <div className="space-y-4 pt-8">
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
-                    src="/images/especialproject.JPG"
+                    src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/especialproject.webp`}
                     alt="Special Project"
                     loading="lazy"
                     decoding="async"
@@ -105,7 +105,7 @@ export const Bespoke: React.FC = () => {
                 </div>
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
-                    src="/images/unique.JPG"
+                    src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/unique.webp`}
                     alt="Unique Creation"
                     loading="lazy"
                     decoding="async"

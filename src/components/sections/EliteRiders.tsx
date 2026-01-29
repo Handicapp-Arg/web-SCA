@@ -26,14 +26,14 @@ export const EliteRiders: React.FC = () => {
       discipline: t('rider_milthaler_discipline' as keyof TranslationKeys),
       achievements: t('rider_milthaler_achievements' as keyof TranslationKeys),
       placeholderLabel: 'Carlos Milthaler - Professional Jumping Rider',
-      image: '/images/CarlosMilthaler.jpg',
+  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/CarlosMilthaler.webp`,
     },
     {
       name: 'Vitor Teixeira',
       discipline: t('rider_teixeira_discipline' as keyof TranslationKeys),
       achievements: t('rider_teixeira_achievements' as keyof TranslationKeys),
       placeholderLabel: 'Vitor Teixeira - Olympic Dressage Rider',
-      image: '/images/VitorAlvesTeixeira.jpg',
+  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/VitorAlvesTeixeira.webp`,
     },
   ];
 

@@ -13,35 +13,35 @@ export const Brands: React.FC = () => {
   const brands = [
     { 
       name: 'SADDLERY', 
-      logo: '/images/canaves.webp',
+  logo: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/canaves.webp`,
       taglineKey: 'brand_saddlery_tagline' as const,
       color: 'from-blue-600 to-blue-800',
       link: 'https://sattelmanufaktur-bargh.de/index.php/jorge-canaves'
     },
     { 
       name: 'HBC', 
-      logo: '/images/HBC.webp',
+  logo: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/HBC.webp`,
       taglineKey: 'brand_hbc_tagline' as const,
       color: 'from-green-600 to-green-800',
       link: 'https://www.sattelmanufaktur-bargh.de/hbc.html'
     },
     { 
       name: 'HILBAR', 
-      logo: '/images/hilbar.webp',
+  logo: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/hilbar.webp`,
       taglineKey: 'brand_hilbar_tagline' as const,
       color: 'from-purple-600 to-purple-800',
       link: 'https://sattelmanufaktur-bargh.de/index.php/hilbar'
     },
     { 
       name: 'MAXFLEX', 
-      logo: '/images/maxflex.webp',
+  logo: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/maxflex.webp`,
       taglineKey: 'brand_maxflex_tagline' as const,
       color: 'from-orange-600 to-orange-800',
       link: 'https://sattelmanufaktur-bargh.de/index.php/max-flex'
     },
     { 
       name: 'MAX BENZ', 
-      logo: '/images/maxbenz.webp',
+  logo: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/maxbenz.webp`,
       taglineKey: 'brand_maxbenz_tagline' as const,
       color: 'from-red-600 to-red-800',
       link: 'https://sattelmanufaktur-bargh.de/index.php/max-benz'

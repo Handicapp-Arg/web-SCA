@@ -87,7 +87,7 @@ export const Contact: React.FC = () => {
       className="relative py-20 md:py-32 text-white"
       style={{
         backgroundColor: '#0f0f0f',
-        backgroundImage: 'linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url(/images/care_04.webp)',
+  backgroundImage: `linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url(https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/care_04.webp)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
