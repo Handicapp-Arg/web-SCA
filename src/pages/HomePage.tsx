@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navbar, Footer } from '@/components/layout';
 import { 
   Hero, 
   Concept, 
@@ -29,20 +28,16 @@ export const HomePage: React.FC = () => {
   });
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Concept />
-        <Expertise />
-        <ManufacturingProcess />
-        <Products />
-        <Services />
-        <EliteRiders />
-        <Bespoke />
-        <Brands />
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <Concept />
+      <Expertise />
+      <ManufacturingProcess />
+      <Products />
+      <Services />
+      <EliteRiders />
+      <Bespoke />
+      <Brands />
+      <Contact />
       <EventPopup delay={1000} />
     </>
   );
