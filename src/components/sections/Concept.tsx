@@ -84,7 +84,7 @@ export const Concept: React.FC = () => {
               {/* Main Image - Factory Overview - HERO con descripción */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group mb-6">
                 <img
-                  src="/images/factory_overview.JPG"
+                  src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/factory_overview.webp`}
                   alt="SCA Factory Overview"
                   loading="lazy"
                   decoding="async"
@@ -107,7 +107,7 @@ export const Concept: React.FC = () => {
                 {/* Secondary Image - Craftsmanship */}
                 <div className="relative rounded-xl overflow-hidden shadow-xl group md:col-span-3">
                   <img
-                    src="/images/craftsmanship_detail.JPG"
+                    src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/craftsmanship_detail.webp`}
                     alt="Handcrafted Quality"
                     loading="lazy"
                     decoding="async"
@@ -129,7 +129,7 @@ export const Concept: React.FC = () => {
                   {/* Argentina Badge con imagen */}
                   <div className="relative rounded-xl overflow-hidden shadow-xl group h-full min-h-[280px]">
                     <img
-                      src="/images/argentina_craftsmanship.JPG"
+                      src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/argentina_craftsmanship.webp`}
                       alt="Argentine Craftsmanship"
                       loading="lazy"
                       decoding="async"

@@ -74,13 +74,13 @@ export const ManufacturingProcess: React.FC = () => {
                 {/* Media */}
                 <div className="mb-6 overflow-hidden rounded-xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
                   {index === 0 && (
-                    <img src="/images/vapor.jpg" alt="Vapor" loading="lazy" decoding="async" className="w-full h-auto object-cover aspect-[4/3]" />
+                    <img src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/vapor.webp`} alt="Vapor" className="w-full h-auto object-cover aspect-[4/3]" />
                   )}
                   {index === 1 && (
-                    <img src="/images/armazones.JPG" alt="Armazones" loading="lazy" decoding="async" className="w-full h-auto object-cover aspect-[4/3]" />
+                    <img src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/armazones.webp`} alt="Armazones" className="w-full h-auto object-cover aspect-[4/3]" />
                   )}
                   {index === 2 && (
-                    <img src="/images/calidad.JPG" alt="Calidad" loading="lazy" decoding="async" className="w-full h-auto object-cover aspect-[4/3]" />
+                    <img src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/calidad.webp`} alt="Calidad" className="w-full h-auto object-cover aspect-[4/3]" />
                   )}
                 </div>
 

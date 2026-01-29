@@ -25,22 +25,22 @@ export const Products: React.FC = () => {
   const productCategories: ProductCategory[] = [
     { 
       nameKey: 'products_cat_jumping', 
-      image: '/images/montura_salto.webp',
+  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_salto.webp`,
       gradient: ''
     },
     { 
       nameKey: 'products_cat_dressage', 
-      image: '/images/montura_adistramiento.webp',
+  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_adistramiento.webp`,
       gradient: ''
     },
     { 
       nameKey: 'products_cat_allpurpose', 
-      image: '/images/montura_todoproposito.webp',
+  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_todoproposito.webp`,
       gradient: ''
     },
     { 
       nameKey: 'products_cat_trekking', 
-      image: '/images/montura_trekking.webp',
+  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_trekking.webp`,
       gradient: ''
     },
   ];
