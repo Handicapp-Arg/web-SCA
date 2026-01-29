@@ -17,6 +17,7 @@ export const Hero: React.FC = () => {
           loop
           muted
           playsInline
+          preload="metadata"
           className="
             absolute inset-0 w-full h-full object-cover
             brightness-[0.45] saturate-[0.6] contrast-[0.85]

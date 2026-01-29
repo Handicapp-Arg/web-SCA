@@ -187,6 +187,8 @@ export const Products: React.FC = () => {
                   <img
                     src={category.image}
                     alt={t(category.nameKey as any)}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                   />
 

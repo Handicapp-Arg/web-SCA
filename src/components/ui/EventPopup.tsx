@@ -94,7 +94,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
-              className="relative w-full max-w-5xl bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] sm:max-h-[95vh] overflow-y-auto"
+              className="relative w-full max-w-5xl bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -108,7 +108,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
 
               <div className="flex flex-col md:flex-row relative">
                 {/* Logo Section - SPOGA HORSE */}
-                <div className="w-full md:w-5/12 p-5 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#000f26' }}>
+                <div className="w-full md:w-5/12 p-3 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#000f26' }}>
                   {/* Animated Border Light Effect */}
                   <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
@@ -127,7 +127,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
 
                   {/* Logo */}
                   <motion.div 
-                    className="w-full mb-3 sm:mb-4 md:mb-6 lg:mb-8 relative z-10"
+                    className="w-3/4 sm:w-full mb-2 sm:mb-4 md:mb-6 lg:mb-8 relative z-10"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
@@ -141,7 +141,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
 
                   {/* Stand Location & Dates with Animation */}
                   <motion.div 
-                    className="w-full flex items-center gap-2 sm:gap-3 p-3 sm:p-4 md:p-5 bg-gradient-to-r from-accent/10 to-accent/5 backdrop-blur-sm rounded-lg sm:rounded-xl border border-accent/30 shadow-lg relative overflow-hidden z-10"
+                    className="w-full flex items-center gap-2 sm:gap-3 p-2 sm:p-4 md:p-5 bg-gradient-to-r from-accent/10 to-accent/5 backdrop-blur-sm rounded-lg sm:rounded-xl border border-accent/30 shadow-lg relative overflow-hidden z-10"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
@@ -162,13 +162,13 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                         repeatDelay: 2,
                       }}
                     />
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0 relative z-10">
-                      <i className="fas fa-map-marker-alt text-accent text-base sm:text-lg md:text-xl" />
+                    <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0 relative z-10">
+                      <i className="fas fa-map-marker-alt text-accent text-xs sm:text-lg md:text-xl" />
                     </div>
                     <div className="flex-1 relative z-10">
-                      <div className="text-white font-bold text-sm sm:text-base md:text-lg mb-0.5 sm:mb-1">Hall 08.1 | G016</div>
-                      <div className="text-gray-300 text-xs sm:text-sm mb-0.5 sm:mb-1">Visit us at SPOGA HORSE 2026</div>
-                      <div className="text-gray-400 text-xs sm:text-sm flex items-center gap-1 sm:gap-2">
+                      <div className="text-white font-bold text-[11px] sm:text-base md:text-lg mb-0 sm:mb-1 leading-tight">Hall 08.1 | G016</div>
+                      <div className="text-gray-300 text-[9px] sm:text-sm mb-0 leading-tight hidden sm:block">Visit us at SPOGA HORSE 2026</div>
+                      <div className="text-gray-400 text-[9px] sm:text-sm flex items-center gap-1 sm:gap-2 leading-tight">
                         <i className="far fa-calendar" />
                         {t('event_dates')}
                       </div>
@@ -177,7 +177,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                 </div>
 
                 {/* Content Section - Enhanced */}
-                <div className="flex-1 p-5 sm:p-6 md:p-10 lg:p-12 flex flex-col justify-center relative bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden">
+                <div className="flex-1 p-3 sm:p-6 md:p-10 lg:p-12 flex flex-col justify-center relative bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden">
                   {/* Decorative Background Elements */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                   <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -195,11 +195,11 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}
-                      className="inline-flex items-center gap-2 mb-3 sm:mb-4 md:mb-6"
+                      className="inline-flex items-center gap-1.5 mb-2 sm:mb-4 md:mb-6"
                     >
-                      <div className="flex items-center gap-2 text-accent">
-                        <i className="fas fa-map-marker-alt text-sm" />
-                        <span className="text-sm font-bold uppercase tracking-wider">Colonia, Alemania</span>
+                      <div className="flex items-center gap-1.5 text-accent">
+                        <i className="fas fa-map-marker-alt text-xs sm:text-sm" />
+                        <span className="text-xs sm:text-sm font-bold uppercase tracking-wider">Colonia, Alemania</span>
                       </div>
                     </motion.div>
 
@@ -208,7 +208,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
-                      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight"
+                      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-2 sm:mb-4 md:mb-6 leading-tight"
                     >
                       {t('event_welcome_title')}<br />
                       <span className="text-primary">{t('event_welcome_location')}</span>
@@ -219,7 +219,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
-                      className="text-gray-600 text-sm sm:text-base md:text-lg mb-2 sm:mb-3 md:mb-4 leading-relaxed"
+                      className="text-gray-600 text-sm sm:text-base md:text-lg mb-1.5 sm:mb-3 md:mb-4 leading-snug"
                     >
                       {t('event_desc_1')} <strong className="text-gray-900">{t('event_collection')}</strong>.
                     </motion.p>
@@ -228,7 +228,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.45 }}
-                      className="text-gray-600 text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-10 leading-relaxed"
+                      className="text-gray-600 text-sm sm:text-base md:text-lg mb-2.5 sm:mb-6 md:mb-10 leading-snug"
                     >
                       {t('event_desc_2')} <strong className="text-accent">{t('event_welcome_pack')}</strong> {t('event_desc_2_end')}
                     </motion.p>
@@ -238,14 +238,14 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
-                      className="space-y-3"
+                      className="space-y-2"
                     >
                       {/* Primary Button - Coordinar Reunión */}
                       <motion.button
                         onClick={handleContact}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full bg-gradient-to-r from-primary via-primary-dark to-primary text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
+                        className="w-full bg-gradient-to-r from-primary via-primary-dark to-primary text-white font-semibold py-2.5 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group text-xs sm:text-base"
                       >
                         {/* Shimmer Effect */}
                         <motion.div
@@ -263,8 +263,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                             repeatDelay: 1,
                           }}
                         />
-                        <i className="fas fa-address-card text-lg relative z-10" />
-                        <span className="relative z-10">{t('event_contact_btn').toUpperCase()}</span>
+                        <i className="fas fa-address-card text-sm sm:text-lg relative z-10" />
+                        <span className="relative z-10 font-bold">{t('event_contact_btn').toUpperCase()}</span>
                         {/* Hover Glow */}
                         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
                       </motion.button>
@@ -274,7 +274,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                         onClick={handleWhatsApp}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="w-full bg-gradient-to-r from-[#25D366] via-[#1ebe5d] to-[#25D366] text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group text-sm sm:text-base"
+                        className="w-full bg-gradient-to-r from-[#25D366] via-[#1ebe5d] to-[#25D366] text-white font-semibold py-2.5 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group text-xs sm:text-base"
                       >
                         {/* Shimmer Effect */}
                         <motion.div
@@ -293,8 +293,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                             delay: 0.5,
                           }}
                         />
-                        <i className="fab fa-whatsapp text-lg relative z-10" />
-                        <span className="relative z-10">{t('event_whatsapp_btn').toUpperCase()}</span>
+                        <i className="fab fa-whatsapp text-sm sm:text-lg relative z-10" />
+                        <span className="relative z-10 font-bold">{t('event_whatsapp_btn').toUpperCase()}</span>
                         {/* Hover Glow */}
                         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300" />
                       </motion.button>
