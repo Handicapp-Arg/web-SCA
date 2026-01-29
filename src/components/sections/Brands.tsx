@@ -194,6 +194,8 @@ export const Brands: React.FC = () => {
                       <img
                         src={brand.logo}
                         alt={brand.name}
+                        loading="lazy"
+                        decoding="async"
                         className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
                       />
                     </div>
@@ -334,6 +336,8 @@ export const Brands: React.FC = () => {
                       <img
                         src={brand.logo}
                         alt={brand.name}
+                        loading="lazy"
+                        decoding="async"
                         className="max-w-[180px] max-h-24 object-contain filter-none opacity-80 group-hover:opacity-100 transition-all duration-500"
                       />
                     </div>

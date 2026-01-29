@@ -222,9 +222,9 @@ export const translations: Translations = {
     riders_title: 'Used by World-Class Athletes',
     riders_subtitle: 'Our saddles are trusted by professional riders competing at World Championships and Olympic Games.',
     rider_milthaler_discipline: 'Show Jumping',
-    rider_milthaler_achievements: 'International competitor and Grand Prix champion',
+    rider_milthaler_achievements: 'Chilean Olympic and Pan American athlete, Grand Prix winner in Mexico',
     rider_teixeira_discipline: 'Eventing',
-    rider_teixeira_achievements: 'Olympic and World Championship competitor',
+    rider_teixeira_achievements: 'Brazilian Olympic and Pan American athlete, teaching at the highest level worldwide',
     
     // Enhanced OEM Section
     oem_support_title: 'Complete OEM Support',
@@ -455,9 +455,9 @@ export const translations: Translations = {
     riders_title: 'Verwendet von Weltklasse-Athleten',
     riders_subtitle: 'Unsere Sättel werden von professionellen Reitern verwendet, die bei Weltmeisterschaften und Olympischen Spielen antreten.',
     rider_milthaler_discipline: 'Springreiten',
-    rider_milthaler_achievements: 'Internationaler Teilnehmer und Grand-Prix-Champion',
+    rider_milthaler_achievements: 'Chilenischer Olympia- und Panamerikanischer Athlet, Grand-Prix-Sieger in Mexiko',
     rider_teixeira_discipline: 'Vielseitigkeit',
-    rider_teixeira_achievements: 'Olympia- und Weltmeisterschaftsteilnehmer',
+    rider_teixeira_achievements: 'Brasilianischer Olympia- und Panamerikanischer Athlet, lehrt auf höchstem Niveau weltweit',
     
     // Enhanced OEM Section
     oem_support_title: 'Komplette OEM-Unterstützung',
@@ -686,9 +686,9 @@ export const translations: Translations = {
     riders_title: 'Usadas por Atletas de Clase Mundial',
     riders_subtitle: 'Nuestras monturas son confiadas por jinetes profesionales que compiten en Campeonatos Mundiales y Juegos Olímpicos.',
     rider_milthaler_discipline: 'Salto',
-    rider_milthaler_achievements: 'Competidor internacional y campeón de Grand Prix',
+    rider_milthaler_achievements: 'Atleta olímpico y panamericano chileno, ganador de Grand Prix en México',
     rider_teixeira_discipline: 'Prueba Completa',
-    rider_teixeira_achievements: 'Competidor olímpico y de campeonatos mundiales',
+    rider_teixeira_achievements: 'Atleta olímpico y panamericano brasileño, enseñando al más alto nivel mundial',
     
     // Enhanced OEM Section
     oem_support_title: 'Soporte OEM Completo',

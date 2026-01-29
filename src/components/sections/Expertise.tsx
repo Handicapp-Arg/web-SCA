@@ -173,6 +173,8 @@ export const Expertise: React.FC = () => {
                       <img 
                         src={partners[currentPartner].image} 
                         alt={partners[currentPartner].name}
+                        loading="lazy"
+                        decoding="async"
                         className={`absolute inset-0 w-full h-full object-cover ${partners[currentPartner].imagePosition}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent lg:bg-gradient-to-r" />

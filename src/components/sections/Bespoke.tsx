@@ -69,6 +69,8 @@ export const Bespoke: React.FC = () => {
                   <img
                     src="/images/custom1.JPG"
                     alt="Custom Design 1"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-cover aspect-[3/4] group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -79,6 +81,8 @@ export const Bespoke: React.FC = () => {
                   <img
                     src="/images/custom2.JPG"
                     alt="Custom Design 2"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -91,6 +95,8 @@ export const Bespoke: React.FC = () => {
                   <img
                     src="/images/especialproject.JPG"
                     alt="Special Project"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -101,6 +107,8 @@ export const Bespoke: React.FC = () => {
                   <img
                     src="/images/unique.JPG"
                     alt="Unique Creation"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-cover aspect-[3/4] group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
