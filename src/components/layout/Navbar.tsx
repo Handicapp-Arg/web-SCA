@@ -66,6 +66,8 @@ export const Navbar: React.FC = () => {
           ? 'bg-primary/95 backdrop-blur-md shadow-lg' 
           : 'bg-primary/90 backdrop-blur-sm'
       }`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -73,6 +75,7 @@ export const Navbar: React.FC = () => {
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
             className="flex items-center z-50 transition-transform duration-300 hover:scale-105"
+            aria-label="Go to top"
           >
             <img 
               src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/logoSCA%20-%20blanco.webp`} 
@@ -123,6 +126,9 @@ export const Navbar: React.FC = () => {
                 <button
                   onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-white/20 bg-white/5 hover:bg-white/10 transition-colors"
+                  aria-haspopup="listbox"
+                  aria-expanded={isLangMenuOpen}
+                  aria-label="Select language"
                 >
                   <span className="text-white text-sm font-medium">{language.toUpperCase()}</span>
                   <i className={`fas fa-chevron-down text-accent text-xs transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
@@ -130,12 +136,15 @@ export const Navbar: React.FC = () => {
 
                 {/* Dropdown */}
                 {isLangMenuOpen && (
-                  <div className="absolute top-full right-0 mt-2 bg-primary rounded-md shadow-xl overflow-hidden min-w-[140px] z-50 border border-white/10">
+                  <div className="absolute top-full right-0 mt-2 bg-primary rounded-md shadow-xl overflow-hidden min-w-[140px] z-50 border border-white/10" role="listbox" aria-label="Language options">
                     {languages.map((lang) => (
                       <button
                         key={lang}
                         onClick={() => handleLanguageChange(lang)}
                         className="w-full text-left px-4 py-2.5 text-sm text-white hover:bg-accent transition-colors"
+                        role="option"
+                        aria-selected={language === lang}
+                        tabIndex={0}
                       >
                         {languageConfig[lang].name}
                       </button>

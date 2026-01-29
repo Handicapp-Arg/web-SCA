@@ -2,12 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Favicon para tema claro (usa logo oscuro) -->
-    <link rel="icon" type="image/png" href="/images/logoSCA.webp" media="(prefers-color-scheme: light)" />
-    <!-- Favicon para tema oscuro (usa logo blanco) -->
-    <link rel="icon" type="image/png" href="/images/logoSCA - blanco.webp" media="(prefers-color-scheme: dark)" />
-    <!-- Favicon por defecto -->
-    <link rel="icon" type="image/png" href="/images/logoSCA.webp" />
+  <!-- Favicon para tema claro (usa logo oscuro) -->
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dh2m9ychv/image/upload/web-sca/logoSCA.webp" media="(prefers-color-scheme: light)" />
+  <!-- Favicon para tema oscuro (usa logo blanco) -->
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dh2m9ychv/image/upload/web-sca/logoSCA%20-%20blanco.webp" media="(prefers-color-scheme: dark)" />
+  <!-- Favicon por defecto -->
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dh2m9ychv/image/upload/web-sca/logoSCA.webp" />
+  <!-- SEO: Canonical & alternate -->
+  <link rel="canonical" href="https://sca.com.ar/" />
+  <link rel="alternate" href="https://sca.com.ar/en" hreflang="en" />
+  <link rel="alternate" href="https://sca.com.ar/es" hreflang="es" />
+  <link rel="alternate" href="https://sca.com.ar/de" hreflang="de" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sca.com.ar/" />
+  <meta property="og:title" content="SCA | Saddle Company Argentina - Global OEM Manufacturing" />
+  <meta property="og:description" content="SCA - Saddle Company Argentina | Global OEM Saddle Manufacturing. Your strategic partner bridging Argentine craftsmanship with European market demands." />
+  <meta property="og:image" content="https://res.cloudinary.com/dh2m9ychv/image/upload/web-sca/og-sca.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://sca.com.ar/" />
+  <meta name="twitter:title" content="SCA | Saddle Company Argentina - Global OEM Manufacturing" />
+  <meta name="twitter:description" content="SCA - Saddle Company Argentina | Global OEM Saddle Manufacturing. Your strategic partner bridging Argentine craftsmanship with European market demands." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dh2m9ychv/image/upload/web-sca/og-sca.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="SCA - Saddle Company Argentina | Global OEM Saddle Manufacturing. Your strategic partner bridging Argentine craftsmanship with European market demands." />
     <meta name="keywords" content="saddle manufacturing, OEM, Argentina, leather, equestrian, premium saddles" />
@@ -17,6 +36,29 @@
     
     <title>SCA | Saddle Company Argentina - Global OEM Manufacturing</title>
   </head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_path: window.location.pathname,
+        anonymize_ip: true
+      });
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/XXXXXXXXX";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script");
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.clarity.ms/tag/XXXXXXXXX" alt="" />
+    </noscript>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
