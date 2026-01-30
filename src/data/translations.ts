@@ -185,6 +185,8 @@ export const translations: Translations = {
     process_trees_desc: 'We manufacture our own saddle trees with rigorous symmetry testing. Each tree is laser-verified before assembly to guarantee structural perfection.',
     process_quality_title: 'Continuous Quality Control',
     process_quality_desc: 'Laser systems at each assembly station ensure symmetry and precision throughout the entire manufacturing line. Nothing leaves our facility without approval.',
+    process_efs_title: 'EFS - Easy Fit System',
+    process_efs_desc: 'Our revolutionary fitting system that allows precise adjustments to ensure perfect saddle fit for every horse. Innovation and comfort in one solution.',
     
     // Product Value Proposition
     product_value_title: 'Crafted by Professionals, Approved by Experts',
@@ -418,6 +420,8 @@ export const translations: Translations = {
     process_trees_desc: 'Wir fertigen unsere eigenen Sattelbäume mit rigoroser Symmetrieprüfung. Jeder Baum wird vor der Montage lasergeprüft, um strukturelle Perfektion zu garantieren.',
     process_quality_title: 'Kontinuierliche Qualitätskontrolle',
     process_quality_desc: 'Lasersysteme an jeder Montagestation gewährleisten Symmetrie und Präzision während der gesamten Fertigungslinie. Nichts verlässt unsere Anlage ohne Freigabe.',
+    process_efs_title: 'EFS - Easy Fit System',
+    process_efs_desc: 'Unser revolutionäres Anpassungssystem ermöglicht präzise Einstellungen für perfekte Sattelpassform bei jedem Pferd. Innovation und Komfort in einer Lösung.',
     
     // Product Value Proposition
     product_value_title: 'Von Profis gefertigt, von Experten genehmigt',
@@ -649,6 +653,8 @@ export const translations: Translations = {
     process_trees_desc: 'Fabricamos nuestros propios armazones con rigurosas pruebas de simetría. Cada armazón es verificado con láser antes del ensamblaje para garantizar perfección estructural.',
     process_quality_title: 'Control de Calidad Continuo',
     process_quality_desc: 'Sistemas láser en cada estación de ensamblaje garantizan simetría y precisión en toda la línea de producción. Nada sale de nuestra planta sin aprobación.',
+    process_efs_title: 'EFS - Easy Fit System',
+    process_efs_desc: 'Nuestro revolucionario sistema de ajuste que permite realizar ajustes precisos para garantizar un calce perfecto de la montura para cada caballo. Innovación y comodidad en una sola solución.',
     
     // Product Value Proposition
     product_value_title: 'Diseñadas por Profesionales, Aprobadas por Expertos',

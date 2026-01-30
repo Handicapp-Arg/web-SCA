@@ -25,22 +25,22 @@ export const Products: React.FC = () => {
   const productCategories: ProductCategory[] = [
     { 
       nameKey: 'products_cat_jumping', 
-  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_salto.webp`,
+      image: 'https://res.cloudinary.com/dh2m9ychv/image/upload/v1769804694/montura_salto_e_background_removal_f_png_wnhu0q.png',
       gradient: ''
     },
     { 
       nameKey: 'products_cat_dressage', 
-  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_adistramiento.webp`,
+      image: 'https://res.cloudinary.com/dh2m9ychv/image/upload/v1769804692/montura_adistramiento_e_background_removal_f_png_kp0war.png',
       gradient: ''
     },
     { 
       nameKey: 'products_cat_allpurpose', 
-  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_todoproposito.webp`,
+      image: 'https://res.cloudinary.com/dh2m9ychv/image/upload/v1769804692/montura_todoproposito_e_background_removal_f_png_hjjhcj.png',
       gradient: ''
     },
     { 
       nameKey: 'products_cat_trekking', 
-  image: `https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/montura_trekking.webp`,
+      image: 'https://res.cloudinary.com/dh2m9ychv/image/upload/v1769804404/montura_trekking_e_background_removal_f_png_iuxmtg.png',
       gradient: ''
     },
   ];
@@ -172,7 +172,7 @@ export const Products: React.FC = () => {
             {productCategories.map((category, index) => (
               <motion.div
                 key={index}
-                className="group cursor-pointer"
+                className="group cursor-pointer flex flex-col"
                 initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 30 }}
                 transition={{ 
@@ -182,28 +182,26 @@ export const Products: React.FC = () => {
                 }}
                 whileHover={{ y: -12, scale: 1.05 }}
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/5] bg-gradient-to-br from-slate-800 via-slate-700 to-cyan-900/80 group-hover:ring-2 group-hover:ring-cyan-400 transition-all duration-300">
-                  {/* Product Image */}
+                {/* Image Container */}
+                <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/5] bg-gradient-to-br from-gray-100 via-gray-50 to-cyan-50/50 group-hover:ring-2 group-hover:ring-cyan-400 transition-all duration-300">
+                  {/* Product Image - sin tapar */}
                   <img
                     src={category.image}
                     alt={t(category.nameKey as any)}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                    className="w-full h-full object-contain p-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                   />
-
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/40" />
 
                   {/* Cyan accent line on hover */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
 
-                  {/* Category Name - Below Image */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/95 to-slate-800/80 backdrop-blur-sm py-4 group-hover:from-cyan-900/95 group-hover:to-cyan-800/80 transition-all duration-300">
-                    <h4 className="text-white font-bold text-base md:text-lg uppercase tracking-wide text-center">
-                      {t(category.nameKey as any)}
-                    </h4>
-                  </div>
+                {/* Category Name - FUERA de la imagen */}
+                <div className="mt-4 bg-gradient-to-r from-slate-900 to-slate-800 rounded-lg py-3 px-4 shadow-md group-hover:from-cyan-900 group-hover:to-cyan-800 transition-all duration-300">
+                  <h4 className="text-white font-bold text-base md:text-lg uppercase tracking-wide text-center">
+                    {t(category.nameKey as any)}
+                  </h4>
                 </div>
               </motion.div>
             ))}

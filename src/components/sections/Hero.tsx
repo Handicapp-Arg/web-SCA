@@ -11,20 +11,17 @@ export const Hero: React.FC = () => {
       aria-label="Hero Section"
     >
       {/* ===== VIDEO BACKGROUND ===== */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
-          className="
-            absolute inset-0 w-full h-full object-cover
-            brightness-[0.45] saturate-[0.6] contrast-[0.85]
-          "
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.45] saturate-[0.6] contrast-[0.85]"
         >
           <source
-            src="https://res.cloudinary.com/dh2m9ychv/video/upload/v1769435837/handicappvideo_qnf50x.mp4"
+            src="https://res.cloudinary.com/dh2m9ychv/video/upload/v1769807374/hero_mf3vkf.mp4"
             type="video/mp4"
           />
         </video>
