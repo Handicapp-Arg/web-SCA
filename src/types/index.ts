@@ -193,6 +193,8 @@ export interface TranslationKeys {
   process_trees_desc: string;
   process_quality_title: string;
   process_quality_desc: string;
+  process_efs_title: string;
+  process_efs_desc: string;
 
   // Product Value Proposition
   product_value_title: string;
