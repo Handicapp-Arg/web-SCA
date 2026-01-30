@@ -133,7 +133,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
                     transition={{ delay: 0.2, duration: 0.5 }}
                   >
                     <img 
-                      src="/images/spogahorse_logo.jpg" 
+                      src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/spogahorse_logo.webp`} 
                       alt="SPOGA HORSE 2026" 
                       className="w-full h-auto object-contain"
                     />
@@ -413,7 +413,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ delay = 2000, onClose })
             />
             
             <img 
-              src="/images/spogahorse_logo.jpg" 
+              src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/spogahorse_logo.webp`} 
               alt="SPOGA HORSE 2026" 
               className="w-full h-full object-cover scale-105 relative z-10"
             />

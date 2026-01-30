@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocale } from '@/hooks/useLocale';
 import { ActionButton } from '@/components/ui';
+import { useSEO } from '@/hooks/useSEO';
 import { downloadVCard, getWhatsAppLink, getMailtoLink } from '@/lib/contactUtils';
 import { companyContact, contactMessages, eventInfo } from '@/lib/connectData';
 
@@ -11,6 +12,13 @@ import { companyContact, contactMessages, eventInfo } from '@/lib/connectData';
  * No navigation, no footer - just quick actions
  */
 export const ConnectPage: React.FC = () => {
+  useSEO({
+    title: 'SCA | Connect - Contacto rápido',
+    description: 'Conecta con SCA en eventos: guarda contacto, WhatsApp, email y más. OEM Saddle Manufacturing.',
+    image: 'https://res.cloudinary.com/dh2m9ychv/image/upload/web-sca/og-sca.webp',
+    url: typeof window !== 'undefined' ? window.location.href : 'https://sca.com.ar/connect',
+    lang: 'en',
+  });
   const { t } = useLanguage();
   const { getLocalizedPath } = useLocale();
 
@@ -59,9 +67,7 @@ export const ConnectPage: React.FC = () => {
             {/* Logo */}
             <div className="mb-4 flex justify-center">
               <img
-                src="/images/logoSCA - blanco.webp"
-                loading="lazy"
-                decoding="async"
+                src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload/web-sca/web-sca/logoSCA%20-%20blanco.webp`}
                 alt="SCA Logo"
                 className="h-24 md:h-32 w-auto object-contain"
               />
