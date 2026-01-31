@@ -42,13 +42,20 @@ export const ManufacturingProcess: React.FC = () => {
     },
   ];
 
-  // Forzar play cuando cambia el video
+  // Reproducir video cuando cambia el index o se carga el componente
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Silenciar errores de autoplay (algunos navegadores bloquean autoplay)
-      });
-    }
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          // Navegador bloqueó autoplay
+          console.log('Autoplay blocked');
+        }
+      }
+    };
+    
+    playVideo();
   }, [currentIndex]);
 
   const nextSlide = () => {
@@ -136,10 +143,11 @@ export const ManufacturingProcess: React.FC = () => {
                 key={currentIndex}
                 ref={videoRef}
                 src={processes[currentIndex].videoUrl}
-                autoPlay
                 muted
                 playsInline
+                preload="auto"
                 onEnded={nextSlide}
+                onLoadedData={() => videoRef.current?.play()}
                 className="w-full h-full object-contain md:object-cover"
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
