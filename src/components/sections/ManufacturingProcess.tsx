@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SectionHeader, RevealWrapper } from '@/components/ui';
@@ -19,6 +19,7 @@ export const ManufacturingProcess: React.FC = () => {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showDescription, setShowDescription] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const processes: ProcessItem[] = [
     {
@@ -40,6 +41,15 @@ export const ManufacturingProcess: React.FC = () => {
       videoUrl: 'https://res.cloudinary.com/dh2m9ychv/video/upload/v1769801924/CalidadControl_euymej.mp4',
     },
   ];
+
+  // Forzar play cuando cambia el video
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Silenciar errores de autoplay (algunos navegadores bloquean autoplay)
+      });
+    }
+  }, [currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % processes.length);
@@ -124,6 +134,7 @@ export const ManufacturingProcess: React.FC = () => {
             <AnimatePresence mode="wait">
               <motion.video
                 key={currentIndex}
+                ref={videoRef}
                 src={processes[currentIndex].videoUrl}
                 autoPlay
                 muted
