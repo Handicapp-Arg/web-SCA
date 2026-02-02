@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
           className="absolute inset-0 w-full h-full object-cover brightness-[0.45] saturate-[0.6] contrast-[0.85]"
         >
           <source
-            src="https://res.cloudinary.com/dh2m9ychv/video/upload/v1769807374/hero_mf3vkf.mp4"
+            src="https://res.cloudinary.com/dh2m9ychv/video/upload/v1770062526/Sca_web_pkoshs.mov"
             type="video/mp4"
           />
         </video>
