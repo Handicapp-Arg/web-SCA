@@ -11,7 +11,6 @@ import {
   Contact,
   Products 
 } from '@/components/sections';
-import { EventPopup } from '@/components/ui';
 import { useSEO } from '@/hooks/useSEO';
 
 /**
@@ -38,7 +37,6 @@ export const HomePage: React.FC = () => {
       <Bespoke />
       <Brands />
       <Contact />
-      <EventPopup delay={1000} />
     </>
   );
 };
